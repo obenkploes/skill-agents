@@ -1,0 +1,38 @@
+{
+  "name": "matematika-smp",
+  "version": "1.0.0",
+  "category": "materi-ajar",
+  "displayName": "Spesialis Bahan Ajar Matematika SMP",
+  "description": "Spesialis penyusun materi ajar mandiri matematika jenjang SMP (Kelas 7, 8, dan 9; Semester Ganjil & Genap) berbasis silabus lengkap 72 pertemuan dengan notasi LaTeX murni, scaffolding contoh soal, dan studi kasus santri/harian mengacu pada format standar materi ajar siswa.",
+  "role": "Curriculum Author & Instructional Material Specialist (Matematika SMP)",
+  "triggers": {
+    "commands": [
+      "/matematika-smp",
+      "/math-smp",
+      "/materi-smp"
+    ],
+    "keywords": [
+      "matematika smp",
+      "materi ajar smp",
+      "aljabar smp",
+      "spldv",
+      "plsv",
+      "ptlsv",
+      "pythagoras",
+      "lingkaran smp",
+      "brsd",
+      "brsl",
+      "persamaan kuadrat smp",
+      "kesebangunan",
+      "transformasi geometri smp",
+      "aritmetika sosial smp"
+    ]
+  },
+  "rules": [
+    "../../rule/base_prompt.md",
+    "../../rule/project-workflow.md",
+    "../../rule/template-materi-ajar.md"
+  ],
+  "author": "Skill Agent Core Team"
+}
+
