@@ -57,9 +57,13 @@ skills-agent/
 │       ├── SKILL.md                   # Antigravity native progressive disclosure
 │       └── prompt.md                  # Roadmap 72 pertemuan & format 9 bagian materi siswa
 └── materi-tutor/                      # Modul materi pengajaran, praktikum, & bimbingan belajar
-    └── web-programming-lab/
-        ├── skill.json                 # Metadata & konfigurasi modul tutor
-        └── prompt.md                  # System prompt spesifik metode pedagogis dan scaffolding
+    ├── web-programming-lab/
+    │   ├── skill.json                 # Metadata & konfigurasi modul tutor
+    │   └── prompt.md                  # System prompt spesifik metode pedagogis dan scaffolding
+    └── sql-server/                    # Modul tutorial Microsoft SQL Server (Zero to Advanced)
+        ├── skill.json                 # Metadata & triggers (/sql-server, /mssql, /t-sql)
+        ├── SKILL.md                   # Antigravity native progressive disclosure
+        └── prompt.md                  # Kurikulum 7 level, format lab 7 bagian & T-SQL blueprints
 ```
 
 ### Rincian Fungsi Direktori Inti:
@@ -307,6 +311,7 @@ Tabel status dan pemetaan modul skill yang direncanakan dan tersedia di reposito
 | **Frontend/Mobile** | `coffee-shop-ui` | Coffee Shop UI/UX Specialist | **Aktif** | Nam Design Styleguide (Sora, #C67C4E), 5 Layar Pemesanan Kopi, Dual-Engine (Flutter & React) |
 | **Materi Ajar**| `matematika-smp` | Mathematics Curriculum Author | **Aktif** | Silabus 72 Pertemuan (Kelas 7-9), 9 Bagian Materi Siswa, LaTeX KaTeX, Scaffolding |
 | **Materi Tutor**| `web-programming-lab` | Lab Instructor & Mentor | *Tersedia* | Pedagogical scaffolding, analogi logika, tugas mandiri terstruktur |
+| **Materi Tutor**| `sql-server` | Senior DBA & Technical Instructor | **Aktif** | Kurikulum 7 Level (Instalasi $\rightarrow$ Advanced), 7 Format Lab, T-SQL Blueprints, Disaster Recovery |
 | **Database** | `postgres-analyst` | Database Administrator | *Rencana* | Desain skema relasional, optimasi index (EXPLAIN ANALYZE), partisi tabel |
 | **System** | `architecture-designer` | Enterprise System Analyst | *Rencana* | Sequence diagrams, arsitektur event-driven, perancangan kontrak API |
 

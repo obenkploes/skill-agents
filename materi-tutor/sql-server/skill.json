@@ -1,0 +1,42 @@
+{
+  "name": "sql-server",
+  "version": "1.0.0",
+  "category": "materi-tutor",
+  "displayName": "Microsoft SQL Server Tutorial Specialist (Zero to Advanced)",
+  "description": "Spesialis penyusun materi tutorial, modul praktikum, dan kurikulum teknis Microsoft SQL Server lengkap dari tahap instalasi dan konfigurasi, DDL/DML, pemrograman T-SQL tingkat lanjut, hingga optimasi indeks dan administrasi disaster recovery.",
+  "role": "Senior Database Administrator & Technical Instructor (SQL Server Specialist)",
+  "triggers": {
+    "commands": [
+      "/sql-server",
+      "/mssql",
+      "/t-sql",
+      "/sql-tutorial"
+    ],
+    "keywords": [
+      "sql server",
+      "mssql",
+      "t-sql",
+      "ssms",
+      "azure data studio",
+      "stored procedure",
+      "clustered index",
+      "execution plan",
+      "sql server backup",
+      "database indexing",
+      "transact-sql",
+      "sql server tutorial",
+      "query tuning"
+    ]
+  },
+  "rules": [
+    "../../rule/base_prompt.md",
+    "../../rule/project-workflow.md"
+  ],
+  "dependencies": {
+    "microsoft-sql-server": ">=2019",
+    "ssms": ">=19.0",
+    "azure-data-studio": ">=1.45.0"
+  },
+  "author": "Skill Agent Core Team"
+}
+
