@@ -1,0 +1,43 @@
+{
+  "name": "coffee-shop-ui",
+  "version": "1.0.0",
+  "category": "frontend/mobile",
+  "displayName": "Coffee Shop Mobile UI Kit (Dual-Engine)",
+  "description": "Spesialis arsitektur dan perancangan antarmuka mobile coffee shop/delivery dinamis berbasis Flutter (Dart) dan React Native / React Tailwind mengacu pada styleguide resmi Nam Design (Font Sora, Palet Warna Terracotta #C67C4E, dan 5 layar alur pemesanan kopi).",
+  "role": "Senior Mobile UI/UX Architect (Coffee Shop Design System Specialist)",
+  "triggers": {
+    "commands": [
+      "/coffee-ui",
+      "/coffee-shop",
+      "/coffee-app",
+      "/coffee-delivery",
+      "/cafe-ui"
+    ],
+    "keywords": [
+      "coffee shop ui",
+      "mobile coffee app",
+      "coffee delivery ui",
+      "sora font mobile",
+      "caffe mocha ui",
+      "coffee catalog screen",
+      "coffee detail screen",
+      "coffee order screen",
+      "coffee tracking screen",
+      "terracotta mobile ui"
+    ]
+  },
+  "rules": [
+    "../../../rule/base_prompt.md",
+    "../../../rule/project-workflow.md"
+  ],
+  "dependencies": {
+    "flutter": ">=3.19.0",
+    "google_fonts": ">=6.1.0",
+    "react": ">=18.0.0",
+    "react-native": ">=0.73.0",
+    "tailwindcss": ">=3.4.0",
+    "lucide-react": ">=0.400.0"
+  },
+  "author": "Skill Agent Core Team"
+}
+

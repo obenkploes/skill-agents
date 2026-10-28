@@ -43,10 +43,14 @@ skills-agent/
 │   │   ├── skill.json                 # Metadata, trigger CLI (/tailmind, /tailadmin)
 │   │   └── prompt.md                  # System prompt spesialisasi TailAdmin UI & chart
 │   └── mobile/                        # Modul frontend mobile
-│       └── task-management-ui/        # Dual-Engine UI Kit (Flutter & React / React Native)
-│           ├── skill.json             # Metadata & triggers (/task-ui, /flutter-task-ui, /react-task-ui)
+│       ├── task-management-ui/        # Dual-Engine UI Kit (Flutter & React / React Native)
+│       │   ├── skill.json             # Metadata & triggers (/task-ui, /flutter-task-ui, /react-task-ui)
+│       │   ├── SKILL.md               # Antigravity native progressive disclosure
+│       │   └── prompt.md              # Universal tokens & Flutter/React widget blueprints
+│       └── coffee-shop-ui/            # Coffee Shop UI Kit Nam Design (Font Sora & Terracotta #C67C4E)
+│           ├── skill.json             # Metadata & triggers (/coffee-ui, /coffee-shop)
 │           ├── SKILL.md               # Antigravity native progressive disclosure
-│           └── prompt.md              # Universal tokens & Flutter/React widget blueprints
+│           └── prompt.md              # 5 Layar alur kopi (Onboarding, Home, Detail, Order, Delivery)
 ├── materi-ajar/                       # Modul bahan ajar mandiri siswa (LaTeX & scaffolding)
 │   └── matematika-smp/                # Modul silabus Matematika SMP Kelas 7, 8, 9 (72 Pertemuan)
 │       ├── skill.json                 # Metadata & trigger CLI (/matematika-smp, /math-smp)
@@ -300,6 +304,7 @@ Tabel status dan pemetaan modul skill yang direncanakan dan tersedia di reposito
 | **Frontend** | `react-tailwind` | Senior Frontend Engineer | *Tersedia* | React 19, TypeScript, Tailwind CSS, State management, Accessibility |
 | **Frontend** | `tailmind` | TailAdmin System Specialist | **Aktif** | TailAdmin Dashboard, KPI Stat Cards, Gauge Chart, Sales Bar, Period Filter Area |
 | **Frontend/Mobile** | `task-management-ui` | Mobile UI/UX Architect | **Aktif** | Dual-Engine (Flutter & React): Task Dashboard, Gradient Slider, Detail Sheet, Create Form |
+| **Frontend/Mobile** | `coffee-shop-ui` | Coffee Shop UI/UX Specialist | **Aktif** | Nam Design Styleguide (Sora, #C67C4E), 5 Layar Pemesanan Kopi, Dual-Engine (Flutter & React) |
 | **Materi Ajar**| `matematika-smp` | Mathematics Curriculum Author | **Aktif** | Silabus 72 Pertemuan (Kelas 7-9), 9 Bagian Materi Siswa, LaTeX KaTeX, Scaffolding |
 | **Materi Tutor**| `web-programming-lab` | Lab Instructor & Mentor | *Tersedia* | Pedagogical scaffolding, analogi logika, tugas mandiri terstruktur |
 | **Database** | `postgres-analyst` | Database Administrator | *Rencana* | Desain skema relasional, optimasi index (EXPLAIN ANALYZE), partisi tabel |
