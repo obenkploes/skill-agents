@@ -1,0 +1,41 @@
+{
+  "name": "task-management-ui",
+  "version": "1.0.0",
+  "category": "frontend/mobile",
+  "displayName": "Dual-Engine Task Management Mobile UI Kit",
+  "description": "Spesialis arsitektur dan perancangan antarmuka mobile task management dinamis berbasis Flutter (Dart) dan React Native / React Tailwind mengacu pada standar visual Task Management Mobile App UI Kit (20+ Screens).",
+  "role": "Senior Mobile UI/UX Architect (Flutter & React Native Specialist)",
+  "triggers": {
+    "commands": [
+      "/task-ui",
+      "/flutter-task-ui",
+      "/react-task-ui",
+      "/mobile-task",
+      "/task-ui-kit"
+    ],
+    "keywords": [
+      "task management ui",
+      "mobile task ui",
+      "flutter task ui",
+      "react native task",
+      "task dashboard mobile",
+      "task detail bottom sheet",
+      "create task modal",
+      "category progress card",
+      "docked fab navigation"
+    ]
+  },
+  "rules": [
+    "../../../rule/base_prompt.md",
+    "../../../rule/project-workflow.md"
+  ],
+  "dependencies": {
+    "flutter": ">=3.19.0",
+    "react": ">=18.0.0",
+    "react-native": ">=0.73.0",
+    "tailwindcss": ">=3.4.0",
+    "lucide-react": ">=0.400.0"
+  },
+  "author": "Skill Agent Core Team"
+}
+

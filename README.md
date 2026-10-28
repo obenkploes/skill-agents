@@ -39,9 +39,14 @@ skills-agent/
 │   ├── react-tailwind/
 │   │   ├── skill.json                 # Metadata & konfigurasi trigger frontend
 │   │   └── prompt.md                  # System prompt spesifik modul React & Tailwind CSS
-│   └── tailmind/                      # Modul skill TailAdmin / TailMind dashboard
-│       ├── skill.json                 # Metadata, trigger CLI (/tailmind, /tailadmin)
-│       └── prompt.md                  # System prompt spesialisasi TailAdmin UI & chart
+│   ├── tailmind/                      # Modul skill TailAdmin / TailMind dashboard
+│   │   ├── skill.json                 # Metadata, trigger CLI (/tailmind, /tailadmin)
+│   │   └── prompt.md                  # System prompt spesialisasi TailAdmin UI & chart
+│   └── mobile/                        # Modul frontend mobile
+│       └── task-management-ui/        # Dual-Engine UI Kit (Flutter & React / React Native)
+│           ├── skill.json             # Metadata & triggers (/task-ui, /flutter-task-ui, /react-task-ui)
+│           ├── SKILL.md               # Antigravity native progressive disclosure
+│           └── prompt.md              # Universal tokens & Flutter/React widget blueprints
 ├── materi-ajar/                       # Modul bahan ajar mandiri siswa (LaTeX & scaffolding)
 │   └── matematika-smp/                # Modul silabus Matematika SMP Kelas 7, 8, 9 (72 Pertemuan)
 │       ├── skill.json                 # Metadata & trigger CLI (/matematika-smp, /math-smp)
@@ -294,6 +299,7 @@ Tabel status dan pemetaan modul skill yang direncanakan dan tersedia di reposito
 | **Backend** | `laravel-api` | Senior Laravel Architect | *Tersedia* | Laravel 11, API Resources, Eloquent optimization, Service layer |
 | **Frontend** | `react-tailwind` | Senior Frontend Engineer | *Tersedia* | React 19, TypeScript, Tailwind CSS, State management, Accessibility |
 | **Frontend** | `tailmind` | TailAdmin System Specialist | **Aktif** | TailAdmin Dashboard, KPI Stat Cards, Gauge Chart, Sales Bar, Period Filter Area |
+| **Frontend/Mobile** | `task-management-ui` | Mobile UI/UX Architect | **Aktif** | Dual-Engine (Flutter & React): Task Dashboard, Gradient Slider, Detail Sheet, Create Form |
 | **Materi Ajar**| `matematika-smp` | Mathematics Curriculum Author | **Aktif** | Silabus 72 Pertemuan (Kelas 7-9), 9 Bagian Materi Siswa, LaTeX KaTeX, Scaffolding |
 | **Materi Tutor**| `web-programming-lab` | Lab Instructor & Mentor | *Tersedia* | Pedagogical scaffolding, analogi logika, tugas mandiri terstruktur |
 | **Database** | `postgres-analyst` | Database Administrator | *Rencana* | Desain skema relasional, optimasi index (EXPLAIN ANALYZE), partisi tabel |
