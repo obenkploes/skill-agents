@@ -47,10 +47,14 @@ skills-agent/
 │       │   ├── skill.json             # Metadata & triggers (/task-ui, /flutter-task-ui, /react-task-ui)
 │       │   ├── SKILL.md               # Antigravity native progressive disclosure
 │       │   └── prompt.md              # Universal tokens & Flutter/React widget blueprints
-│       └── coffee-shop-ui/            # Coffee Shop UI Kit Nam Design (Font Sora & Terracotta #C67C4E)
-│           ├── skill.json             # Metadata & triggers (/coffee-ui, /coffee-shop)
+│       ├── coffee-shop-ui/            # Coffee Shop UI Kit Nam Design (Font Sora & Terracotta #C67C4E)
+│       │   ├── skill.json             # Metadata & triggers (/coffee-ui, /coffee-shop)
+│       │   ├── SKILL.md               # Antigravity native progressive disclosure
+│       │   └── prompt.md              # 5 Layar alur kopi (Onboarding, Home, Detail, Order, Delivery)
+│       └── food-delivery-ui/          # Food Delivery & Chef Marketplace UI Kit (Brand Orange #FF7622)
+│           ├── skill.json             # Metadata & triggers (/food-ui, /food-delivery, /chef-app)
 │           ├── SKILL.md               # Antigravity native progressive disclosure
-│           └── prompt.md              # 5 Layar alur kopi (Onboarding, Home, Detail, Order, Delivery)
+│           └── prompt.md              # 24+ Layar Dual-Engine (Customer App & Chef Partner App)
 ├── materi-ajar/                       # Modul bahan ajar mandiri siswa (LaTeX & scaffolding)
 │   └── matematika-smp/                # Modul silabus Matematika SMP Kelas 7, 8, 9 (72 Pertemuan)
 │       ├── skill.json                 # Metadata & trigger CLI (/matematika-smp, /math-smp)
@@ -309,6 +313,7 @@ Tabel status dan pemetaan modul skill yang direncanakan dan tersedia di reposito
 | **Frontend** | `tailmind` | TailAdmin System Specialist | **Aktif** | TailAdmin Dashboard, KPI Stat Cards, Gauge Chart, Sales Bar, Period Filter Area |
 | **Frontend/Mobile** | `task-management-ui` | Mobile UI/UX Architect | **Aktif** | Dual-Engine (Flutter & React): Task Dashboard, Gradient Slider, Detail Sheet, Create Form |
 | **Frontend/Mobile** | `coffee-shop-ui` | Coffee Shop UI/UX Specialist | **Aktif** | Nam Design Styleguide (Sora, #C67C4E), 5 Layar Pemesanan Kopi, Dual-Engine (Flutter & React) |
+| **Frontend/Mobile** | `food-delivery-ui` | Food Delivery UI/UX Architect | **Aktif** | Dual-Engine (Flutter & React): 24+ Layar Customer App & Chef Marketplace (#FF7622) |
 | **Materi Ajar**| `matematika-smp` | Mathematics Curriculum Author | **Aktif** | Silabus 72 Pertemuan (Kelas 7-9), 9 Bagian Materi Siswa, LaTeX KaTeX, Scaffolding |
 | **Materi Tutor**| `web-programming-lab` | Lab Instructor & Mentor | *Tersedia* | Pedagogical scaffolding, analogi logika, tugas mandiri terstruktur |
 | **Materi Tutor**| `sql-server` | Senior DBA & Technical Instructor | **Aktif** | Kurikulum 7 Level (Instalasi $\rightarrow$ Advanced), 7 Format Lab, T-SQL Blueprints, Disaster Recovery |
