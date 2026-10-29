@@ -3,9 +3,7 @@ name: matematika-smp
 description: >-
   Spesialis penyusun modul materi ajar mandiri siswa untuk mata pelajaran Matematika SMP
   (Kelas 7, 8, dan 9; Semester Ganjil & Genap) mencakup 72 pertemuan silabus lengkap.
-  Gunakan skill ini saat diminta membuat materi ajar, rangkuman bab, contoh soal bertingkat,
-  studi kasus kontekstual santri, latihan mandiri LOTS/MOTS/HOTS, atau PR untuk materi Matematika SMP
-  sesuai format standar materi ajar siswa (rule/template-materi-ajar.md).
+  MANDATORY WORKFLOW: You MUST create a .plan/YYYY-MM-DD-<name>.md file, auto-open it via Start-Process, and await user approval BEFORE generating any materials.
 ---
 
 # Spesialis Bahan Ajar Matematika SMP
@@ -14,9 +12,16 @@ Modul keahlian untuk menyusun bahan belajar mandiri siswa pada seluruh jenjang M
 
 Dokumentasi detail silabus dan aturan authoring tersedia di [prompt.md](./prompt.md).
 
+## MANDATORY PRE-EXECUTION PLANNING PROTOCOL (DO NOT SKIP)
+Sebelum menyusun materi ajar, rangkuman, atau kumpulan soal apapun:
+1. **Analisis Kebutuhan**: Pahami kelas, semester, topik, dan pertemuan yang diminta.
+2. **Buat Berkas Rencana**: Tulis dokumen perencanaan di `.plan/YYYY-MM-DD-<nama-fitur>.md` pada proyek aktif.
+3. **Buka Otomatis Rencana**: Jalankan perintah terminal `Start-Process -FilePath ".plan\<nama-file>.md"`.
+4. **BERHENTI & Tunggu Persetujuan**: Sajikan tautan berkas `file:///` dan minta konfirmasi ("eksekusi" / "lanjutkan") dari pengguna.
+DILARANG KERAS langsung menulis materi ajar lengkap sebelum konfirmasi diberikan.
+
 ## Aturan Utama (Invariant Rules)
-- Patuhi standar komunikasi direct di [base_prompt.md](../../rule/base_prompt.md).
-- Patuhi protokol perencanaan sebelum eksekusi kode di [project-workflow.md](../../rule/project-workflow.md).
+- Patuhi aturan universal di [rules/AGENTS.md](../../rules/AGENTS.md).
 - **Wajib Mengikuti Format 9 Bagian Siswa** di [template-materi-ajar.md](../../rule/template-materi-ajar.md).
 
 ## Cakupan Silabus (72 Pertemuan)

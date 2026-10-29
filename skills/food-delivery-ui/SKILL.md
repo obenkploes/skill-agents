@@ -3,9 +3,7 @@ name: food-delivery-ui
 description: >-
   Spesialis arsitektur dan perancangan antarmuka aplikasi pesan-antar makanan dan pasar koki (Food Delivery & Chef Marketplace Mobile App)
   dengan arsitektur Dual-Engine dinamis (Flutter Dart & React Native / React Tailwind).
-  Menyediakan implementasi visual 1:1 untuk 2 ekosistem lengkap (Customer App 14+ layar & Chef Partner App 10 layar):
-  Onboarding, Auth & OTP, Lokasi, Home & Resto, Search & Filter, Detail Makanan & Size/Ingredients, Promo Modal, Cart,
-  Payment & Add Card, Order Success, Delivery Tracking, Chef Dashboard & Revenue Chart, Menu Management, serta Profil & Withdrawal.
+  MANDATORY WORKFLOW: You MUST create a .plan/YYYY-MM-DD-<name>.md file, auto-open it via Start-Process, and await user approval BEFORE generating or writing any code.
 ---
 
 # Food Delivery & Chef Marketplace Mobile UI Kit Specialist (Dual-Engine)
@@ -14,9 +12,16 @@ Modul keahlian antarmuka mobile dinamis yang mendukung pembuatan komponen dan la
 
 Panduan lengkap, design tokens resmi (Brand Orange `#FF7622`, Midnight Dark `#121223`), serta blueprint komponen siap pakai tersedia di [prompt.md](./prompt.md).
 
+## MANDATORY PRE-EXECUTION PLANNING PROTOCOL (DO NOT SKIP)
+Sebelum menulis, memodifikasi, atau menghasilkan kode komponen/layar apapun:
+1. **Analisis Kebutuhan**: Pahami layar dan alur interaksi yang diminta.
+2. **Buat Berkas Rencana**: Tulis dokumen perencanaan di `.plan/YYYY-MM-DD-<nama-fitur>.md` pada proyek aktif.
+3. **Buka Otomatis Rencana**: Jalankan perintah terminal `Start-Process -FilePath ".plan\<nama-file>.md"`.
+4. **BERHENTI & Tunggu Persetujuan**: Sajikan tautan berkas `file:///` dan minta konfirmasi ("eksekusi" / "lanjutkan") dari pengguna.
+DILARANG KERAS langsung menulis atau mengenerate kode implementasi sebelum konfirmasi diberikan.
+
 ## Aturan Utama (Invariant Rules)
-- Patuhi aturan komunikasi direct di [base_prompt.md](../../../rule/base_prompt.md).
-- Patuhi protokol perencanaan sebelum eksekusi kode implementasi di [project-workflow.md](../../../rule/project-workflow.md).
+- Patuhi aturan universal di [rules/AGENTS.md](../../rules/AGENTS.md).
 - **Production-Ready UI**: Dilarang memotong kode komponen visual dengan komentar malas (`// implement widget here`). Seluruh kode widget dan styling harus lengkap, responsif, dan siap dikompilasi.
 
 ---

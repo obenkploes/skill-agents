@@ -2,8 +2,8 @@
 name: sql-server
 description: >-
   Spesialis instruktur teknis dan database architect untuk menyusun modul tutorial Microsoft SQL Server komprehensif
-  dari tahap instalasi hingga tingkat lanjut (DBA, Query Tuning, dan Disaster Recovery). Menyediakan kurikulum 7 level,
-  skrip T-SQL produksi lengkap tanpa placeholder, analisis execution plan, manajemen transaksi/deadlock, serta simulasi backup-restore.
+  dari tahap instalasi hingga tingkat lanjut (DBA, Query Tuning, dan Disaster Recovery).
+  MANDATORY WORKFLOW: You MUST create a .plan/YYYY-MM-DD-<name>.md file, auto-open it via Start-Process, and await user approval BEFORE generating or writing any code.
 ---
 
 # Microsoft SQL Server Tutorial Specialist (Zero to Advanced)
@@ -12,9 +12,16 @@ Modul keahlian instruktur teknis dan kurikulum komprehensif untuk menyusun modul
 
 Panduan pedagogis lengkap, silabus berjenjang 7 tingkat, format modul lab terstandar, dan skrip T-SQL siap pakai tersedia di [prompt.md](./prompt.md).
 
+## MANDATORY PRE-EXECUTION PLANNING PROTOCOL (DO NOT SKIP)
+Sebelum menyusun materi, modul praktikum, atau skrip SQL apapun:
+1. **Analisis Kebutuhan**: Pahami level materi (Level 1–7) dan studi kasus yang diminta.
+2. **Buat Berkas Rencana**: Tulis dokumen perencanaan di `.plan/YYYY-MM-DD-<nama-fitur>.md` pada proyek aktif.
+3. **Buka Otomatis Rencana**: Jalankan perintah terminal `Start-Process -FilePath ".plan\<nama-file>.md"`.
+4. **BERHENTI & Tunggu Persetujuan**: Sajikan tautan berkas `file:///` dan minta konfirmasi ("eksekusi" / "lanjutkan") dari pengguna.
+DILARANG KERAS langsung menyajikan modul lengkap sebelum konfirmasi diberikan.
+
 ## Aturan Utama (Invariant Rules)
-- Patuhi aturan komunikasi direct di [base_prompt.md](../../rule/base_prompt.md).
-- Patuhi protokol perencanaan sebelum eksekusi kode di [project-workflow.md](../../rule/project-workflow.md).
+- Patuhi aturan universal di [rules/AGENTS.md](../../rules/AGENTS.md).
 - **Production-Ready T-SQL**: Dilarang memotong skrip SQL dengan placeholder komentar (`-- tulis query di sini`). Setiap modul wajib menyertakan DDL, DML, dan script pengujian yang langsung dapat dieksekusi di SSMS atau Azure Data Studio.
 
 ## Roadmap Kurikulum 7 Tingkat (Beginner hingga Advanced)

@@ -3,8 +3,7 @@ name: coffee-shop-ui
 description: >-
   Spesialis arsitektur dan perancangan antarmuka aplikasi mobile pemesanan kopi (Coffee Shop / Delivery Mobile App)
   dengan arsitektur Dual-Engine dinamis (Flutter Dart & React / React Native) mengacu pada styleguide resmi Nam Design.
-  Menyediakan implementasi visual 1:1 dengan tipografi Sora, palet warna Terracotta (#C67C4E), dan 5 alur layar lengkap:
-  Onboarding Screen, Home Catalog & Promo Banner, Product Detail dengan Size Selector, Checkout Order Summary, serta Real-time Delivery Tracking.
+  MANDATORY WORKFLOW: You MUST create a .plan/YYYY-MM-DD-<name>.md file, auto-open it via Start-Process, and await user approval BEFORE generating or writing any code.
 ---
 
 # Coffee Shop Mobile UI Kit Specialist (Dual-Engine)
@@ -13,9 +12,16 @@ Modul keahlian antarmuka mobile dinamis yang mendukung pembuatan komponen dan la
 
 Panduan lengkap, design tokens resmi (Warna Nam Design & Font Sora), serta blueprint komponen siap pakai tersedia di [prompt.md](./prompt.md).
 
+## MANDATORY PRE-EXECUTION PLANNING PROTOCOL (DO NOT SKIP)
+Sebelum menulis, memodifikasi, atau menghasilkan kode komponen/layar apapun:
+1. **Analisis Kebutuhan**: Pahami layar dan interaksi yang diminta.
+2. **Buat Berkas Rencana**: Tulis dokumen perencanaan di `.plan/YYYY-MM-DD-<nama-fitur>.md` pada proyek aktif.
+3. **Buka Otomatis Rencana**: Jalankan perintah terminal `Start-Process -FilePath ".plan\<nama-file>.md"`.
+4. **BERHENTI & Tunggu Persetujuan**: Sajikan tautan berkas `file:///` dan minta konfirmasi ("eksekusi" / "lanjutkan") dari pengguna.
+DILARANG KERAS langsung menulis atau mengenerate kode implementasi sebelum konfirmasi diberikan.
+
 ## Aturan Utama (Invariant Rules)
-- Patuhi aturan komunikasi direct di [base_prompt.md](../../../rule/base_prompt.md).
-- Patuhi protokol perencanaan sebelum eksekusi kode implementasi di [project-workflow.md](../../../rule/project-workflow.md).
+- Patuhi aturan universal di [rules/AGENTS.md](../../rules/AGENTS.md).
 
 ## Alur Layar yang Didukung (5 Core Screens)
 1. **Onboarding Screen**:

@@ -1,0 +1,8 @@
+{
+  "name": "skills-agent",
+  "displayName": "Skills Agent Suite",
+  "version": "1.0.0",
+  "description": "Koleksi skill mobile UI (Flutter & React), backend, kurikulum materi ajar, dan database tutorial lengkap dengan mandatory planning workflow protocol.",
+  "author": "Skill Agent Core Team"
+}
+

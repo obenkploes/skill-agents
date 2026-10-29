@@ -24,56 +24,28 @@ Struktur direktori dirancang dengan prinsip pemisahan tanggung jawab (*Separatio
 ```text
 skills-agent/
 ├── README.md                          # Panduan utama arsitektur dan penggunaan sistem
+├── plugin.json                        # Manifest resmi Antigravity Global Plugin
 ├── .plan/                             # Arsip dokumen perencanaan implementasi fitur/proyek
 │   └── 2026-10-27-contoh-fitur.md     # Contoh berkas rencana eksekusi (mandatory planning)
-├── rule/                              # Invariant rules (aturan global wajib dipatuhi semua skill)
-│   ├── base_prompt.md                 # Prinsip komunikasi, batas teknis, & format output universal
-│   ├── project-workflow.md            # Protokol perencanaan dua-fase & gate persetujuan pengguna
-│   ├── template-plan.md               # Format baku berkas perencanaan implementasi
-│   └── template-materi-ajar.md        # Format baku modul ajar, praktikum, & tugas kontekstual santri
-├── backend/                           # Modul skill domain backend engineering
-│   └── laravel-api/
-│       ├── skill.json                 # Metadata, parameter, & konfigurasi trigger CLI
-│       └── prompt.md                  # System prompt spesifik modul backend Laravel
-├── frontend/                          # Modul skill domain frontend engineering
-│   ├── react-tailwind/
-│   │   ├── skill.json                 # Metadata & konfigurasi trigger frontend
-│   │   └── prompt.md                  # System prompt spesifik modul React & Tailwind CSS
-│   ├── tailmind/                      # Modul skill TailAdmin / TailMind dashboard
-│   │   ├── skill.json                 # Metadata, trigger CLI (/tailmind, /tailadmin)
-│   │   └── prompt.md                  # System prompt spesialisasi TailAdmin UI & chart
-│   └── mobile/                        # Modul frontend mobile
-│       ├── task-management-ui/        # Dual-Engine UI Kit (Flutter & React / React Native)
-│       │   ├── skill.json             # Metadata & triggers (/task-ui, /flutter-task-ui, /react-task-ui)
-│       │   ├── SKILL.md               # Antigravity native progressive disclosure
-│       │   └── prompt.md              # Universal tokens & Flutter/React widget blueprints
-│       ├── coffee-shop-ui/            # Coffee Shop UI Kit Nam Design (Font Sora & Terracotta #C67C4E)
-│       │   ├── skill.json             # Metadata & triggers (/coffee-ui, /coffee-shop)
-│       │   ├── SKILL.md               # Antigravity native progressive disclosure
-│       │   └── prompt.md              # 5 Layar alur kopi (Onboarding, Home, Detail, Order, Delivery)
-│       └── food-delivery-ui/          # Food Delivery & Chef Marketplace UI Kit (Brand Orange #FF7622)
-│           ├── skill.json             # Metadata & triggers (/food-ui, /food-delivery, /chef-app)
-│           ├── SKILL.md               # Antigravity native progressive disclosure
-│           └── prompt.md              # 24+ Layar Dual-Engine (Customer App & Chef Partner App)
-├── materi-ajar/                       # Modul bahan ajar mandiri siswa (LaTeX & scaffolding)
-│   └── matematika-smp/                # Modul silabus Matematika SMP Kelas 7, 8, 9 (72 Pertemuan)
-│       ├── skill.json                 # Metadata & trigger CLI (/matematika-smp, /math-smp)
-│       ├── SKILL.md                   # Antigravity native progressive disclosure
-│       └── prompt.md                  # Roadmap 72 pertemuan & format 9 bagian materi siswa
-└── materi-tutor/                      # Modul materi pengajaran, praktikum, & bimbingan belajar
-    ├── web-programming-lab/
-    │   ├── skill.json                 # Metadata & konfigurasi modul tutor
-    │   └── prompt.md                  # System prompt spesifik metode pedagogis dan scaffolding
-    └── sql-server/                    # Modul tutorial Microsoft SQL Server (Zero to Advanced)
-        ├── skill.json                 # Metadata & triggers (/sql-server, /mssql, /t-sql)
-        ├── SKILL.md                   # Antigravity native progressive disclosure
-        └── prompt.md                  # Kurikulum 7 level, format lab 7 bagian & T-SQL blueprints
+├── rules/                             # Global Discovery Rules resmi Antigravity
+│   ├── AGENTS.md                      # Invariant rules (Base prompt + Mandatory Two-Phase Planning)
+│   └── templates/                     # Berkas template resmi rujukan
+│       ├── template-plan.md           # Format baku berkas perencanaan implementasi
+│       └── template-materi-ajar.md    # Format baku modul ajar, praktikum, & tugas siswa
+└── skills/                            # Discovery root resmi Antigravity untuk semua skill
+    ├── task-management-ui/            # Dual-Engine UI Kit (Flutter & React / React Native)
+    ├── coffee-shop-ui/                # Coffee Shop UI Kit Nam Design (Font Sora & Terracotta #C67C4E)
+    ├── food-delivery-ui/              # Food Delivery & Chef Marketplace UI Kit (Brand Orange #FF7622)
+    ├── sql-server/                    # Modul tutorial Microsoft SQL Server (Zero to Advanced)
+    ├── matematika-smp/                # Modul silabus Matematika SMP Kelas 7, 8, 9 (72 Pertemuan)
+    └── tailmind/                      # Modul skill TailAdmin / TailMind dashboard
 ```
 
 ### Rincian Fungsi Direktori Inti:
-- **`rule/`**: Fondasi tak-tergantikan (*invariants*). Aturan dalam direktori ini otomatis diinjeksi atau dirujuk oleh setiap modul skill. Tidak boleh diabaikan atau ditimpa oleh konfigurasi lokal.
+- **`plugin.json`**: Manifest resmi penanda bahwa repositori ini adalah paket Antigravity Global Plugin.
+- **`rules/`**: Fondasi tak-tergantikan (*invariants*). Berkas `rules/AGENTS.md` otomatis diinjeksi ke setiap percakapan oleh Antigravity engine secara global. Folder `rules/templates/` memuat format baku perencanaan dan bahan ajar.
 - **`.plan/`**: Tempat seluruh berkas perencanaan dieksekusi sebelum kode implementasi ditulis pada root proyek yang sedang aktif dikerjakan. Menggunakan format penamaan standar `.plan/YYYY-MM-DD-<nama-fitur>.md`.
-- **`<domain-category>/<skill-name>/`**: Folder mandiri (*self-contained*) untuk masing-masing keahlian teknis atau peran agen.
+- **`skills/<skill-name>/`**: Folder mandiri (*self-contained*) untuk masing-masing keahlian teknis atau peran agen yang langsung dideteksi oleh Antigravity.
 
 ---
 
@@ -255,70 +227,136 @@ Anda bertindak sebagai Senior Go Engineer dengan spesialisasi arsitektur Clean A
 
 ---
 
-## 7. INTEGRASI DENGAN ANTIGRAVITY CLI & VS CODE
+## 7. PANDUAN PENGGUNAAN LINTAS KOMPUTER & LINUX / MACOS
 
-Arsitektur ini dirancang agar dapat diintegrasikan dengan mulus ke dalam lingkungan pengembang harian lintas proyek melalui variabel lingkungan (*Environment Variables*).
+Repositori ini telah dikemas sebagai **Antigravity Global Plugin (`plugin.json` + `rules/AGENTS.md` + `skills/`)**. Anda dapat menggunakannya di komputer lain atau di sistem operasi Linux/macOS tanpa perlu menyalin aturan (*rules*) ke setiap proyek baru.
 
-### A. Konfigurasi Environment Variables (Global)
-Path repositori telah didaftarkan pada variabel lingkungan pengguna Windows:
-- `SKILLS_AGENT_PATH` = `D:\Project\exercise\skills-agent`
-- `ANTIGRAVITY_SKILLS_PATH` = `D:\Project\exercise\skills-agent`
+---
 
-### B. Penggunaan dengan Antigravity CLI (`agy`)
-Antigravity CLI dapat memanggil modul skill dari direktori mana pun dengan memanfaatkan variabel lingkungan:
+### A. Penggunaan di Komputer Lain (Windows)
 
-```bash
-# PowerShell
-agy run --skill "$env:SKILLS_AGENT_PATH\frontend\tailmind" "Buatkan dashboard e-commerce dengan stat card dan gauge target"
-
-# Windows Command Prompt (CMD)
-agy run --skill "%SKILLS_AGENT_PATH%\frontend\tailmind" "Buatkan dashboard e-commerce dengan stat card dan gauge target"
-```
-
-**Mekanisme Context Resolution:**
-Ketika sebuah skill dijalankan, urutan perakitan konteks sistem adalah:
-$$\text{Base Prompt (`rule/base_prompt.md`)} \longrightarrow \text{Workflow Protocol (`rule/project-workflow.md`)} \longrightarrow \text{Domain Prompt (`prompt.md`)} \longrightarrow \text{User Task}$$
-
-### C. Integrasi dengan Antigravity di VS Code
-Agar Antigravity di VS Code mengenali modul skill di **proyek mana pun**:
-1. Buat berkas `.agents/skills.json` di root proyek target untuk menautkan repositori skill:
-   ```json
-   {
-     "entries": [
-       { "path": "D:/Project/exercise/skills-agent/frontend" }
-     ]
-   }
-   ```
-2. Atau jalankan perintah otomatis satu baris di terminal proyek target (PowerShell):
+1. **Clone Repositori**:
+   Simpan repositori pada direktori pilihan Anda (misalnya di drive `C:` atau `D:`):
    ```powershell
-   New-Item -ItemType Directory -Force .agents; Set-Content -Path .agents/skills.json -Value '{"entries":[{"path":"D:/Project/exercise/skills-agent/frontend"}]}'
+   git clone <URL_REPOSITORI_ANDA> "D:\Project\exercise\skills-agent"
    ```
-3. Antigravity IDE / VS Code akan secara otomatis membaca berkas `SKILL.md` (progressive disclosure) dan memuat keahlian *TailAdmin / TailMind Specialist* saat relevan dengan percakapan aktif.
-4. Anda juga dapat menyematkan instruksi secara langsung pada prompt percakapan VS Code:
-   `@file:D:/Project/exercise/skills-agent/frontend/tailmind/prompt.md`
+
+2. **Tautkan ke Antigravity Global Plugins (Sekali Setup)**:
+   Buka terminal PowerShell dan jalankan perintah pembuatan NTFS Junction:
+   ```powershell
+   # Buat folder plugins jika belum ada
+   New-Item -ItemType Directory -Force "$env:USERPROFILE\.gemini\config\plugins"
+
+   # Hubungkan repositori langsung ke direktori plugin Antigravity
+   cmd /c mklink /J "$env:USERPROFILE\.gemini\config\plugins\skills-agent" "D:\Project\exercise\skills-agent"
+   ```
+
+3. **(Opsional) Daftarkan Environment Variable**:
+   ```powershell
+   [Environment]::SetEnvironmentVariable("SKILLS_AGENT_PATH", "D:\Project\exercise\skills-agent", "User")
+   ```
+
+---
+
+### B. Penggunaan di Linux (Ubuntu / Debian / Fedora / Arch) & macOS
+
+Di sistem operasi Linux dan macOS, Antigravity menyimpan konfigurasi global di `~/.gemini/config/`.
+
+1. **Clone Repositori**:
+   ```bash
+   git clone <URL_REPOSITORI_ANDA> ~/skills-agent
+   ```
+
+2. **Tautkan Menggunakan Symbolic Link (`ln -s`)**:
+   Buat symbolic link dari folder repositori ke folder plugins Antigravity:
+   ```bash
+   # Buat direktori plugins jika belum ada
+   mkdir -p ~/.gemini/config/plugins
+
+   # Buat symbolic link
+   ln -s ~/skills-agent ~/.gemini/config/plugins/skills-agent
+   ```
+
+3. **Konfigurasi Auto-Open di Linux / macOS**:
+   Pada Linux/macOS, perintah pembuka dokumen `.plan/` disesuaikan:
+   - **Linux**: Menggunakan perintah `xdg-open .plan/<nama-file>.md` atau `code .plan/<nama-file>.md`.
+   - **macOS**: Menggunakan perintah `open .plan/<nama-file>.md` atau `code .plan/<nama-file>.md`.
+
+4. **(Opsional) Export Environment Variable**:
+   Tambahkan ke berkas `~/.bashrc` atau `~/.zshrc`:
+   ```bash
+   export SKILLS_AGENT_PATH="$HOME/skills-agent"
+   export ANTIGRAVITY_SKILLS_PATH="$HOME/skills-agent"
+   ```
+   Lalu muat ulang terminal:
+   ```bash
+   source ~/.bashrc   # atau source ~/.zshrc
+   ```
+
+---
+
+### C. Metode Alternatif Tanpa Symlink/Junction (`plugins.json`)
+
+Jika sistem operasi atau hak akses membatasi pembuatan link simbolik/junction, Anda dapat mendaftarkan path repositori menggunakan berkas konfigurasi resmi Antigravity di `~/.gemini/config/plugins.json`:
+
+- **Windows** (`C:\Users\<User>\.gemini\config\plugins.json`):
+  ```json
+  {
+    "entries": [
+      { "path": "D:/Project/exercise/skills-agent" }
+    ]
+  }
+  ```
+- **Linux / macOS** (`~/.gemini/config/plugins.json`):
+  ```json
+  {
+    "entries": [
+      { "path": "~/skills-agent" }
+    ]
+  }
+  ```
+
+---
+
+### D. Cara Pemanggilan Skill Sehari-Hari Lintas Proyek
+
+Setelah ditautkan via salah satu metode di atas:
+1. **Di Antigravity Chat / IDE (VS Code)**:
+   Buka proyek coding Anda yang mana saja (misal: proyek baru Flutter, Laravel, atau React di direktori terpisah). Panggil trigger skill langsung di chat:
+   - `/coffee-ui` atau `/food-ui` $\rightarrow$ Merancang antarmuka mobile.
+   - `/sql-server` $\rightarrow$ Menyiapkan modul tutorial atau skrip SQL Server.
+   - `/tailmind` $\rightarrow$ Merancang dashboard admin Tailwind CSS.
+   - `/matematika-smp` $\rightarrow$ Menyusun bahan ajar mandiri matematika siswa.
+
+2. **Perilaku Otomatis (Planning Enforced)**:
+   Antigravity di proyek mana pun akan **otomatis membaca `rules/AGENTS.md`**, sehingga agen akan:
+   - Membuat file `.plan/YYYY-MM-DD-<nama-fitur>.md` di proyek target Anda.
+   - Membukanya secara otomatis di editor.
+   - Berhenti untuk meminta konfirmasi (*"eksekusi"* / *"lanjutkan"*) sebelum menulis kode implementasi.
+
+3. **Via Antigravity CLI (`agy`)**:
+   ```bash
+   # Di proyek mana saja:
+   agy run --skill skills-agent/coffee-shop-ui "Buatkan Order Summary screen menggunakan Flutter"
+   ```
 
 ---
 
 ## 8. MATRIKS PERAN & KATALOG MODUL
 
-Tabel status dan pemetaan modul skill yang direncanakan dan tersedia di repositori:
+Tabel status dan pemetaan modul skill yang aktif dan tersedia di repositori:
 
-| Kategori | Nama Modul | Peran Representatif | Status | Cakupan Utama |
+| Kategori | Lokasi / Modul | Peran Representatif | Status | Cakupan Utama |
 | :--- | :--- | :--- | :---: | :--- |
-| **Rule** | `base_prompt.md` | Core Supervisor | **Aktif** | Standar komunikasi direct, batas keamanan, format markdown |
-| **Rule** | `project-workflow.md` | Process Controller | **Aktif** | Mandatory pre-execution planning, approval gate |
-| **Rule** | `template-materi-ajar.md` | Curriculum Author | **Aktif** | Standar modul materi ajar siswa, scaffolding contoh soal, latihan, & PR santri |
-| **Backend** | `laravel-api` | Senior Laravel Architect | *Tersedia* | Laravel 11, API Resources, Eloquent optimization, Service layer |
-| **Frontend** | `react-tailwind` | Senior Frontend Engineer | *Tersedia* | React 19, TypeScript, Tailwind CSS, State management, Accessibility |
-| **Frontend** | `tailmind` | TailAdmin System Specialist | **Aktif** | TailAdmin Dashboard, KPI Stat Cards, Gauge Chart, Sales Bar, Period Filter Area |
-| **Frontend/Mobile** | `task-management-ui` | Mobile UI/UX Architect | **Aktif** | Dual-Engine (Flutter & React): Task Dashboard, Gradient Slider, Detail Sheet, Create Form |
-| **Frontend/Mobile** | `coffee-shop-ui` | Coffee Shop UI/UX Specialist | **Aktif** | Nam Design Styleguide (Sora, #C67C4E), 5 Layar Pemesanan Kopi, Dual-Engine (Flutter & React) |
-| **Frontend/Mobile** | `food-delivery-ui` | Food Delivery UI/UX Architect | **Aktif** | Dual-Engine (Flutter & React): 24+ Layar Customer App & Chef Marketplace (#FF7622) |
-| **Materi Ajar**| `matematika-smp` | Mathematics Curriculum Author | **Aktif** | Silabus 72 Pertemuan (Kelas 7-9), 9 Bagian Materi Siswa, LaTeX KaTeX, Scaffolding |
-| **Materi Tutor**| `web-programming-lab` | Lab Instructor & Mentor | *Tersedia* | Pedagogical scaffolding, analogi logika, tugas mandiri terstruktur |
-| **Materi Tutor**| `sql-server` | Senior DBA & Technical Instructor | **Aktif** | Kurikulum 7 Level (Instalasi $\rightarrow$ Advanced), 7 Format Lab, T-SQL Blueprints, Disaster Recovery |
-| **Database** | `postgres-analyst` | Database Administrator | *Rencana* | Desain skema relasional, optimasi index (EXPLAIN ANALYZE), partisi tabel |
-| **System** | `architecture-designer` | Enterprise System Analyst | *Rencana* | Sequence diagrams, arsitektur event-driven, perancangan kontrak API |
+| **Global Rule** | `rules/AGENTS.md` | Core Supervisor & Process Controller | **Aktif** | Standar komunikasi direct, boundaries, & Mandatory Two-Phase Planning Protocol |
+| **Template** | `rules/templates/template-plan.md` | Planning Architect | **Aktif** | Format baku dokumen perencanaan 5 bagian (.plan/) |
+| **Template** | `rules/templates/template-materi-ajar.md` | Curriculum Author | **Aktif** | Standar modul materi ajar siswa 9 bagian, LaTeX KaTeX, Scaffolding |
+| **Skill** | `skills/task-management-ui` | Mobile UI/UX Architect | **Aktif** | Dual-Engine (Flutter & React): Task Dashboard, Gradient Slider, Detail Sheet, Create Form |
+| **Skill** | `skills/coffee-shop-ui` | Coffee Shop UI/UX Specialist | **Aktif** | Nam Design Styleguide (Sora, #C67C4E), 5 Layar Pemesanan Kopi, Dual-Engine (Flutter & React) |
+| **Skill** | `skills/food-delivery-ui` | Food Delivery UI/UX Architect | **Aktif** | Dual-Engine (Flutter & React): 24+ Layar Customer App & Chef Marketplace (#FF7622) |
+| **Skill** | `skills/tailmind` | TailAdmin System Specialist | **Aktif** | TailAdmin Dashboard, KPI Stat Cards, Gauge Chart, Sales Bar, Period Filter Area |
+| **Skill** | `skills/sql-server` | Senior DBA & Technical Instructor | **Aktif** | Kurikulum 7 Level (Instalasi $\rightarrow$ Advanced), 7 Format Lab, T-SQL Blueprints, Disaster Recovery |
+| **Skill** | `skills/matematika-smp` | Mathematics Curriculum Author | **Aktif** | Silabus 72 Pertemuan (Kelas 7-9), 9 Bagian Materi Siswa, LaTeX KaTeX, Scaffolding |
 
 ---
 

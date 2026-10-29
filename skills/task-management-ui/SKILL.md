@@ -3,9 +3,7 @@ name: task-management-ui
 description: >-
   Spesialis arsitektur dan perancangan antarmuka aplikasi mobile manajemen tugas (Task Management Mobile App)
   dengan arsitektur Dual-Engine dinamis yang mendukung Flutter (Dart) dan React / React Native (Tailwind CSS / NativeWind).
-  Gunakan skill ini saat diminta membuat UI mobile task dashboard, kartu kategori proyek gradien, task cards dengan priority badges,
-  task detail bottom sheet/modal dengan tabs, form pembuatan tugas baru (create task), atau docked FAB bottom navigation
-  mengacu pada desain Task Management Mobile App UI Kit (20+ Screens).
+  MANDATORY WORKFLOW: You MUST create a .plan/YYYY-MM-DD-<name>.md file, auto-open it via Start-Process, and await user approval BEFORE generating or writing any code.
 ---
 
 # Dual-Engine Task Management Mobile UI Kit Specialist
@@ -14,9 +12,16 @@ Modul keahlian antarmuka mobile dinamis yang mendukung pembuatan komponen dan la
 
 Panduan arsitektur, design tokens universal, serta blueprint komponen lengkap tersedia di [prompt.md](./prompt.md).
 
+## MANDATORY PRE-EXECUTION PLANNING PROTOCOL (DO NOT SKIP)
+Sebelum menulis, memodifikasi, atau menghasilkan kode komponen/layar apapun:
+1. **Analisis Kebutuhan**: Pahami layar dan interaksi yang diminta.
+2. **Buat Berkas Rencana**: Tulis dokumen perencanaan di `.plan/YYYY-MM-DD-<nama-fitur>.md` pada proyek aktif.
+3. **Buka Otomatis Rencana**: Jalankan perintah terminal `Start-Process -FilePath ".plan\<nama-file>.md"`.
+4. **BERHENTI & Tunggu Persetujuan**: Sajikan tautan berkas `file:///` dan minta konfirmasi ("eksekusi" / "lanjutkan") dari pengguna.
+DILARANG KERAS langsung menulis atau mengenerate kode implementasi sebelum konfirmasi diberikan.
+
 ## Aturan Utama (Invariant Rules)
-- Patuhi aturan komunikasi direct di [base_prompt.md](../../../rule/base_prompt.md).
-- Patuhi protokol perencanaan sebelum eksekusi kode implementasi di [project-workflow.md](../../../rule/project-workflow.md).
+- Patuhi aturan universal di [rules/AGENTS.md](../../rules/AGENTS.md).
 
 ## Fitur & Layar yang Didukung
 1. **Home / Task Dashboard Screen**:

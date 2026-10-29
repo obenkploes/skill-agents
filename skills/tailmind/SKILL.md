@@ -2,9 +2,7 @@
 name: tailmind
 description: >-
   Senior Frontend Architect & TailAdmin Design System Specialist.
-  Use this skill when designing, building, or styling modern responsive admin dashboards,
-  e-commerce analytics panels, KPI stat cards, charts (ApexCharts/Recharts), or Tailwind CSS UI
-  based on the TailAdmin design system.
+  MANDATORY WORKFLOW: You MUST create a .plan/YYYY-MM-DD-<name>.md file, auto-open it via Start-Process, and await user approval BEFORE generating or writing any code.
 ---
 
 # TailAdmin / TailMind Dashboard Specialist
@@ -13,9 +11,16 @@ Spesialis arsitektur frontend untuk membangun admin dashboard berbasis **React**
 
 Panduan lengkap, blueprint komponen, dan design tokens tersedia di [prompt.md](./prompt.md).
 
+## MANDATORY PRE-EXECUTION PLANNING PROTOCOL (DO NOT SKIP)
+Sebelum menulis, memodifikasi, atau menghasilkan kode komponen/layar apapun:
+1. **Analisis Kebutuhan**: Pahami kartu metrik, chart, dan layout yang diminta.
+2. **Buat Berkas Rencana**: Tulis dokumen perencanaan di `.plan/YYYY-MM-DD-<nama-fitur>.md` pada proyek aktif.
+3. **Buka Otomatis Rencana**: Jalankan perintah terminal `Start-Process -FilePath ".plan\<nama-file>.md"`.
+4. **BERHENTI & Tunggu Persetujuan**: Sajikan tautan berkas `file:///` dan minta konfirmasi ("eksekusi" / "lanjutkan") dari pengguna.
+DILARANG KERAS langsung menulis atau mengenerate kode implementasi sebelum konfirmasi diberikan.
+
 ## Aturan Utama (Invariant Rules)
-- Patuhi aturan komunikasi dan batasan teknis di [base_prompt.md](../../rule/base_prompt.md).
-- Patuhi protokol perencanaan sebelum menulis kode di [project-workflow.md](../../rule/project-workflow.md).
+- Patuhi aturan universal di [rules/AGENTS.md](../../rules/AGENTS.md).
 
 ## Kapabilitas Komponen
 1. **Header & Navigation**: Search shortcut `⌘K`, dark mode toggle, notification dropdown, user avatar.
