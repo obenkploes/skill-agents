@@ -38,7 +38,9 @@ skills-agent/
     ├── food-delivery-ui/              # Food Delivery & Chef Marketplace UI Kit (Brand Orange #FF7622)
     ├── sql-server/                    # Modul tutorial Microsoft SQL Server (Zero to Advanced)
     ├── matematika-smp/                # Modul silabus Matematika SMP Kelas 7, 8, 9 (72 Pertemuan)
-    └── tailmind/                      # Modul skill TailAdmin / TailMind dashboard
+    ├── matematika-sma/                # Modul silabus Matematika SMA Kelas 10, 11, 12 IPA & Pesantren (72 Pertemuan)
+    ├── tailmind/                      # Modul skill TailAdmin / TailMind dashboard
+    └── zenith-ui/                     # Modul skill Zenith UI Multi-Engine (Native CSS, Tailwind, Bootstrap)
 ```
 
 ### Rincian Fungsi Direktori Inti:
@@ -326,7 +328,9 @@ Setelah ditautkan via salah satu metode di atas:
    - `/coffee-ui` atau `/food-ui` $\rightarrow$ Merancang antarmuka mobile.
    - `/sql-server` $\rightarrow$ Menyiapkan modul tutorial atau skrip SQL Server.
    - `/tailmind` $\rightarrow$ Merancang dashboard admin Tailwind CSS.
-   - `/matematika-smp` $\rightarrow$ Menyusun bahan ajar mandiri matematika siswa.
+   - `/zenith-ui` $\rightarrow$ Merancang antarmuka Zenith dashboard (Native CSS, Tailwind, Bootstrap).
+   - `/matematika-smp` $\rightarrow$ Menyusun bahan ajar mandiri matematika SMP.
+   - `/matematika-sma` $\rightarrow$ Menyusun bahan ajar mandiri matematika SMA (IPA & Pesantren).
 
 2. **Perilaku Otomatis (Planning Enforced)**:
    Antigravity di proyek mana pun akan **otomatis membaca `rules/AGENTS.md`**, sehingga agen akan:
@@ -357,6 +361,8 @@ Tabel status dan pemetaan modul skill yang aktif dan tersedia di repositori:
 | **Skill** | `skills/tailmind` | TailAdmin System Specialist | **Aktif** | TailAdmin Dashboard, KPI Stat Cards, Gauge Chart, Sales Bar, Period Filter Area |
 | **Skill** | `skills/sql-server` | Senior DBA & Technical Instructor | **Aktif** | Kurikulum 7 Level (Instalasi $\rightarrow$ Advanced), 7 Format Lab, T-SQL Blueprints, Disaster Recovery |
 | **Skill** | `skills/matematika-smp` | Mathematics Curriculum Author | **Aktif** | Silabus 72 Pertemuan (Kelas 7-9), 9 Bagian Materi Siswa, LaTeX KaTeX, Scaffolding |
+| **Skill** | `skills/matematika-sma` | Mathematics Curriculum Author | **Aktif** | Silabus 72 Pertemuan (Kelas 10-12 IPA & Pesantren), 9 Bagian Materi Siswa, LaTeX KaTeX, Scaffolding |
+| **Skill** | `skills/zenith-ui` | Multi-Engine UI Architect | **Aktif** | Zenith Modern Dashboard & Web UI (Native CSS, Tailwind CSS, Bootstrap 5) |
 
 ---
 

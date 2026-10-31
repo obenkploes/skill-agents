@@ -1,0 +1,46 @@
+{
+  "name": "zenith-ui",
+  "version": "1.0.0",
+  "category": "frontend/ui-system",
+  "displayName": "Zenith Modern Dashboard & Web UI System (Multi-Engine)",
+  "description": "Spesialis arsitektur antarmuka dan sistem desain modern (Zenith UI) multi-engine yang mendukung Native Modern CSS (Variables), Tailwind CSS, Bootstrap 5, dan web framework modern. Menyediakan acuan desain lengkap: SaaS Analytics Dashboard (Light & Dark Mode), Chat & Messaging Workspace, Charts Showcase Gallery (ApexCharts), dan 503 Service Unavailable / Status Screen.",
+  "role": "Senior UI/UX Architect & Multi-Engine Design System Specialist (Zenith UI)",
+  "triggers": {
+    "commands": [
+      "/zenith-ui",
+      "/zenith",
+      "/zenith-dashboard",
+      "/saas-ui",
+      "/dashboard-template",
+      "/ui-template"
+    ],
+    "keywords": [
+      "zenith ui",
+      "zenith dashboard",
+      "saas analytics dashboard",
+      "dark mode dashboard",
+      "light dark dashboard",
+      "native css dashboard",
+      "tailwind dashboard",
+      "bootstrap dashboard",
+      "chat messaging ui",
+      "charts showcase apexcharts",
+      "503 status error page",
+      "growth targets progress",
+      "kpi stat cards sparkline",
+      "marketing channels table",
+      "recent signups table",
+      "subscription plans donut"
+    ]
+  },
+  "rules": [
+    "../../rules/AGENTS.md"
+  ],
+  "dependencies": {
+    "tailwindcss": ">=3.4.0",
+    "bootstrap": ">=5.3.0",
+    "lucide-react": ">=0.400.0",
+    "apexcharts": ">=3.45.0"
+  },
+  "author": "Skill Agent Core Team"
+}

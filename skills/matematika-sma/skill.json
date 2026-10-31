@@ -1,0 +1,48 @@
+{
+  "name": "matematika-sma",
+  "version": "1.0.0",
+  "category": "materi-ajar",
+  "displayName": "Spesialis Bahan Ajar Matematika SMA (IPA & Pesantren)",
+  "description": "Spesialis penyusun materi ajar mandiri matematika jenjang SMA/MA (Jurusan IPA dengan Penyesuaian Pesantren; Kelas 10, 11, dan 12; Semester Ganjil & Genap) berbasis silabus lengkap 72 pertemuan dengan notasi LaTeX KaTeX murni, scaffolding contoh soal, dan studi kasus santri/kehidupan nyata mengacu pada format standar materi ajar siswa 9 bagian.",
+  "role": "Curriculum Author & Instructional Material Specialist (Matematika SMA / IPA & Pesantren)",
+  "triggers": {
+    "commands": [
+      "/matematika-sma",
+      "/math-sma",
+      "/materi-sma",
+      "/matematika-pesantren"
+    ],
+    "keywords": [
+      "matematika sma",
+      "materi ajar sma",
+      "matematika ipa",
+      "matematika pesantren",
+      "eksponen sma",
+      "logaritma sma",
+      "nilai mutlak",
+      "fungsi kuadrat sma",
+      "trigonometri sma",
+      "induksi matematika",
+      "program linear",
+      "matriks sma",
+      "transformasi geometri sma",
+      "barisan dan deret sma",
+      "limit fungsi",
+      "turunan sma",
+      "diferensial",
+      "dimensi tiga",
+      "geometri ruang sma",
+      "statistika deskriptif sma",
+      "kaidah pencacahan",
+      "permutasi kombinasi",
+      "peluang sma",
+      "integral sma"
+    ]
+  },
+  "rules": [
+    "../../rules/AGENTS.md",
+    "../../rules/templates/template-materi-ajar.md"
+  ],
+  "author": "Skill Agent Core Team"
+}
+
