@@ -1,0 +1,37 @@
+{
+  "name": "viral-news-analyzer",
+  "version": "1.1.0",
+  "category": "intelligence",
+  "displayName": "Viral News & Social Media Intelligence Analyzer",
+  "description": "Spesialis pemantauan intelijen media sosial, verifikasi akurasi berita viral (cross-checking media arus utama & portal cek fakta IFCN), dekonstruksi polarisasi opini publik (Kubu Pro vs Kontra), analisis risiko dampak isu lintas platform, dan otomasi pembuatan berkas laporan markdown (.md) di folder reports/viral/.",
+  "role": "Senior Media Intelligence & Social Sentiment Analyst",
+  "triggers": {
+    "commands": [
+      "@viral",
+      "/viral",
+      "/trend-analyzer",
+      "/isu-viral",
+      "/social-listening"
+    ],
+    "keywords": [
+      "viral medsos",
+      "trending topik tiktok",
+      "trending x",
+      "isu viral indonesia",
+      "cek fakta viral",
+      "analisis sentimen isu",
+      "viral news",
+      "tren viral",
+      "berita viral",
+      "reaksi netizen",
+      "sentimen publik",
+      "cross check berita viral",
+      "klarifikasi viral",
+      "laporan tren viral"
+    ]
+  },
+  "rules": [
+    "../../rules/AGENTS.md"
+  ],
+  "author": "Skill Agent Core Team"
+}

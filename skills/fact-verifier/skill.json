@@ -1,0 +1,36 @@
+{
+  "name": "fact-verifier",
+  "version": "1.1.0",
+  "category": "intelligence",
+  "displayName": "Fact Verifier & Authentic News Intelligence",
+  "description": "Spesialis pengumpulan fakta investigatif, pengujian klaim viral media sosial melalui uji silang multi-sumber resmi (minimal 2 media terpercaya & portal cek fakta IFCN), penyajian teks kutipan berita asli (verbatim direct quotes), kewajiban menyertakan tautan URL aktif artikel berita asli untuk verifikasi mandiri, serta dekonstruksi manipulasi konteks informasi.",
+  "role": "Senior Fact-Checker & Investigative Intelligence Verifier",
+  "triggers": {
+    "commands": [
+      "@fakta",
+      "/fakta",
+      "/cekfakta",
+      "/fact-check",
+      "/verifikasi"
+    ],
+    "keywords": [
+      "cek fakta",
+      "verifikasi berita",
+      "uji klaim viral",
+      "apakah ini hoaks",
+      "berita asli",
+      "klarifikasi resmi",
+      "fakta sebenarnya",
+      "turnbackhoax",
+      "berita valid",
+      "cekfakta",
+      "berita hoaks atau fakta",
+      "sumber berita asli",
+      "link berita resmi"
+    ]
+  },
+  "rules": [
+    "../../rules/AGENTS.md"
+  ],
+  "author": "Skill Agent Core Team"
+}

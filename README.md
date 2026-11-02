@@ -37,10 +37,13 @@ skills-agent/
     ├── coffee-shop-ui/                # Coffee Shop UI Kit Nam Design (Font Sora & Terracotta #C67C4E)
     ├── food-delivery-ui/              # Food Delivery & Chef Marketplace UI Kit (Brand Orange #FF7622)
     ├── sql-server/                    # Modul tutorial Microsoft SQL Server (Zero to Advanced)
+    ├── mysql/                         # Modul tutorial MySQL 8.x (36 Materi Tematik Terurut)
     ├── matematika-smp/                # Modul silabus Matematika SMP Kelas 7, 8, 9 (72 Pertemuan)
     ├── matematika-sma/                # Modul silabus Matematika SMA Kelas 10, 11, 12 IPA & Pesantren (72 Pertemuan)
     ├── tailmind/                      # Modul skill TailAdmin / TailMind dashboard
-    └── zenith-ui/                     # Modul skill Zenith UI Multi-Engine (Native CSS, Tailwind, Bootstrap)
+    ├── zenith-ui/                     # Modul skill Zenith UI Multi-Engine (Native CSS, Tailwind, Bootstrap)
+    ├── viral-news-analyzer/           # Modul analisis intelijen berita viral & sentimen medsos
+    └── fact-verifier/                 # Modul uji kebenaran fakta & ekstraksi teks berita asli
 ```
 
 ### Rincian Fungsi Direktori Inti:
@@ -327,10 +330,13 @@ Setelah ditautkan via salah satu metode di atas:
    Buka proyek coding Anda yang mana saja (misal: proyek baru Flutter, Laravel, atau React di direktori terpisah). Panggil trigger skill langsung di chat:
    - `/coffee-ui` atau `/food-ui` $\rightarrow$ Merancang antarmuka mobile.
    - `/sql-server` $\rightarrow$ Menyiapkan modul tutorial atau skrip SQL Server.
+   - `/mysql` $\rightarrow$ Menyusun modul tutorial, skrip praktikum, & latihan MySQL 8.x per materi tematik.
    - `/tailmind` $\rightarrow$ Merancang dashboard admin Tailwind CSS.
    - `/zenith-ui` $\rightarrow$ Merancang antarmuka Zenith dashboard (Native CSS, Tailwind, Bootstrap).
    - `/matematika-smp` $\rightarrow$ Menyusun bahan ajar mandiri matematika SMP.
    - `/matematika-sma` $\rightarrow$ Menyusun bahan ajar mandiri matematika SMA (IPA & Pesantren).
+   - `@viral` atau `/viral` $\rightarrow$ Menganalisis berita viral medsos, verifikasi fakta, & sentimen publik.
+   - `@fakta` atau `/fakta` $\rightarrow$ Memverifikasi kebenaran fakta, uji silang multi-sumber, & ekstraksi teks berita asli.
 
 2. **Perilaku Otomatis (Planning Enforced)**:
    Antigravity di proyek mana pun akan **otomatis membaca `rules/AGENTS.md`**, sehingga agen akan:
@@ -339,10 +345,33 @@ Setelah ditautkan via salah satu metode di atas:
    - Berhenti untuk meminta konfirmasi (*"eksekusi"* / *"lanjutkan"*) sebelum menulis kode implementasi.
 
 3. **Via Antigravity CLI (`agy`)**:
-   ```bash
-   # Di proyek mana saja:
-   agy run --skill skills-agent/coffee-shop-ui "Buatkan Order Summary screen menggunakan Flutter"
-   ```
+   Antigravity menyediakan antarmuka baris perintah (*Command Line Interface*) yang ringan dan cepat melalui binary `agy`. Seluruh skill yang terdaftar dapat langsung dipanggil di terminal:
+
+   - **Mode Interaktif (TUI Terminal Session)**:
+     ```bash
+     # Jalankan sesi chat terminal di proyek mana saja
+     agy
+     ```
+     Di dalam sesi interaktif, ketik pemicu skill secara langsung:
+     - `@viral apa saja tren medsos hari ini`
+     - `@fakta cek kebenaran video viral X`
+     - `/matematika-sma buatkan materi eksponen kelas 10`
+     - `/skills` untuk melihat daftar seluruh skill aktif yang terhubung.
+
+   - **Mode Perintah Langsung (*One-Shot Headless Execution*)**:
+     ```bash
+     # Investigasi berita viral langsung dari terminal
+     agy run "@viral analisis isu boikot brand X yang ramai di TikTok"
+
+     # Uji kebenaran klaim fakta langsung dari terminal
+     agy run "@fakta apakah benar berita kenaikan tarif listrik 20% di WhatsApp"
+
+     # Generate modul materi ajar SMA
+     agy run "/matematika-sma buatkan materi turunan fungsi kelas 11"
+
+     # Desain antarmuka dengan menentukan modul skill secara eksplisit
+     agy run --skill skills-agent/coffee-shop-ui "Buatkan Order Summary screen menggunakan Flutter"
+     ```
 
 ---
 
@@ -360,9 +389,12 @@ Tabel status dan pemetaan modul skill yang aktif dan tersedia di repositori:
 | **Skill** | `skills/food-delivery-ui` | Food Delivery UI/UX Architect | **Aktif** | Dual-Engine (Flutter & React): 24+ Layar Customer App & Chef Marketplace (#FF7622) |
 | **Skill** | `skills/tailmind` | TailAdmin System Specialist | **Aktif** | TailAdmin Dashboard, KPI Stat Cards, Gauge Chart, Sales Bar, Period Filter Area |
 | **Skill** | `skills/sql-server` | Senior DBA & Technical Instructor | **Aktif** | Kurikulum 7 Level (Instalasi $\rightarrow$ Advanced), 7 Format Lab, T-SQL Blueprints, Disaster Recovery |
+| **Skill** | `skills/mysql` | Senior DBA & Technical Instructor | **Aktif** | Silabus 36 Pembahasan Tematik Terurut (DDL, DML, Where, Joins, Window Functions, Indexing, PITR), 7 Bagian Lab |
 | **Skill** | `skills/matematika-smp` | Mathematics Curriculum Author | **Aktif** | Silabus 72 Pertemuan (Kelas 7-9), 9 Bagian Materi Siswa, LaTeX KaTeX, Scaffolding |
 | **Skill** | `skills/matematika-sma` | Mathematics Curriculum Author | **Aktif** | Silabus 72 Pertemuan (Kelas 10-12 IPA & Pesantren), 9 Bagian Materi Siswa, LaTeX KaTeX, Scaffolding |
 | **Skill** | `skills/zenith-ui` | Multi-Engine UI Architect | **Aktif** | Zenith Modern Dashboard & Web UI (Native CSS, Tailwind CSS, Bootstrap 5) |
+| **Skill** | `skills/viral-news-analyzer` | Media Intelligence Analyst | **Aktif** | Pemantauan isu viral medsos, verifikasi akurasi cek fakta, polarisasi pro-kontra, & arsip laporan .md (reports/viral/) |
+| **Skill** | `skills/fact-verifier` | Fact-Checker & Investigative Verifier | **Aktif** | Uji silang multi-sumber resmi (minimal 2 media), ekstraksi kutipan asli (verbatim), & tautan URL artikel asli |
 
 ---
 

@@ -31,6 +31,13 @@ Agen **HANYA BOLEH** menulis atau menghasilkan kode implementasi setelah penggun
 
 ---
 
+### ATURAN KHUSUS GLOBAL: IZIN OTOMATIS BERKAS MARKDOWN (.MD)
+> [!IMPORTANT]
+> **Kebijakan Izin Global File Markdown (.md):**
+> Sesuai instruksi pengguna, izin untuk membuat, menulis, dan memperbarui seluruh berkas berformat Markdown (`.md`)—termasuk berkas perencanaan `.plan/*.md`, laporan verifikasi fakta `reports/fakta/*.md`, laporan intelijen viral `reports/viral/*.md`, modul ajar, dan dokumentasi teknis—berstatus **OTOMATIS DIIZINKAN (AUTO-APPROVED / PRE-APPROVED SECARA GLOBAL)**. Agen TIDAK PERLU berhenti atau menunggu persetujuan manual konfirmasi lanjutan khusus untuk eksekusi berkas `.md`, melainkan dapat langsung menyusun dan menyajikan hasil laporan lengkap dengan tetap menjaga kualitas, struktur komprehensif, dan integritas data.
+
+---
+
 ## 2. UNIVERSAL BASE OPERATING PRINCIPLES
 
 - **Direct & Zero Fluff**: Awali respons langsung pada inti solusi teknis di kalimat pertama. Hindari basa-basi pembuka ("Tentu, ini solusinya", "Halo!", "Berikut adalah..."), penutup klise ("Semoga membantu!"), maupun meta-komentar.
@@ -39,4 +46,3 @@ Agen **HANYA BOLEH** menulis atau menghasilkan kode implementasi setelah penggun
 - **Security & Secrets**: DILARANG menyematkan kredensial, token, sandi, atau environment variable rahasia langsung di dalam kode. Selalu gunakan placeholder config/env.
 - **Explicit Pathing**: Cantumkan path berkas eksplisit di baris paling atas setiap blok kode (contoh: `// lib/screens/HomeScreen.dart` atau `// app/Services/OrderService.php`).
 - **Clickable File Links**: Setiap rujukan berkas wajib menggunakan format tautan Markdown `file:///` dengan garis miring ke depan (*forward slashes*).
-

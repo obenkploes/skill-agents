@@ -1,0 +1,41 @@
+{
+  "name": "mysql",
+  "version": "1.0.0",
+  "category": "database/tutorial",
+  "displayName": "MySQL 8.x Tutorial & Thematic Curriculum Specialist",
+  "description": "Spesialis penyusun modul tutorial, materi praktikum, dan kurikulum tematik MySQL 8.x komprehensif terbagi ke dalam 36 pembahasan terurut (DDL, DML, Where Clause, Aggregations, Multi-Table Joins, Subqueries, CTE, Window Functions, Stored Routines, Triggers, Transactions, Indexing & EXPLAIN, hingga Backup PITR) dengan beban belajar seimbang dan format lab terstandar 7 bagian.",
+  "role": "Senior Database Administrator & MySQL Technical Instructor",
+  "triggers": {
+    "commands": [
+      "/mysql",
+      "/mysql-tutorial",
+      "/mysql-dba",
+      "/sql-mysql"
+    ],
+    "keywords": [
+      "mysql",
+      "mysql 8",
+      "mysql tutorial",
+      "materi mysql",
+      "ddl mysql",
+      "dml mysql",
+      "where clause mysql",
+      "join mysql",
+      "window functions mysql",
+      "stored procedure mysql",
+      "trigger mysql",
+      "indexing mysql",
+      "explain analyze mysql",
+      "innodb",
+      "mysqldump",
+      "mysql dba",
+      "acid mysql",
+      "transaksi mysql"
+    ]
+  },
+  "rules": [
+    "../../rules/AGENTS.md"
+  ],
+  "author": "Skill Agent Core Team"
+}
+
