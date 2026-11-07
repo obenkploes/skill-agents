@@ -43,7 +43,8 @@ skills-agent/
     ├── tailmind/                      # Modul skill TailAdmin / TailMind dashboard
     ├── zenith-ui/                     # Modul skill Zenith UI Multi-Engine (Native CSS, Tailwind, Bootstrap)
     ├── viral-news-analyzer/           # Modul analisis intelijen berita viral & sentimen medsos
-    └── fact-verifier/                 # Modul uji kebenaran fakta & ekstraksi teks berita asli
+    ├── fact-verifier/                 # Modul uji kebenaran fakta & ekstraksi teks berita asli
+    └── santri-robotics-iot-mentor/    # Mentor rekayasa embedded systems, robotika & IoT santri
 ```
 
 ### Rincian Fungsi Direktori Inti:
@@ -337,6 +338,7 @@ Setelah ditautkan via salah satu metode di atas:
    - `/matematika-sma` $\rightarrow$ Menyusun bahan ajar mandiri matematika SMA (IPA & Pesantren).
    - `@viral` atau `/viral` $\rightarrow$ Menganalisis berita viral medsos, verifikasi fakta, & sentimen publik.
    - `@fakta` atau `/fakta` $\rightarrow$ Memverifikasi kebenaran fakta, uji silang multi-sumber, & ekstraksi teks berita asli.
+   - `/robotics` atau `/iot` $\rightarrow$ Menyusun modul praktikum robotika Arduino, simulasi Wokwi, & telemetri IoT ESP32.
 
 2. **Perilaku Otomatis (Planning Enforced)**:
    Antigravity di proyek mana pun akan **otomatis membaca `rules/AGENTS.md`**, sehingga agen akan:
@@ -395,6 +397,7 @@ Tabel status dan pemetaan modul skill yang aktif dan tersedia di repositori:
 | **Skill** | `skills/zenith-ui` | Multi-Engine UI Architect | **Aktif** | Zenith Modern Dashboard & Web UI (Native CSS, Tailwind CSS, Bootstrap 5) |
 | **Skill** | `skills/viral-news-analyzer` | Media Intelligence Analyst | **Aktif** | Pemantauan isu viral medsos, verifikasi akurasi cek fakta, polarisasi pro-kontra, & arsip laporan .md (reports/viral/) |
 | **Skill** | `skills/fact-verifier` | Fact-Checker & Investigative Verifier | **Aktif** | Uji silang multi-sumber resmi (minimal 2 media), ekstraksi kutipan asli (verbatim), & tautan URL artikel asli |
+| **Skill** | `skills/santri-robotics-iot-mentor` | Embedded Systems & IoT Mentor | **Aktif** | Kurikulum 5 Tahap Robotika & IoT (Tong Sampah Otomatis, Line Follower, Pemadam Api, Telemetri ESP32 & DB) |
 
 ---
 
