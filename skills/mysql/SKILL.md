@@ -12,7 +12,7 @@ Modul keahlian instruktur teknis dan kurikulum komprehensif untuk menyusun modul
 
 Berbeda dengan kurikulum berbasis level yang memadatkan materi, modul ini disusun berbasis **36 Pembahasan Tematik Terfokus (*Single Topic Focus*)** dengan porsi belajar yang seimbang, bertahap, dan mudah dipahami oleh siswa, mahasiswa, maupun pemula.
 
-Dokumentasi detail silabus tematik, skrip database sampel yang konsisten, dan format modul lab 7 bagian tersedia di [prompt.md](./prompt.md).
+Dokumentasi detail silabus tematik, skrip database sampel yang konsisten, dan format modul tutor 8 bagian (mengacu ke [template-tutor.md](../../rules/templates/template-tutor.md)) tersedia di [prompt.md](./prompt.md).
 
 ## MANDATORY PRE-EXECUTION PLANNING PROTOCOL (DO NOT SKIP)
 Sebelum menyusun materi, modul praktikum, atau skrip SQL apapun:
@@ -24,9 +24,10 @@ DILARANG KERAS langsung menyajikan modul lengkap sebelum konfirmasi diberikan.
 
 ## Aturan Utama (Invariant Rules)
 - Patuhi aturan universal di [rules/AGENTS.md](../../rules/AGENTS.md).
-- **Production-Ready & Idempotent SQL**: Dilarang memotong skrip SQL dengan placeholder komentar pemalas (`-- tulis query di sini`). Setiap modul wajib menyertakan DDL, DML data uji, kueri praktikum, dan skrip pembersihan yang langsung dapat dieksekusi di MySQL CLI, MySQL Workbench, atau DBeaver.
+- **Wajib Mengikuti Standar Modul Tutor 8 Bagian** di [template-tutor.md](../../rules/templates/template-tutor.md): bedah fungsi/klausa & argumen dasar sebelum praktik, sediakan minimal 4 contoh kueri bertingkat mikro, dan susun latihan 4 level (8–10 soal) untuk jenjang SMK dan Mahasiswa.
+- **Production-Ready & Idempotent SQL**: Dilarang memotong skrip SQL contoh dengan placeholder komentar pemalas (`-- tulis query di sini`). Setiap modul wajib menyertakan DDL, DML data uji, kueri praktikum, dan skrip pembersihan yang langsung dapat dieksekusi di MySQL CLI, MySQL Workbench, atau DBeaver.
 - **Dialek MySQL 8.x Murni**: DILARANG mencampurkan sintaks database lain (seperti `TOP` milik SQL Server, `SERIAL` milik PostgreSQL, atau `GETDATE()`). Gunakan `LIMIT`, `AUTO_INCREMENT`, `NOW()`, dan fitur modern MySQL 8 (`CHECK`, CTE, Window Functions, `EXPLAIN ANALYZE`).
-- **Konsistensi Skema Contoh**: Gunakan skema database relasional yang berkesinambungan (studi kasus toko retail `toko_db` atau universitas `kampus_db`) agar materi saling terhubung secara logis.
+- **Konsistensi Skema Contoh**: Gunakan skema database relasional yang berkesinambungan dan sesuai nilai halal/edukatif (studi kasus toko retail `toko_db` atau universitas `kampus_db`) agar materi saling terhubung secara logis.
 
 ---
 
@@ -82,14 +83,15 @@ DILARANG KERAS langsung menyajikan modul lengkap sebelum konfirmasi diberikan.
 
 ---
 
-## Standar Format Modul Lab Praktikum (7 Bagian)
+## Standar Format Modul Tutor & Praktikum (8 Bagian)
 
-Setiap materi yang dihasilkan wajib mengadopsi struktur 7 bagian terpadu:
-1. **Bagian 1: Judul Materi & Capaian Pembelajaran Spesifik** (Kemampuan konkret yang dikuasai siswa).
-2. **Bagian 2: Konsep Inti & Arsitektur Teknis** (Penjelasan fokus pada 1 konsep disertai diagram alir/ASCII).
-3. **Bagian 3: Prasyarat & Skema Database Idempotent** (Skrip `CREATE DATABASE IF NOT EXISTS`, tabel sampel mandiri).
-4. **Bagian 4: Langkah Praktik Terpandu & Skrip SQL Lengkap** (Kueri bertahap dari kasus sederhana ke kompleks tanpa komentar pemalas).
-5. **Bagian 5: Verifikasi Hasil Eksekusi & Ekspektasi Output** (Tabel ekspektasi output baris data).
-6. **Bagian 6: Anti-Pattern, Kesalahan Umum, & Tips Performa** (Kesalahan yang sering dilakukan pemula dan cara memperbaikinya).
-7. **Bagian 7: Lab Tantangan Mandiri** (3-5 soal studi kasus baru tanpa kunci jawaban langsung untuk menguji pemahaman).
+Setiap materi yang dihasilkan wajib mengadopsi struktur 8 bagian terpadu sesuai [template-tutor.md](../../rules/templates/template-tutor.md):
+1. **Bagian 1: Tujuan Pembelajaran & Peta Konsep** (Kemampuan konkret + alur eksekusi ASCII).
+2. **Bagian 2: Kamus Fungsi, Klausa, & Argumen Dasar *(Wajib Terperinci)*** (Bedah setiap keyword, fungsi SQL, tipe argumen/klausa, nilai kembali, dan contoh mikro 1–3 baris).
+3. **Bagian 3: Prasyarat & Skema Database Idempotent** (Skrip `CREATE DATABASE IF NOT EXISTS`, tabel sampel mandiri, minimal 5–10 baris data uji).
+4. **Bagian 4: Contoh Praktik Terpandu Bertingkat (Minimal 4 Contoh Mikro)** (Contoh 1 Paling Dasar → Contoh 2 Variasi Klausa/Argumen → Contoh 3 Kombinasi Menengah → Contoh 4 Terapan Utuh & Edge Case/Optimasi).
+5. **Bagian 5: Verifikasi Hasil Eksekusi & Panduan Debugging** (Tabel ekspektasi output Contoh 1–4 + tabel kesalahan umum & anti-pattern performa).
+6. **Bagian 6: Latihan Soal & Praktikum Berjenjang (4 Level, 8–10 Soal)** (Level 1 Prediksi/Cek Sintaks → Level 2 Modifikasi Terbimbing → Level 3 Kueri Mandiri Terpadu → Level 4 Analisis Kasus & Performa Mahasiswa/SMK Lanjutan).
+7. **Bagian 7: Cek Mandiri & Panduan Verifikasi Latihan** (Ringkasan indikator hasil Level 1–2 untuk belajar mandiri, atau checklist uji untuk modul evaluasi/ujian).
+8. **Bagian 8: Ringkasan Fungsi & Refleksi Pemahaman** (Tabel rangkuman sintaks + pertanyaan pemahaman konseptual).
 

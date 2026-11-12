@@ -22,7 +22,17 @@ DILARANG KERAS langsung menulis materi ajar lengkap sebelum konfirmasi diberikan
 
 ## Aturan Utama (Invariant Rules)
 - Patuhi aturan universal di [rules/AGENTS.md](../../rules/AGENTS.md).
-- **Wajib Mengikuti Format 9 Bagian Siswa** di [template-materi-ajar.md](../../rule/template-materi-ajar.md).
+- **Wajib Mengikuti Format 9 Bagian Siswa (Terkalibrasi 80 Menit/Minggu)** di [template-materi-ajar.md](../../rules/templates/template-materi-ajar.md):
+  1. *Pemanasan Prasyarat & Konsep Dasar* (2 soal pemanasan kilat 3 menit + pengantar ringkas & analogi konkret SMP).
+  2. *Bentuk Umum & Rumus Baku* (KaTeX LaTeX murni `$...$` dan `$$...$$`, maksimal 1–2 rumus inti per pertemuan).
+  3. *Sifat-Sifat & Aturan Penting* (maksimal 2–3 syarat/aturan yang langsung dipakai di latihan).
+  4. *Contoh Soal & Pembahasan Bertingkat Mikro* (minimal 2 contoh: Dasar Angka Bulat → Variasi Ringan; menerapkan Prinsip *Contoh Kembar* 1-to-1 dengan latihan).
+  5. *Penerapan Kontekstual* (1 studi kasus soal cerita ramah hitung sebagai model langsung bagi Soal Cerita di Bagian 6C).
+  6. *Latihan Soal Kelas* (4 tangga halus sebelum cara cepat: `6A` Terbimbing 2 soal → `6B` Penguasaan Prosedur Inti 4–5 soal angka bulat bertahap → `6C` Soal Cerita Terpisah 1–2 soal → `6D` Tantangan Opsional 1 soal).
+  7. *Pola Kunci, Jebakan Umum, & Cara Cepat* (penguatan pola & cara cek hasil setelah latihan + peringatan kesalahan umum).
+  8. *Pekerjaan Rumah (PR Pondok / Mandiri)* (soal rutin, soal cerita, refleksi konsep, dan Kunci Jawaban Akhir Ringkas untuk cek mandiri).
+  9. *Ringkasan Materi* (2–4 poin inti paling esensial).
+- **Kalibrasi Tingkat Kesulitan SMP (80 Menit/Minggu)**: Utamakan bilangan bulat/rasional ramah hitung, hindari hasil akar irasional atau manipulasi pecahan aljabar rumit kecuali menjadi materi pokok pertemuan, dan gunakan instruksi soal yang ringkas.
 
 ## Cakupan Silabus (72 Pertemuan)
 1. **Kelas 7**:

@@ -31,7 +31,8 @@ skills-agent/
 │   ├── AGENTS.md                      # Invariant rules (Base prompt + Mandatory Two-Phase Planning)
 │   └── templates/                     # Berkas template resmi rujukan
 │       ├── template-plan.md           # Format baku berkas perencanaan implementasi
-│       └── template-materi-ajar.md    # Format baku modul ajar, praktikum, & tugas siswa
+│       ├── template-materi-ajar.md    # Format baku modul ajar siswa SMP & SMA (80 mnt/minggu)
+│       └── template-tutor.md          # Format baku modul tutor & praktikum SMK & Mahasiswa (8 bagian)
 └── skills/                            # Discovery root resmi Antigravity untuk semua skill
     ├── task-management-ui/            # Dual-Engine UI Kit (Flutter & React / React Native)
     ├── coffee-shop-ui/                # Coffee Shop UI Kit Nam Design (Font Sora & Terracotta #C67C4E)
@@ -385,13 +386,14 @@ Tabel status dan pemetaan modul skill yang aktif dan tersedia di repositori:
 | :--- | :--- | :--- | :---: | :--- |
 | **Global Rule** | `rules/AGENTS.md` | Core Supervisor & Process Controller | **Aktif** | Standar komunikasi direct, boundaries, & Mandatory Two-Phase Planning Protocol |
 | **Template** | `rules/templates/template-plan.md` | Planning Architect | **Aktif** | Format baku dokumen perencanaan 5 bagian (.plan/) |
-| **Template** | `rules/templates/template-materi-ajar.md` | Curriculum Author | **Aktif** | Standar modul materi ajar siswa 9 bagian, LaTeX KaTeX, Scaffolding |
+| **Template** | `rules/templates/template-materi-ajar.md` | Curriculum Author | **Aktif** | Standar modul materi ajar siswa 9 bagian terkalibrasi 80 menit/minggu, LaTeX KaTeX, Scaffolding Halus |
+| **Template** | `rules/templates/template-tutor.md` | Technical Tutor & Lab Architect | **Aktif** | Standar modul tutor & praktikum 8 bagian (SMK & Mahasiswa): Kamus Fungsi/Argumen, 4 Contoh Mikro, & 4 Level Latihan |
 | **Skill** | `skills/task-management-ui` | Mobile UI/UX Architect | **Aktif** | Dual-Engine (Flutter & React): Task Dashboard, Gradient Slider, Detail Sheet, Create Form |
 | **Skill** | `skills/coffee-shop-ui` | Coffee Shop UI/UX Specialist | **Aktif** | Nam Design Styleguide (Sora, #C67C4E), 5 Layar Pemesanan Kopi, Dual-Engine (Flutter & React) |
 | **Skill** | `skills/food-delivery-ui` | Food Delivery UI/UX Architect | **Aktif** | Dual-Engine (Flutter & React): 24+ Layar Customer App & Chef Marketplace (#FF7622) |
 | **Skill** | `skills/tailmind` | TailAdmin System Specialist | **Aktif** | TailAdmin Dashboard, KPI Stat Cards, Gauge Chart, Sales Bar, Period Filter Area |
-| **Skill** | `skills/sql-server` | Senior DBA & Technical Instructor | **Aktif** | Kurikulum 7 Level (Instalasi $\rightarrow$ Advanced), 7 Format Lab, T-SQL Blueprints, Disaster Recovery |
-| **Skill** | `skills/mysql` | Senior DBA & Technical Instructor | **Aktif** | Silabus 36 Pembahasan Tematik Terurut (DDL, DML, Where, Joins, Window Functions, Indexing, PITR), 7 Bagian Lab |
+| **Skill** | `skills/sql-server` | Senior DBA & Technical Instructor | **Aktif** | Kurikulum 7 Level (Instalasi $\rightarrow$ Advanced), 8 Bagian Tutor/Lab (`template-tutor.md`), T-SQL Blueprints, Disaster Recovery |
+| **Skill** | `skills/mysql` | Senior DBA & Technical Instructor | **Aktif** | Silabus 36 Pembahasan Tematik Terurut (DDL, DML, Where, Joins, Window Functions, Indexing, PITR), 8 Bagian Tutor/Lab (`template-tutor.md`) |
 | **Skill** | `skills/matematika-smp` | Mathematics Curriculum Author | **Aktif** | Silabus 72 Pertemuan (Kelas 7-9), 9 Bagian Materi Siswa, LaTeX KaTeX, Scaffolding |
 | **Skill** | `skills/matematika-sma` | Mathematics Curriculum Author | **Aktif** | Silabus 72 Pertemuan (Kelas 10-12 IPA & Pesantren), 9 Bagian Materi Siswa, LaTeX KaTeX, Scaffolding |
 | **Skill** | `skills/zenith-ui` | Multi-Engine UI Architect | **Aktif** | Zenith Modern Dashboard & Web UI (Native CSS, Tailwind CSS, Bootstrap 5) |

@@ -10,7 +10,7 @@ description: >-
 
 Modul keahlian instruktur teknis dan kurikulum komprehensif untuk menyusun modul pembelajaran, panduan praktikum laboratorium, dan materi belajar mandiri **Microsoft SQL Server (2019 / 2022)**. 
 
-Panduan pedagogis lengkap, silabus berjenjang 7 tingkat, format modul lab terstandar, dan skrip T-SQL siap pakai tersedia di [prompt.md](./prompt.md).
+Panduan pedagogis lengkap, silabus berjenjang 7 tingkat, format modul tutor 8 bagian (mengacu ke [template-tutor.md](../../rules/templates/template-tutor.md)), dan skrip T-SQL siap pakai tersedia di [prompt.md](./prompt.md).
 
 ## MANDATORY PRE-EXECUTION PLANNING PROTOCOL (DO NOT SKIP)
 Sebelum menyusun materi, modul praktikum, atau skrip SQL apapun:
@@ -22,7 +22,8 @@ DILARANG KERAS langsung menyajikan modul lengkap sebelum konfirmasi diberikan.
 
 ## Aturan Utama (Invariant Rules)
 - Patuhi aturan universal di [rules/AGENTS.md](../../rules/AGENTS.md).
-- **Production-Ready T-SQL**: Dilarang memotong skrip SQL dengan placeholder komentar (`-- tulis query di sini`). Setiap modul wajib menyertakan DDL, DML, dan script pengujian yang langsung dapat dieksekusi di SSMS atau Azure Data Studio.
+- **Wajib Mengikuti Standar Modul Tutor 8 Bagian** di [template-tutor.md](../../rules/templates/template-tutor.md): rincikan fungsi/klausa T-SQL & argumennya sebelum praktik, sediakan minimal 4 contoh bertingkat mikro, serta susun latihan berjenjang 4 level (8–10 soal) untuk jenjang SMK dan Mahasiswa.
+- **Production-Ready T-SQL**: Dilarang memotong skrip SQL contoh dengan placeholder komentar (`-- tulis query di sini`). Setiap modul wajib menyertakan DDL, DML, dan script pengujian yang langsung dapat dieksekusi di SSMS atau Azure Data Studio.
 
 ## Roadmap Kurikulum 7 Tingkat (Beginner hingga Advanced)
 1. **Level 1: Instalasi & Tooling**:
@@ -66,13 +67,14 @@ DILARANG KERAS langsung menyajikan modul lengkap sebelum konfirmasi diberikan.
    - Skenario Restore: Disaster Recovery, Point-in-Time Recovery (PITR) hingga log sequence number (LSN) tertentu.
    - Otomasi Pemeliharaan: SQL Server Agent Jobs, Maintenance Plans (Index Rebuild/Reorganize, Integrity Check `DBCC CHECKDB`).
 
-## Standar Format Modul Praktikum (7 Bagian)
-Setiap modul praktikum yang dihasilkan wajib mengadopsi struktur 7 bagian terpadu:
-1. **Bagian 1: Judul & Tujuan Pembelajaran Spesifik** (Apa kemampuan nyata yang dicapai).
-2. **Bagian 2: Konsep Kunci & Arsitektur Teknis** (Penjelasan konsep disertai diagram arsitektur / ASCII).
-3. **Bagian 3: Prasyarat & Lingkungan Praktik** (Versi instance, database contoh yang digunakan).
-4. **Bagian 4: Langkah Praktik Terpandu & Skrip T-SQL Lengkap** (Skrip idempotent lengkap tanpa komentar pemalas).
-5. **Bagian 5: Analisis Output & Verifikasi Hasil Eksekusi** (Tabel ekspektasi output data atau pesan SSMS).
-6. **Bagian 6: Troubleshooting, Anti-Pattern, & Best Practices** (Kesalahan umum, implikasi performa, dan solusinya).
-7. **Bagian 7: Lab Tantangan Mandiri** (Kasus uji studi kasus nyata untuk melatih kemandirian peserta).
+## Standar Format Modul Tutor & Praktikum (8 Bagian)
+Setiap modul praktikum yang dihasilkan wajib mengadopsi struktur 8 bagian terpadu sesuai [template-tutor.md](../../rules/templates/template-tutor.md):
+1. **Bagian 1: Tujuan Pembelajaran & Peta Konsep** (Kemampuan nyata + diagram alur/arsitektur ASCII).
+2. **Bagian 2: Kamus Fungsi, Klausa T-SQL, & Argumen Dasar *(Wajib Terperinci)*** (Bedah fungsi, klausa, parameter wajib/opsional, nilai kembali, & contoh mikro 1–3 baris).
+3. **Bagian 3: Prasyarat & Lingkungan Praktik Idempotent** (Versi SQL Server, dataset uji, `IF OBJECT_ID...`).
+4. **Bagian 4: Contoh Praktik T-SQL Bertingkat (Minimal 4 Contoh Mikro)** (Dasar Tunggal → Variasi Parameter → Kombinasi → Terapan Produksi & *Edge Case*).
+5. **Bagian 5: Verifikasi Output & Troubleshooting (*Common Pitfalls*)** (Tabel output/statistik I/O + solusi error pemula & anti-pattern).
+6. **Bagian 6: Latihan Soal & Praktikum Berjenjang (4 Level, 8–10 Soal SMK & Mahasiswa)** (Level 1 Prediksi/Cek Sintaks → Level 2 Modifikasi Terbimbing → Level 3 Implementasi Mandiri → Level 4 Analisis Kasus & Optimasi).
+7. **Bagian 7: Cek Mandiri & Panduan Verifikasi Latihan** (Indikator output Level 1–2 atau checklist pengujian).
+8. **Bagian 8: Ringkasan Fungsi & Refleksi Pemahaman** (Tabel ringkasan perintah + pertanyaan pemahaman konseptual).
 

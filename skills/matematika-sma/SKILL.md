@@ -24,16 +24,16 @@ DILARANG KERAS langsung menulis materi ajar lengkap sebelum konfirmasi diberikan
 
 ## Aturan Utama (Invariant Rules)
 - Patuhi aturan universal di [rules/AGENTS.md](../../rules/AGENTS.md).
-- **Wajib Mengikuti Format 9 Bagian Siswa** di [template-materi-ajar.md](../../rules/templates/template-materi-ajar.md):
-  1. *Pengertian & Konsep Dasar* (komunikatif, analogi intuitif).
-  2. *Bentuk Umum & Rumus Baku* (KaTeX LaTeX murni `$ ... $` dan `$$ ... $$`).
-  3. *Sifat-Sifat, Karakteristik, & Aturan Khusus* (tabel komparasi & syarat keberlakuan rumus).
-  4. *Contoh Soal & Pembahasan Terperinci* (scaffolding bertingkat: Diketahui, Ditanyakan, Langkah, Kesimpulan $\checkmark$).
-  5. *Penerapan Kontekstual* (Studi kasus nyata & lingkungan pesantren: hafalan Al-Qur'an, infak, jadwal piket/ibadah, konsumsi asrama).
-  6. *Pola Kunci & Cara Cepat Mengingat* (jembatan keledai visual & catatan waspada kesalahan umum).
-  7. *Latihan Soal Mandiri* (Tingkat Dasar, Variasi/Campuran, Tantangan/HOTS).
-  8. *Pekerjaan Rumah (PR Pondok / Mandiri)* (soal perhitungan, soal cerita, dan pertanyaan pemahaman konsep).
-  9. *Ringkasan Materi* (3-4 poin esensial).
+- **Wajib Mengikuti Format 9 Bagian Siswa (Terkalibrasi 80 Menit/Minggu)** di [template-materi-ajar.md](../../rules/templates/template-materi-ajar.md):
+  1. *Pemanasan Prasyarat & Konsep Dasar* (2 soal kilat pengingat prasyarat + pengantar komunikatif hikmah logika & keteraturan alam ciptaan Allah SWT beserta analogi konkret).
+  2. *Bentuk Umum & Rumus Baku* (KaTeX LaTeX murni `$...$` dan `$$...$$`, fokus pada 1–2 rumus inti pertemuan).
+  3. *Sifat-Sifat & Aturan Penting* (2–3 syarat/sifat esensial yang terpakai di latihan & tabel komparasi bila perlu).
+  4. *Contoh Soal & Pembahasan Bertingkat Mikro* (Dasar Angka Ramah Hitung → Variasi Menengah → Pendalaman/Pembuktian Terpandu bila sesuai topik; menerapkan Prinsip *Contoh Kembar* dengan Diketahui, Ditanyakan, Langkah, Kesimpulan $\checkmark$).
+  5. *Penerapan Kontekstual* (1 studi kasus santri & kehidupan nyata berangka ramah hitung sebagai model langsung bagi Soal Cerita di Bagian 6C).
+  6. *Latihan Soal Kelas* (4 tangga halus sebelum cara cepat: `6A` Terbimbing 2 soal → `6B` Penguasaan Prosedur Inti 4–5 soal bertahap → `6C` Soal Cerita Terpisah 1–2 soal → `6D` Tantangan/HOTS Opsional 1 soal).
+  7. *Pola Kunci, Jebakan Umum, & Cara Cepat* (penguatan pola & cara verifikasi hasil setelah latihan + peringatan kesalahan umum).
+  8. *Pekerjaan Rumah (PR Pondok / Mandiri)* (soal perhitungan rutin, soal cerita, refleksi pemahaman konsep, serta **Kunci Jawaban Akhir Ringkas** untuk cek mandiri).
+  9. *Ringkasan Materi* (2–4 poin esensial).
 - **Strict LaTeX KaTeX**: Dilarang menggunakan teks datar tanpa format untuk rumus matematika (seperti `nn+12`, `51-1=4`, `x-2x+2x-2`). Semua variabel, persamaan, pecahan, akar, eksponen, limit, turunan, integral, dan matriks WAJIB diformat menggunakan sintaks KaTeX murni.
 - **Zero Teacher Rubric**: Dilarang menyertakan rubrik penilaian instruktur, lembar penskoran guru, atau catatan fasilitator.
 
@@ -72,7 +72,7 @@ DILARANG KERAS langsung menulis materi ajar lengkap sebelum konfirmasi diberikan
   - Pertemuan 11: Evaluasi 3 (Ulangan Harian: Transformasi Geometri).
   - Pertemuan 12: Review & Persiapan UAS Ganjil.
 - **Semester Genap (Barisan, Deret, dan Kalkulus Diferensial - 12 Pertemuan)**:
-  - Pertemuan 1-3: Barisan dan Deret (Aritmetika $U_n$ & $S_n$, geometri, deret geometri tak hingga konvergen/divergen, aplikasi pertumbuhan/peluruhan/bunga).
+  - Pertemuan 1-3: Barisan dan Deret (Aritmetika $U_n$ & $S_n$, geometri, deret geometri tak hingga konvergen/divergen, aplikasi pertumbuhan dan peluruhan).
   - Pertemuan 4: Evaluasi 1 (Ulangan Harian: Barisan dan Deret).
   - Pertemuan 5-6: Limit Fungsi (Konsep intuitif limit, limit aljabar bentuk tak tentu $\frac{0}{0}$ pemfaktoran & rasionalisasi akar, limit trigonometri).
   - Pertemuan 7-8: Turunan Fungsi / Diferensial (Konsep laju perubahan, aturan dasar konstanta/pangkat/koefisien, aturan hasil kali, bagi, dan rantai).

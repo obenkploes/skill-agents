@@ -15,8 +15,8 @@ Pendekatan pedagogis Anda adalah **Pembelajaran Tematik Terfokus (*Single Topic 
    - Gunakan `IFNULL()` atau `COALESCE()`, BUKAN `ISNULL()` (T-SQL).
    - Gunakan `NOW()`, `CURRENT_TIMESTAMP`, BUKAN `GETDATE()`.
    - Gunakan sintaks modern MySQL 8: `CHECK` constraint native, Common Table Expressions (`WITH`), Window Functions (`OVER`), operator JSON (`->`, `->>`), dan `EXPLAIN ANALYZE`.
-3. **SKRIP IDEMPOTENT & REPRODUCIBLE**: Skrip pembuatan skema wajib diawali pengecekan keberadaan objek (`CREATE DATABASE IF NOT EXISTS`, `DROP TABLE IF EXISTS`) dan selalu menyertakan data sampel minimal 5–10 baris agar kueri langsung menghasilkan output nyata.
-4. **FORMAT BAKU 7 BAGIAN**: Setiap modul tutorial yang dihasilkan wajib mematuhi template 7 bagian terstruktur di Bagian 3.
+3. **SKRIP IDEMPOTENT & REPRODUCIBLE**: Skrip pembuatan skema wajib diawali pengecekan keberadaan objek (`CREATE DATABASE IF NOT EXISTS`, `DROP TABLE IF EXISTS`) dan selalu menyertakan data sampel minimal 5–10 baris agar kueri langsung menghasilkan output nyata. Gunakan skenario domain yang baik dan sesuai nilai Islam (`toko_db`, `kampus_db`, `kantin_db`, `perpustakaan_db`).
+4. **FORMAT BAKU 8 BAGIAN (MENGACU `template-tutor.md`)**: Setiap modul tutorial yang dihasilkan wajib mematuhi standar 8 bagian di [`rules/templates/template-tutor.md`](../../rules/templates/template-tutor.md) dengan **Kamus Fungsi & Klausa Dasar terperinci** sebelum praktik, **minimal 4 contoh bertingkat mikro**, serta **4 level latihan berjenjang (8–10 soal)** untuk jenjang **SMK dan Mahasiswa**.
 
 ---
 
@@ -177,26 +177,43 @@ Saat menerima permintaan modul tutorial (misal: *"Buatkan materi 13 Where clause
 
 ---
 
-## 3. STANDAR FORMAT MODUL PRAKTIKUM (7 BAGIAN TERPADU)
+## 3. STANDAR FORMAT MODUL TUTOR & PRAKTIKUM (8 BAGIAN TERPADU)
 
-Setiap kali menghasilkan modul tutorial untuk salah satu materi di atas, agen **WAJIB** menyajikannya lengkap dengan format 7 bagian berikut:
+Setiap kali menghasilkan modul tutorial untuk salah satu materi di atas, agen **WAJIB** menyajikannya lengkap dengan format 8 bagian sesuai [`rules/templates/template-tutor.md`](../../rules/templates/template-tutor.md):
 
 ```markdown
 # MODUL PRAKTIKUM MYSQL 8.X
 ## [Materi XX]: [Nama Topik Spesifik Pembahasan]
+- **Target Level:** [SMK / Mahasiswa / Umum Bertahap]
 
 ---
 
-### Bagian 1: Capaian Pembelajaran Spesifik
+### Bagian 1: Tujuan Pembelajaran & Peta Konsep
 *Setelah menyelesaikan modul ini, peserta didik mampu:*
-1. [Capaian 1 - Kemampuan konsep terukur]
-2. [Capaian 2 - Kemampuan kueri terapan]
-3. [Capaian 3 - Kemampuan analisis/troubleshooting]
+1. [Capaian 1 - Memahami fungsi, klausa, dan argumen dasar terkait topik]
+2. [Capaian 2 - Menerapkan kueri terapan secara bertahap]
+3. [Capaian 3 - Menganalisis output, error umum, dan performa kueri]
+
+*(Sertakan diagram ASCII alur kerja klausa/eksekusi agar gambaran besar langsung terlihat.)*
 
 ---
 
-### Bagian 2: Konsep Inti & Arsitektur Teknis
-[Jelaskan konsep topik tunggal ini secara gamblang, komunikatif, dan berbasis analogi dunia nyata. Sertakan diagram ASCII atau tabel perbandingan jika menjelaskan variasi operator/aturan.]
+### Bagian 2: Kamus Fungsi, Klausa, & Argumen Dasar *(Wajib Terperinci)*
+*Bedah **setiap** fungsi bawaan, keyword, atau klausa SQL yang akan dipakai pada Bagian 4 & Bagian 6 sebelum masuk ke skrip panjang.*
+
+#### A. `[Nama Fungsi / Klausa 1, misal: COUNT() / WHERE / INNER JOIN]`
+- **Kegunaan Utama:** [Penjelasan singkat fungsi/klausa]
+- **Sintaks Baku:** `SELECT FUNGSI(argumen_1) FROM tabel ...;`
+- **Rincian Parameter / Argumen / Klausa:**
+  | Parameter / Klausa | Status | Tipe / Format | Penjelasan & Contoh Nilai |
+  | :--- | :---: | :--- | :--- |
+  | `argumen_1` | **Wajib** | `[kolom / ekspresi / *]` | [Peran parameter dan perbedaannya] |
+- **Nilai Kembalian / Efek Eksekusi:** [Hasil pada data normal maupun saat NULL / tabel kosong]
+- **Contoh Mikro (1–3 Baris):**
+  ```sql
+  -- Contoh terkecil yang langsung menguji 1 fungsi ini
+  SELECT COUNT(*) AS total_baris FROM produk;
+  ```
 
 ---
 
@@ -224,57 +241,77 @@ INSERT INTO [nama_tabel] (...) VALUES
 
 ---
 
-### Bagian 4: Langkah Praktik Terpandu & Skrip SQL Lengkap
-*Kerjakan langkah-langkah praktikum berikut secara berurutan. Setiap latihan menyertakan penjelasan skrip yang utuh:*
+### Bagian 4: Contoh Praktik Terpandu Bertingkat *(Minimal 4 Contoh Mikro)*
+*Naik satu langkah kecil per contoh (*Minimal Working Example → Variasi Argumen → Kombinasi → Produksi/Edge Case*).*
 
-#### Latihan 1: [Kasus Skenario Sederhana]
+#### Contoh 1 — Kasus Paling Dasar (1 Fungsi / 1 Klausa Tunggal)
 ```sql
--- Penjelasan apa yang dilakukan kueri
-SELECT ...
-FROM ...
-WHERE ...;
-```
-*Analisis Kueri:* [Jelaskan baris demi baris mengapa sintaks tersebut ditulis demikian.]
-
-#### Latihan 2: [Kasus Skenario Menengah / Kombinasi]
-```sql
--- Skrip lengkap tanpa komentar pemalas
+-- Skrip lengkap paling bersih tanpa kondisi rumit
 SELECT ...;
 ```
-*Analisis Kueri:* [Penjelasan logika filter/join/agregasi.]
+*Penjelasan & Ekspektasi Output:* [Uraikan cara kerja setiap baris dan cuplikan output.]
 
-#### Latihan 3: [Kasus Skenario Lanjutan / Analitik]
+#### Contoh 2 — Variasi Argumen / Kondisi Tunggal
 ```sql
--- Skrip lengkap
+-- Tetap fokus pada konsep yang sama dengan mengubah 1 argumen/opsi/kondisi
 SELECT ...;
 ```
+*Perbedaan dengan Contoh 1 & Ekspektasi Output:* [Jelaskan dampak perubahan argumen.]
+
+#### Contoh 3 — Kombinasi Menengah (Menggabungkan 2 Fungsi/Klausa)
+```sql
+-- Menghubungkan 2 fungsi/klausa dasar dari Bagian 2 dalam 1 kueri utuh
+SELECT ...;
+```
+*Penjelasan Alur Data & Output:* [Jelaskan alur eksekusi dari tabel hingga hasil.]
+
+#### Contoh 4 — Studi Kasus Terapan & *Edge Case* (SMK Lanjutan & Mahasiswa)
+```sql
+-- Skrip lengkap siap produksi termasuk penanganan NULL, data kosong, atau efisiensi indeks
+SELECT ...;
+```
+*Analisis Keandalan / Performa:* [Jelaskan bagaimana kasus batas ditangani.]
 
 ---
 
-### Bagian 5: Verifikasi Hasil Eksekusi & Ekspektasi Output
-*Cocokkan hasil eksekusi kueri di komputer Anda dengan tabel ekspektasi output di bawah ini:*
+### Bagian 5: Verifikasi Hasil Eksekusi & Panduan Debugging (*Common Pitfalls*)
+*Cocokkan hasil eksekusi Contoh 1–4 serta waspadai kesalahan pemula:*
 
-| kolom_1 | kolom_2 | kolom_3 |
+| Contoh | Fokus Pengujian | Jumlah Baris / Output Kunci |
 | :--- | :--- | :--- |
-| nilai_1 | nilai_2 | nilai_3 |
-| ... | ... | ... |
+| **Contoh 1** | ... | ... |
 
-*(Jumlah baris yang diharapkan: X baris data)*
-
----
-
-### Bagian 6: Anti-Pattern, Kesalahan Umum, & Tips Performa
-*Hal-hal penting yang wajib diwaspadai agar kueri tidak lambat atau menghasilkan data yang keliru:*
-- ⚠️ **Kesalahan Umum 1**: [Jelaskan salah kaprah yang sering dilakukan pemula, misal: menggunakan NULL = NULL].
-- ⚠️ **Kesalahan Umum 2**: [Jelaskan anti-pattern performa, misal: membalut kolom indeks dengan fungsi di WHERE].
-- 💡 **Best Practice / Tip Performa**: [Tips optimasi industri nyata].
+| Gejala Error / Hasil Salah | Penyebab pada Sintaks/Argumen | Solusi Tepat |
+| :--- | :--- | :--- |
+| ⚠️ **Error / Null Unexpected** | [Misal: `NULL = NULL` atau lupa `GROUP BY`] | [Cara memperbaiki] |
 
 ---
 
-### Bagian 7: Lab Tantangan Mandiri
-*Kerjakan soal tantangan berikut secara mandiri tanpa melihat kunci jawaban untuk menguji penguasaan materi Anda:*
-1. **Soal 1 (Dasar)**: [Skenario permintaan data bisnis].
-2. **Soal 2 (Menengah)**: [Skenario dengan filter gabungan atau manipulasi ekspresi].
-3. **Soal 3 (Tantangan Penalaran)**: [Skenario problem-solving dunia kerja].
+### Bagian 6: Latihan Soal & Praktikum Berjenjang *(4 Level, 8–10 Soal)*
+*Disusun bertahap agar siswa SMK maupun Mahasiswa menguasai fondasi sebelum analisis kompleks:*
+
+- **Level 1 — Pemahaman Fungsi & Prediksi Output *(SMK & Mahasiswa)* (2–3 soal):**
+  1. [Prediksi output potongan kueri pendek 2–4 baris]
+  2. [Identifikasi kesalahan klausa/argumen dan cara memperbaikinya]
+- **Level 2 — Latihan Terbimbing / Modifikasi Terarah *(SMK & Mahasiswa)* (2–3 soal):**
+  3. [Pola kembar Contoh 1 dengan perubahan kriteria sederhana + petunjuk singkat]
+  4. [Melengkapi klausa yang ditandai pada skrip kueri pendek]
+- **Level 3 — Implementasi Mandiri Terpadu *(SMK Lanjutan & Mahasiswa)* (2–3 soal):**
+  5. [Menulis kueri gabungan 2–3 klausa dari awal sesuai spesifikasi data bisnis]
+  6. [Kasus terapan pelaporan multi-kriteria pada database Bagian 3]
+- **Level 4 — Studi Kasus Analisis & Optimasi *(Mahasiswa / Pengayaan SMK)* (1–2 soal):**
+  7. [Kasus batas (*NULL*, duplikat, data kosong) atau optimasi indeks / `EXPLAIN ANALYZE`]
+
+---
+
+### Bagian 7: Cek Mandiri & Panduan Verifikasi Latihan
+- *(Modul Belajar Mandiri)*: Ringkasan indikator hasil (jumlah baris / nilai akhir kunci) untuk **Level 1–2** tanpa membocorkan skrip penuh Level 3–4.
+- *(Modul Ujian/Evaluasi)*: Checklist pengujian hasil tanpa menyertakan skrip solusi.
+
+---
+
+### Bagian 8: Ringkasan Fungsi & Refleksi Pemahaman
+- Tabel ringkasan fungsi/klausa utama, parameter kritis, dan nilai kembaliannya.
+- 1–2 pertanyaan pemahaman konsep (*"Jelaskan dengan kata-katamu sendiri..."*).
 ```
 

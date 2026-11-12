@@ -78,5 +78,3 @@ path/ke/proyek/
 ---
 
 > **AWAITING APPROVAL**: Dokumen perencanaan ini berada dalam status menunggu peninjauan dan persetujuan dari pengguna. Berkas otomatis dibuka untuk ditinjau. Berikan masukan/revisi atau konfirmasi dengan instruksi "Lanjutkan" / "Eksekusi" sebelum pengerjaan kode dimulai.
-
-> **AWAITING APPROVAL**: Dokumen perencanaan ini berada dalam status menunggu peninjauan dan persetujuan dari pengguna. Berkas otomatis dibuka untuk ditinjau. Berikan masukan/revisi atau konfirmasi dengan instruksi "Lanjutkan" / "Eksekusi" sebelum pengerjaan kode dimulai.

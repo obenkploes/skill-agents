@@ -8,8 +8,9 @@ Matematika di lingkungan ini diajarkan bukan sekadar sebagai manipulasi angka da
 ### Batasan Kritis (Negative Constraints)
 1. **DILARANG** menyusun modul dalam format panduan guru/tutor (tidak ada rubrik penilaian pengajar, lembar penskoran guru, alokasi waktu per kegiatan pengajaran, atau catatan instruktur). Format dokumen adalah **murni modul belajar mandiri siswa**.
 2. **DILARANG** menuliskan formula atau persamaan matematika dalam teks datar tanpa format (seperti `nn+12`, `51-1=4`, `x-2x+2x-2`, `r=63=2`, `a=10, b=4`, atau `fx=ax2+bx+c`). Seluruh variabel, angka dalam konteks rumus, persamaan, dan simbol matematis **WAJIB menggunakan notasi LaTeX KaTeX** (`$...$` untuk inline dan `$$...$$` untuk display blok).
-3. **WAJIB** mengikuti struktur 9 bagian materi ajar mandiri sesuai aturan di [`rules/templates/template-materi-ajar.md`](../../rules/templates/template-materi-ajar.md).
+3. **WAJIB** mengikuti struktur 9 bagian materi ajar mandiri terkalibrasi 80 menit/minggu sesuai aturan di [`rules/templates/template-materi-ajar.md`](../../rules/templates/template-materi-ajar.md).
 4. **DILARANG** memotong langkah penyelesaian contoh soal dengan komentar pemalas seperti `// selesaikan sendiri` atau `// langkah selanjutnya serupa`. Semua pembuktian dan perhitungan harus dijabarkan secara tuntas dan gamblang.
+5. **WAJIB KALIBRASI BEBAN 80 MENIT/MINGGU & PRINSIP *CONTOH KEMBAR* (1-TO-1 PAIRING)**: Fokus pada 1 konsep inti (atau 2 sub-konsep langsung) agar tuntas dalam 1 pertemuan mingguan. Setiap variasi manipulasi aljabar atau pembuktian di `Bagian 6` wajib didahului contoh sepola di `Bagian 4–5`, selalu diawali bilangan ramah hitung sebelum variasi simbolik, dengan `Soal Cerita` dipisah (`6C`) dan `Tantangan/HOTS` berstatus opsional 1 soal (`6D`).
 
 ---
 
@@ -76,7 +77,7 @@ Saat menerima permintaan modul materi ajar (misal: *"Buatkan materi Kelas 11 Sem
 | :---: | :--- | :--- |
 | **1** | Barisan dan Deret | Pola barisan bilangan, barisan aritmetika, rumus suku ke-$n$ ($U_n = a + (n-1)b$), dan rumus deret aritmetika ($S_n = \frac{n}{2}(2a + (n-1)b)$). |
 | **2** | Barisan dan Deret | Barisan dan deret geometri ($U_n = a r^{n-1}$, $S_n = \frac{a(r^n - 1)}{r - 1}$), deret geometri tak hingga konvergen ($|r| < 1$, $S_\infty = \frac{a}{1 - r}$) dan divergen ($|r| \ge 1$). |
-| **3** | Latihan & Aplikasi | Aplikasi barisan dan deret dalam masalah pertumbuhan populasi/hafalan, peluruhan radioaktif/jarak langkah, tabungan dan bunga majemuk ($M_t = M_0(1+i)^t$). |
+| **3** | Latihan & Aplikasi | Aplikasi barisan dan deret dalam masalah pertumbuhan populasi/hafalan, peluruhan radioaktif/jarak langkah, serta pertumbuhan nilai produksi/usaha ($M_t = M_0(1+i)^t$). |
 | **4** | Evaluasi 1 | Ulangan Harian 1: Barisan dan Deret Aritmetika, Geometri, Deret Tak Hingga, dan Aplikasinya. |
 | **5** | Limit Fungsi Aljabar | Konsep limit secara intuitif sebagai nilai pendekatan, limit kiri vs limit kanan, substitusi langsung, dan limit bentuk tak tentu $\frac{0}{0}$ dengan metode pemfaktoran aljabar. |
 | **6** | Limit Fungsi Aljabar | Limit bentuk tak tentu $\frac{0}{0}$ dengan metode rasionalisasi perkalian akar sekawan, dan limit menuju tak hingga ($\lim_{x \to \infty} \frac{f(x)}{g(x)}$) dengan membagi pangkat tertinggi. |
@@ -125,7 +126,7 @@ Saat menerima permintaan modul materi ajar (misal: *"Buatkan materi Kelas 11 Sem
 
 ---
 
-## 3. STANDAR FORMAT 9 BAGIAN MODUL MATERI AJAR SISWA
+## 3. STANDAR FORMAT 9 BAGIAN MODUL MATERI AJAR SISWA (SIKLUS 80 MENIT/MINGGU)
 
 Setiap dokumen materi ajar pertemuan yang dihasilkan **WAJIB** disusun secara lengkap mengikuti 9 bagian hierarkis berikut:
 
@@ -136,48 +137,53 @@ Setiap dokumen materi ajar pertemuan yang dihasilkan **WAJIB** disusun secara le
 
 ---
 
-### 1. Pengertian & Konsep Dasar
-[Pengantar konsep yang ditulis secara komunikatif langsung kepada santri/siswa, menanamkan nilai hikmah logika dan keteraturan alam ciptaan Allah SWT, serta analogi konkret yang mudah dibayangkan.]
+### 1. Pemanasan Prasyarat & Konsep Dasar
+- **A. Pemanasan Cepat (3 Menit):** [2 soal kilat pengingat prasyarat pertemuan lalu beserta cek jawaban singkat.]
+- **B. Pengertian & Analogi Nyata:** [Pengantar ringkas yang komunikatif langsung kepada santri/siswa, menanamkan nilai hikmah logika dan keteraturan alam ciptaan Allah SWT, serta analogi konkret yang mudah dibayangkan.]
 
 ---
 
 ### 2. Bentuk Umum & Rumus Baku
-[Penulisan rumus utama menggunakan display blok KaTeX $$...$$ lengkap dengan keterangan simbol dan domain nilai.]
+- [Penulisan 1–2 formula inti pertemuan menggunakan display blok KaTeX $$...$$ lengkap dengan keterangan simbol dan domain/syarat nilai.]
 
 ---
 
-### 3. Sifat-Sifat, Karakteristik, & Aturan Khusus
-[Daftar syarat keberlakuan rumus, sifat operasi matematis, atau tabel perbandingan variasi bentuk.]
+### 3. Sifat-Sifat & Aturan Penting
+- [Daftar maksimal 2–3 syarat keberlakuan rumus atau sifat operasi yang langsung dipakai pada latihan hari ini, serta tabel perbandingan bila ada beberapa kasus.]
 
 ---
 
-### 4. Contoh Soal & Pembahasan Terperinci
-[Contoh soal berjenjang: Dasar -> Menengah/Aljabar -> Soal Pembuktian. Setiap contoh wajib memuat: Diketahui, Ditanyakan, Langkah Penyelesaian baris-demi-baris, dan Kesimpulan tanda centang (\checkmark).]
+### 4. Contoh Soal & Pembahasan Bertingkat Mikro
+- [Contoh soal berjenjang halus dengan prinsip *Contoh Kembar* 1-to-1 terhadap latihan: Contoh 1 (Dasar Angka Ramah Hitung) -> Contoh 2 (Variasi Menengah) -> Contoh 3 (Pengembangan / Pembuktian Terpandu bila sesuai topik). Setiap contoh wajib memuat: Diketahui, Ditanyakan, Langkah Penyelesaian baris-demi-baris, dan Kesimpulan tanda centang (\checkmark).]
 
 ---
 
 ### 5. Penerapan Kontekstual (Studi Kasus Santri & Kehidupan Nyata)
-[Studi kasus terapan di lingkungan pondok pesantren: hafalan Al-Qur'an, infak/sedekah, jadwal piket/marbot, konsumsi asrama, waktu shalat, atau pengukuran arah kiblat.]
+- [1 studi kasus terapan di lingkungan pondok pesantren atau kehidupan nyata dengan angka ramah hitung (hafalan Al-Qur'an, infak, jadwal piket, konsumsi asrama, arah kiblat), sekaligus menjadi model langsung bagi Soal Cerita di Bagian 6C.]
 
 ---
 
-### 6. Pola Kunci & Cara Cepat Mengingat
-[Trik praktis, jembatan keledai visual, pola pikir cepat, dan catatan waspada (warning) terhadap kesalahan umum siswa.]
+### 6. Latihan Soal Kelas (Bertingkat & Terstruktur)
+- [Ditempatkan sebelum Pola Kunci agar pemahaman prosedural terbentuk lewat praktik dengan instruksi ringkas:]
+  - **A. Latihan Terbimbing (2 soal):** Pola kembar Contoh 1–2 (boleh disertai petunjuk langkah awal).
+  - **B. Penguasaan Prosedur Inti (4–5 soal):** Kenaikan kesulitan bertahap halus dari soal sederhana hingga variasi terpola.
+  - **C. Soal Cerita Kontekstual (1–2 soal, Terpisah):** Sepola dengan studi kasus Bagian 5.
+  - **D. Soal Tantangan / HOTS *(Opsional)* (1 soal):** Pengayaan bila Bagian A–C sudah tuntas.
 
 ---
 
-### 7. Latihan Soal Mandiri
-[Paket soal latihan tanpa jawaban untuk dikerjakan siswa: Bagian A (Dasar), Bagian B (Pengembangan/Variasi), Bagian C (Tantangan/HOTS).]
+### 7. Pola Kunci, Jebakan Umum, & Cara Cepat
+- [Disajikan setelah Latihan untuk merangkum pola yang baru dipraktikkan, 1 cara memeriksa kembali kebenaran jawaban, dan peringatan waspada kesalahan umum (`⚠️`).]
 
 ---
 
 ### 8. Pekerjaan Rumah (PR Pondok / Mandiri)
-[Tugas latihan terstruktur untuk dikerjakan di asrama/rumah, memuat soal hitung rutin, soal cerita kontekstual, dan satu soal penalaran konseptual dengan kalimat sendiri.]
+- [2 soal penguatan rutin + 1 soal cerita kontekstual + 1 pertanyaan penalaran konseptual dengan kalimat sendiri, dilengkapi **Kunci Jawaban Akhir Ringkas** (hanya hasil akhir) untuk cek mandiri selama jeda pekan.]
 
 ---
 
 ### 9. Ringkasan Materi
-[3-4 butir intisari prinsip matematika yang wajib diingat dan dipahami siswa.]
+- [2–4 butir intisari prinsip matematika paling esensial yang wajib diingat dan dipahami siswa.]
 ```
 
 ---
