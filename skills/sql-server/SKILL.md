@@ -77,7 +77,7 @@ Setiap modul praktikum yang dihasilkan wajib mengadopsi struktur 8 bagian terpad
 3. **Bagian 3: Prasyarat Lingkungan & Checkpoint 3 Tema Berkelanjutan** `[INTI]` (Versi SQL Server, tabel progresi & skrip idempotent `TokoRitelDB`, `AkademikDB`, `LogistikAuditDB`).
 4. **Bagian 4: Contoh Praktik T-SQL Bertingkat — Tema 1 (Minimal 4 Contoh Mikro)** (Dasar Tunggal `[INTI]` → Variasi Parameter + *State Tracing* `[INTI]` → Kombinasi + *Step Trace* `[INTI]` → Terapan Produksi & *Edge Case* `[PENDALAMAN]`).
 5. **Bagian 5: Verifikasi Output & Troubleshooting (*Common Pitfalls*)** `[INTI]` (Tabel output/statistik I/O + solusi error pemula & anti-pattern).
-6. **Bagian 6: Latihan Soal & Praktikum Berkelanjutan Multi-Tema (4 Level, 8–10 Soal)** (Level 1 *Tracing*/Sintaks & Level 2 Modifikasi pada `TokoRitelDB` `[INTI]` → Level 3 Transfer & Milestone Berkelanjutan pada `AkademikDB` `[INTI LANJUT]` → Level 4 Analisis Kasus & Optimasi pada `LogistikAuditDB` `[PENDALAMAN]`).
-7. **Bagian 7: Cek Mandiri, Milestone Tema, & Panduan Verifikasi** (Indikator output Level 1–2 + checklist kesiapan milestone Tema 2–3, atau checklist uji evaluasi).
+6. **Bagian 6: Latihan Soal** (Tabel acuan data visual konkret / spesifikasi arsitektur di awal + daftar tugas 1 s.d. 8–10 tanpa label pemecah, dengan instruksi langsung aksi teknis "Tulis perintah T-SQL untuk...", serta kenaikan kesulitan alami).
+7. **Bagian 7: Panduan Evaluasi & Checklist Mandiri** (Target visual ASCII grid output kueri `SELECT` + indikator baris terdampak DML/DDL + checklist kesiapan teknis tanpa membocorkan kunci jawaban; kunci jawaban kueri lengkap dihimpun terpisah di `KUNCI_JAWABAN_LATIHAN_SOAL_SQL_SERVER.md`).
 8. **Bagian 8: Ringkasan Fungsi & Refleksi Pemahaman** (Tabel ringkasan perintah + pertanyaan pemahaman konseptual & transfer lintas tema).
 

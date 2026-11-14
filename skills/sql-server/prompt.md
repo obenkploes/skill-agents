@@ -201,14 +201,17 @@ Setiap materi praktikum, modul lab, atau tutorial terpandu yang dibuat oleh agen
 - Tabel ringkasan ekspektasi output / metrik I/O untuk Contoh 1–4.
 - Tabel kesalahan umum pemula & Anti-Pattern (gejala error -> penyebab -> solusi).
 
-## 6. LATIHAN SOAL & PRAKTIKUM BERKELANJUTAN
-- **Level 1 (`TokoRitelDB` — Materi Inti):** 2–3 soal *tracing* & identifikasi sintaks.
-- **Level 2 (`TokoRitelDB` — Materi Inti):** 2–3 soal modifikasi terarah yang sepola dengan Bagian 4.
-- **Level 3 (`AkademikDB` — Inti Lanjut):** 2–3 soal transfer ke skema `AkademikDB` + milestone berkelanjutan.
-- **Level 4 (`LogistikAuditDB` — Pendalaman):** 1–2 soal kasus batas, transaksi/deadlock, atau optimasi performa.
+## 6. LATIHAN SOAL
+*Perhatikan tabel-tabel data acuan berikut sebelum mengerjakan latihan soal:*
+- **Tabel Acuan Data Praktik / Spesifikasi Arsitektur:** Sajikan tabel-tabel data visual konkret (nama tabel, kolom, tipe data, dan 4–5 baris data per tabel, atau spesifikasi profil instance & arsitektur disk untuk modul fondasi) tepat di bawah judul Bagian 6 sebelum butir soal.
+- **Daftar Tugas Praktik:** Susun 8–10 butir tugas terarah bernomor urut 1 s.d. 8–10 tanpa label pemecah ('Level 1', 'Level 2'), dengan kalimat instruksi aksi langsung (*action-oriented*: "Tulis perintah T-SQL untuk [tindakan] [tabel] dengan [kondisi/nilai]..."), dengan kenaikan tingkat kesulitan alami dari dasar tunggal menuju kombinasi filter, agregasi, relasi, hingga analisis kasus batas.
 
-## 7. CEK MANDIRI & PANDUAN VERIFIKASI
-- Indikator hasil akhir bagi **Level 1–2** + **Checklist Kesiapan Milestone Tema 2–3** (atau Daftar Periksa Pengujian untuk soal evaluasi).
+## 7. PANDUAN EVALUASI & CHECKLIST MANDIRI
+*Gunakan petunjuk ringkas berikut untuk mencocokkan hasil eksekusi kueri latihan soal Anda secara mandiri:*
+- **Target Output Visual Kueri (`SELECT`):** Wajib menyajikan contoh hasil akhir tampilan tabel yang diinginkan (*Expected Output Table Grid*) dalam format teks/ASCII tabel SQL Server (`+---+---+`) lengkap dengan keterangan `(N rows affected)` tanpa membocorkan kueri T-SQL solusinya, sehingga siswa dapat memverifikasi hasil visual kueri secara mandiri.
+- **Indikator Keberhasilan Tugas (DML/DDL):** Petunjuk baris terpengaruh (`(N rows affected)`) atau status verifikasi service/port per nomor soal.
+- **Checklist Kesiapan Teknis:** Daftar centang verifikasi mandiri kelancaran eksekusi dan kesesuaian output visual.
+- **Pemisahan Kunci Jawaban (Mandatory):** Kunci jawaban kueri T-SQL lengkap dan pembahasan detail untuk seluruh butir latihan soal dihimpun secara terpusat dan terpisah pada dokumen `sqlserver/KUNCI_JAWABAN_LATIHAN_SOAL_SQL_SERVER.md` (Buku Pegangan Instruktur) agar modul praktikum siswa tetap dapat digunakan sebagai sarana latihan mandiri yang menantang.
 
 ## 8. RINGKASAN & REFLEKSI PEMAHAMAN
 - Tabel ringkasan cepat fungsi/klausa T-SQL, parameter kritis, serta pertanyaan refleksi pemahaman konseptual dan transfer lintas tema.
