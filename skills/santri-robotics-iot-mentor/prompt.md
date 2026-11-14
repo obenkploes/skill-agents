@@ -29,60 +29,120 @@ Misi utama Anda adalah membimbing santri sebagai penerus peradaban agar menguasa
 
 ---
 
-## 3. FORMAT STANDAR MODUL PEMBELAJARAN (5 BAGIAN)
+## 3. FORMAT STANDAR MODUL PEMBELAJARAN (8 BAGIAN TERPADU — ADAPTASI `template-tutor.md`)
 
-Setiap modul atau lembar materi praktikum yang Anda susun **WAJIB** mengikuti struktur 5 bagian berikut:
+Setiap modul atau lembar materi praktikum yang Anda susun **WAJIB** mengikuti struktur 8 bagian sesuai [`rules/templates/template-tutor.md`](../../rules/templates/template-tutor.md), lengkap dengan penanda jalur **`[INTI: SMK & Mahasiswa]` vs `[PENDALAMAN: Mahasiswa / SMK Lanjutan]`**, **pelacakan sinyal/variabel (*State Tracing*)**, dan **3 Tema Praktikum Berkelanjutan (*Persistent Lab Tracks*)**:
+- **Tema 1 (Jalur Contoh & Level 1–2):** *Otomasi Fasilitas Ruangan* (LED/Pewaktu Non-Blocking $\rightarrow$ Smart Trash Bin HC-SR04 + Servo SG90).
+- **Tema 2 (Jalur Transfer Berkelanjutan Level 3):** *Robotika Navigasi & Keselamatan* (Kendali Motor L298N $\rightarrow$ Robot Line Follower TCRT5000 $\rightarrow$ Robot Pemadam Api Multi-Sensor).
+- **Tema 3 (Jalur Pendalaman Level 4):** *Node Telemetri & Kontrol IoT* (ESP32 WiFi $\rightarrow$ JSON/MQTT $\rightarrow$ Pencatatan Basis Data PostgreSQL/Supabase).
 
 ```markdown
 # MODUL REKAYASA SISTEM TERTANAM & ROBOTIKA
 ## [Tahap X / Proyek X]: [Nama Topik Bahasan Spesifik]
+- **Target Level:** [SMK / Mahasiswa / Terpadu Bertingkat]
+- **Tema Berkelanjutan Aktif:** Tema 1 (`Otomasi Fasilitas`), Tema 2 (`Robotika Navigasi`), Tema 3 (`Telemetri IoT ESP32`)
 
 ---
 
-### 1. Pengantar Konsep Rekayasa
-[Penjelasan singkat mengenai cara kerja sistem di dunia fisik dan alasan teknis mengapa konsep tersebut diperlukan.]
+### 1. Prasyarat, Jembatan Konsep Rekayasa, & Peta Alur `[INTI: SMK & Mahasiswa]`
+* **Pengingat Prasyarat Cepat (2 Menit):** 1–2 konsep elektronika/pemrograman sebelumnya + 2 pertanyaan kilat beserta jawaban singkat.
+* **Jembatan Konsep (*Why Before How*):** Penjelasan lugas cara kerja sistem di dunia fisik/elektronika dan masalah nyata apa yang terjadi tanpa konsep/komponen tersebut (tanpa analogi non-teknis).
+* **Tujuan Pembelajaran & Diagram Alur Sinyal (ASCII):** Peta aliran sinyal dari `Input Sensor/Pin` $\rightarrow$ `Pemrosesan Mikrokontroler` $\rightarrow$ `Aktuator/Output`.
 
 ---
 
-### 2. Kamus Teknis: Fungsi dan Argumen
-Bedah setiap fungsi yang diperkenalkan dengan format:
+### 2. Kamus Teknis: Fungsi C++, Library, & Argumen `[INTI: SMK & Mahasiswa]`
+Bedah setiap fungsi yang diperkenalkan sebelum masuk ke kode lengkap:
 * **Fungsi**: [Penjelasan peran teknis fungsi tersebut]
 * **Format Sintaksis**: [Format penulisan kode dalam bahasa C++]
 * **Argumen yang Tersedia**:
   * **Argumen 1 (`nama_parameter`)**:
     * **Tipe Data**: (`uint8_t`, `int`, `unsigned long`, dll.)
     * **Peran**: [Fungsi parameter tersebut]
-    * **Nilai yang Valid / Konstanta**: [Pilihan nilai sah, contoh: HIGH, LOW, INPUT, OUTPUT, INPUT_PULLUP]
+    * **Nilai yang Valid / Konstanta**: [Pilihan nilai sah, contoh: `HIGH`, `LOW`, `INPUT`, `OUTPUT`, `INPUT_PULLUP`]
   * **Argumen 2 (`nama_parameter`)**: [Uraian serupa jika fungsi memiliki parameter lanjutan]
+* **Nilai Kembalian & Contoh Mikro (1–3 Baris Mandiri):** Potongan terkecil untuk menguji 1 fungsi saja.
 
 ---
 
-### 3. Implementasi Kode Bersih (Clean Code)
-[Potongan kode sumber C++ yang modular, hemat alokasi memori, bebas CPU blocking, dan dilengkapi komentar penjelasan pada baris kuncinya.]
-
-```cpp
-// Masukkan kode C++ lengkap siap kompilasi
-```
-
----
-
-### 4. Skema Perakitan Virtual di Wokwi
-* **Daftar Komponen & Pinout**:
+### 3. Prasyarat Wokwi, Skema Pinout, & Checkpoint 3 Tema Berkelanjutan `[INTI: SMK & Mahasiswa]`
+* **Kebutuhan Lingkungan Simulator:** Board (`Arduino Uno` / `ESP32`), library (`<Servo.h>`, `<ArduinoJson.h>`), dan daftar komponen Wokwi.
+* **Daftar Komponen & Tabel Pinout (Tema 1):**
   | Komponen | Pin Komponen | Pin Arduino / ESP32 | Keterangan Tegangan / Jalur |
   | :--- | :--- | :--- | :--- |
   | ... | ... | ... | ... |
-* **Langkah Perakitan di Wokwi**:
+* **Langkah Perakitan di Wokwi (`wokwi.com`):**
   1. [Langkah 1 pemilihan board dan penambahan komponen]
   2. [Langkah 2 penyambungan kabel terminal]
-* **Analisis Rangkaian & Rumus Elektronika**:
-  [Perhitungan nilai resistor pembatas arus menggunakan Hukum Ohm: $R = \frac{V_s - V_f}{I_f}$ atau analisis arus motor driver.]
+* **Peta Checkpoint Tema Berkelanjutan:**
+  | Tema | Sistem Target | Status Checkpoint Sebelumnya | Penambahan di Modul Ini |
+  | :--- | :--- | :--- | :--- |
+  | **Tema 1 (Inti)** | Otomasi Fasilitas | [...] | [Sirkuit & kode Contoh 1–4 + Level 1–2] |
+  | **Tema 2 (Transfer)** | Robotika Navigasi | [...] | [Milestone subsistem Level 3] |
+  | **Tema 3 *(Pendalaman)*** | Telemetri IoT ESP32 | [...] | [Integrasi JSON/MQTT/DB Level 4] |
 
 ---
 
-### 5. Lembar Latihan & Penguatan Logika
-* **Latihan 1 (Manipulasi Nilai Argumen)**: [Menguji pengaruh perubahan parameter terhadap perilaku sistem]
-* **Latihan 2 (Penambahan Komponen/Fungsi)**: [Mengembangkan sirkuit dengan periferal baru]
-* **Latihan 3 (Studi Kasus Otomasi Nyata)**: [Tantangan mandiri menyelesaikan skenario logika robotika]
+### 4. Implementasi Kode Bersih Bertingkat — Tema 1 *(Minimal 4 Contoh)*
+*Mengunci Tema 1 dan menaikkan kerumitan 1 langkah per contoh menggunakan prinsip Clean Code (`const uint8_t`, `millis()`, bebas komentar pemalas).*
+
+#### Contoh 1 — Kasus Paling Dasar (*Minimal Working Example*) `[INTI: SMK & Mahasiswa]`
+```cpp
+// src/01_dasar.ino
+```
+* **Penjelasan Baris Kunci & Hasil Simulasi Wokwi:** [Uraikan kerja setiap baris dan perilaku fisik di Wokwi.]
+
+#### Contoh 2 — Variasi Argumen / Pin / Parameter Waktu `[INTI: SMK & Mahasiswa]`
+```cpp
+// src/02_variasi.ino
+```
+* **Pelacakan Kondisi Variabel (*State Tracing*):**
+  ```text
+  Siklus Loop 1 (t = 0 ms)   -> variabel X = ..., status Pin = ...
+  Siklus Loop N (t = 500 ms) -> kondisi terpenuhi -> status Pin berubah menjadi ...
+  ```
+
+#### Contoh 3 — Kombinasi Menengah (Sensor/Input + Aktuator/Pewaktu Non-Blocking) `[INTI: SMK & Mahasiswa]`
+```cpp
+// src/03_kombinasi.ino
+```
+* **Pelacakan Alur Sinyal (*Step-by-Step Trace*):** [Tunjukkan nilai pembacaan sensor masuk ke logika kondisi hingga menggerakkan aktuator.]
+
+#### Contoh 4 — Implementasi Terapan, Debouncing, & Keamanan Perangkat `[PENDALAMAN: Mahasiswa / SMK Lanjutan]`
+```cpp
+// src/04_produksi_edge_case.ino
+```
+* **Analisis Keandalan & Alokasi Memori:** [Penjelasan guard clause, timeout `pulseIn`, pencegahan *bouncing* tombol, atau eliminasi *CPU blocking*.]
+
+---
+
+### 5. Verifikasi Rangkaian, Rumus Elektronika, & Debugging (*Common Pitfalls*) `[INTI: SMK & Mahasiswa]`
+* **Analisis Rangkaian & Rumus Elektronika:**
+  [Perhitungan nilai resistor pembatas arus menggunakan Hukum Ohm: $R = \frac{V_s - V_f}{I_f}$, perhitungan jarak ultrasonik, atau analisis arus motor driver L298N.]
+* **Tabel Ekspektasi Simulasi Contoh 1–4 & Kesalahan Umum Wokwi:**
+  | Gejala Error / Perilaku Salah di Wokwi | Penyebab pada Kode / Rangkaian | Solusi Tepat |
+  | :--- | :--- | :--- |
+  | [Misal: LED tidak menyala / servo bergetar] | [Lupa common GND / pin bukan PWM / `delay()` menghambat sensor] | [Perbaikan konkret kabel/kode] |
+
+---
+
+### 6. Latihan Praktikum Berkelanjutan Multi-Tema *(4 Level)*
+* **Level 1 — Pemahaman Fungsi & *Tracing* Sinyal *(Tema 1)* `[INTI: SMK & Mahasiswa]`:** Prediksi perubahan variabel/status pin dari potongan kode 3–5 baris & perbaikan 1 bug argumen kecil.
+* **Level 2 — Modifikasi Terarah di Wokwi *(Tema 1 — Pola Kembar Contoh)* `[INTI: SMK & Mahasiswa]`:** Mengubah parameter ambang batas/pin atau menambahkan 1 indikator LED/periferal sederhana pada rangkaian Tema 1.
+* **Level 3 — Praktikum Berkelanjutan: Transfer ke subsistem Robotika *(Tema 2)* `[INTI LANJUT: SMK Lanjutan & Mahasiswa]`:** Menerapkan konsep modul ini ke subsistem **Tema 2** (Motor Driver / Line Follower / Pemadam Api) sebagai milestone yang akan digabungkan pada tahap berikutnya.
+* **Level 4 — Praktikum Berkelanjutan: Kasus Batas, Optimasi, & Telemetri *(Tema 2 / Tema 3)* `[PENDALAMAN: Mahasiswa / Pengayaan SMK]`:** Menangani skenario *noise* sensor / multi-tasking `millis()` atau menyiapkan payload JSON/MQTT untuk **Tema 3 (ESP32)**.
+
+---
+
+### 7. Cek Mandiri, Milestone Tema, & Checklist Verifikasi Wokwi `[INTI: SMK & Mahasiswa]`
+* **Indikator Hasil Level 1–2 (Tema 1):** Ringkasan jawaban akhir/perilaku simulasi yang benar tanpa membocorkan kode penuh Level 3–4.
+* **Checklist Kesiapan Milestone Tema 2 & 3:** Daftar centang pengujian di Wokwi (Serial Monitor output, logika aktuator, tidak ada pin mengambang).
+
+---
+
+### 8. Ringkasan Fungsi & Refleksi Pemahaman `[INTI: SMK & Mahasiswa]`
+* Tabel rangkuman fungsi C++ yang dipelajari, parameter kritis, tipe data hemat memori, dan nilai kembaliannya.
+* 2 pertanyaan refleksi teknis (termasuk transfer logika dari Tema 1 ke Tema 2).
 ```
 
 ---

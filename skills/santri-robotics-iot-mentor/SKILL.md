@@ -42,36 +42,18 @@ DILARANG KERAS langsung menyajikan modul lengkap sebelum konfirmasi diberikan.
 
 ---
 
-## Format Standar Modul Pembelajaran (5 Bagian Terpadu)
+## Format Standar Modul Pembelajaran (8 Bagian Terpadu — Mengacu `template-tutor.md`)
 
-Setiap kali menyusun modul atau lembar materi, gunakan struktur wajib berikut secara konsisten:
+Setiap kali menyusun modul atau lembar materi, gunakan struktur 8 bagian sesuai [template-tutor.md](../../rules/templates/template-tutor.md) dengan penanda jalur (`[INTI]` vs `[PENDALAMAN]`) dan **3 Tema Berkelanjutan** (**Tema 1:** Otomasi Fasilitas, **Tema 2:** Robotika Navigasi & Keselamatan, **Tema 3:** Telemetri IoT ESP32):
 
-### 1. Pengantar Konsep Rekayasa
-* Penjelasan singkat mengenai cara kerja sistem di dunia fisik dan alasan teknis mengapa konsep tersebut diperlukan.
-
-### 2. Kamus Teknis: Fungsi dan Argumen
-Bedah setiap fungsi yang diperkenalkan dengan format:
-* **Fungsi**: Penjelasan peran teknis fungsi tersebut.
-* **Format Sintaksis**: Format penulisan kode dalam bahasa C++.
-* **Argumen yang Tersedia**:
-  * **Argumen 1 (`nama_parameter`)**:
-    * **Tipe Data**: (`uint8_t`, `int`, `unsigned long`, dll.)
-    * **Peran**: Fungsi parameter tersebut.
-    * **Nilai yang Valid / Konstanta**: Pilihan nilai sah (contoh: `HIGH`, `LOW`, `INPUT`, `OUTPUT`, `INPUT_PULLUP`).
-  * **Argumen 2 (`nama_parameter`)**: (Uraian serupa jika fungsi memiliki parameter lanjutan).
-
-### 3. Implementasi Kode Bersih (*Clean Code*)
-* Potongan kode sumber yang modular, hemat alokasi memori (penggunaan `const uint8_t` untuk pin, eliminasi variabel global berlebih), dan dilengkapi komentar penjelasan pada baris kuncinya.
-
-### 4. Skema Perakitan Virtual di Wokwi
-* Diagram jalur koneksi terminal (ASCII atau daftar tabel pinout yang jelas).
-* Langkah-langkah penyambungan komponen di simulator Wokwi.
-* Catatan analisis rangkaian dan rumus dasar elektronika (misal: Hukum Ohm $V = I \times R$ untuk penentuan resistor LED atau driver beban induktif).
-
-### 5. Lembar Latihan & Penguatan Logika
-* **Latihan 1 (Manipulasi Nilai Argumen)**: Menguji pengaruh perubahan parameter terhadap perilaku sistem.
-* **Latihan 2 (Penambahan Komponen/Fungsi)**: Mengembangkan sirkuit dengan periferal baru.
-* **Latihan 3 (Studi Kasus Otomasi Nyata)**: Tantangan mandiri menyelesaikan skenario logika robotika.
+1. **Prasyarat, Jembatan Konsep Rekayasa, & Peta Alur** `[INTI]`: Pengingat prasyarat cepat, alasan teknis sistem fisik (*Why Before How* tanpa analogi non-teknis), tujuan pembelajaran, dan diagram alur sinyal.
+2. **Kamus Teknis: Fungsi C++, Library, & Argumen** `[INTI]`: Pembedahan setiap fungsi (format sintaksis, tipe data argumen, nilai valid/konstanta, nilai kembalian, dan contoh mikro 1–3 baris).
+3. **Prasyarat Wokwi, Skema Pinout, & Checkpoint 3 Tema** `[INTI]`: Tabel pinout, langkah perakitan virtual di Wokwi (`wokwi.com`), serta peta checkpoint Tema 1–3.
+4. **Implementasi Kode Bersih Bertingkat — Tema 1 (Minimal 4 Contoh)**: Contoh 1 Dasar `[INTI]` → Contoh 2 Variasi Parameter + *State Tracing* `[INTI]` → Contoh 3 Kombinasi + *Step Trace* `[INTI]` → Contoh 4 Terapan, Debouncing, & Keamanan `[PENDALAMAN]`.
+5. **Verifikasi Rangkaian, Rumus Elektronika, & Debugging** `[INTI]`: Perhitungan Hukum Ohm ($R = \frac{V_s - V_f}{I_f}$) / daya aktuator + tabel troubleshooting simulasi Wokwi.
+6. **Latihan Praktikum Berkelanjutan Multi-Tema (4 Level)**: Level 1 *Tracing*/Sintaks & Level 2 Modifikasi Wokwi pada **Tema 1** `[INTI]` → Level 3 Transfer ke subsistem **Tema 2** `[INTI LANJUT]` → Level 4 Kasus Batas, Optimasi, & Payload **Tema 3** `[PENDALAMAN]`.
+7. **Cek Mandiri, Milestone Tema, & Checklist Verifikasi Wokwi** `[INTI]`: Indikator hasil Level 1–2 + checklist kesiapan milestone Tema 2–3.
+8. **Ringkasan Fungsi & Refleksi Pemahaman** `[INTI]`: Tabel ringkasan fungsi C++ hemat memori + pertanyaan refleksi teknis lintas tema.
 
 ---
 

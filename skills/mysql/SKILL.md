@@ -24,10 +24,10 @@ DILARANG KERAS langsung menyajikan modul lengkap sebelum konfirmasi diberikan.
 
 ## Aturan Utama (Invariant Rules)
 - Patuhi aturan universal di [rules/AGENTS.md](../../rules/AGENTS.md).
-- **Wajib Mengikuti Standar Modul Tutor 8 Bagian** di [template-tutor.md](../../rules/templates/template-tutor.md): bedah fungsi/klausa & argumen dasar sebelum praktik, sediakan minimal 4 contoh kueri bertingkat mikro, dan susun latihan 4 level (8–10 soal) untuk jenjang SMK dan Mahasiswa.
+- **Wajib Mengikuti Standar Modul Tutor 8 Bagian** di [template-tutor.md](../../rules/templates/template-tutor.md): sertakan pengingat prasyarat & jembatan konsep, bedah fungsi/klausa & argumen dasar sebelum praktik, sediakan minimal 4 contoh bertingkat mikro disertai *state tracing* dan penanda jalur (`[INTI]` vs `[PENDALAMAN]`), serta susun latihan 4 level (8–10 soal) berbasis **3 Tema Berkelanjutan** untuk jenjang SMK dan Mahasiswa.
 - **Production-Ready & Idempotent SQL**: Dilarang memotong skrip SQL contoh dengan placeholder komentar pemalas (`-- tulis query di sini`). Setiap modul wajib menyertakan DDL, DML data uji, kueri praktikum, dan skrip pembersihan yang langsung dapat dieksekusi di MySQL CLI, MySQL Workbench, atau DBeaver.
 - **Dialek MySQL 8.x Murni**: DILARANG mencampurkan sintaks database lain (seperti `TOP` milik SQL Server, `SERIAL` milik PostgreSQL, atau `GETDATE()`). Gunakan `LIMIT`, `AUTO_INCREMENT`, `NOW()`, dan fitur modern MySQL 8 (`CHECK`, CTE, Window Functions, `EXPLAIN ANALYZE`).
-- **Konsistensi Skema Contoh**: Gunakan skema database relasional yang berkesinambungan dan sesuai nilai halal/edukatif (studi kasus toko retail `toko_db` atau universitas `kampus_db`) agar materi saling terhubung secara logis.
+- **3 Tema Berkelanjutan (*Persistent Lab Tracks*)**: Jaga kesinambungan antar-materi memakai 3 tema halal/edukatif tetap: **Tema 1** `toko_db` (jalur contoh & Level 1–2), **Tema 2** `akademik_db` (transfer berkelanjutan Level 3), dan **Tema 3** `logistik_db` (audit & analitik Level 4 Mahasiswa).
 
 ---
 
@@ -86,12 +86,12 @@ DILARANG KERAS langsung menyajikan modul lengkap sebelum konfirmasi diberikan.
 ## Standar Format Modul Tutor & Praktikum (8 Bagian)
 
 Setiap materi yang dihasilkan wajib mengadopsi struktur 8 bagian terpadu sesuai [template-tutor.md](../../rules/templates/template-tutor.md):
-1. **Bagian 1: Tujuan Pembelajaran & Peta Konsep** (Kemampuan konkret + alur eksekusi ASCII).
-2. **Bagian 2: Kamus Fungsi, Klausa, & Argumen Dasar *(Wajib Terperinci)*** (Bedah setiap keyword, fungsi SQL, tipe argumen/klausa, nilai kembali, dan contoh mikro 1–3 baris).
-3. **Bagian 3: Prasyarat & Skema Database Idempotent** (Skrip `CREATE DATABASE IF NOT EXISTS`, tabel sampel mandiri, minimal 5–10 baris data uji).
-4. **Bagian 4: Contoh Praktik Terpandu Bertingkat (Minimal 4 Contoh Mikro)** (Contoh 1 Paling Dasar → Contoh 2 Variasi Klausa/Argumen → Contoh 3 Kombinasi Menengah → Contoh 4 Terapan Utuh & Edge Case/Optimasi).
-5. **Bagian 5: Verifikasi Hasil Eksekusi & Panduan Debugging** (Tabel ekspektasi output Contoh 1–4 + tabel kesalahan umum & anti-pattern performa).
-6. **Bagian 6: Latihan Soal & Praktikum Berjenjang (4 Level, 8–10 Soal)** (Level 1 Prediksi/Cek Sintaks → Level 2 Modifikasi Terbimbing → Level 3 Kueri Mandiri Terpadu → Level 4 Analisis Kasus & Performa Mahasiswa/SMK Lanjutan).
-7. **Bagian 7: Cek Mandiri & Panduan Verifikasi Latihan** (Ringkasan indikator hasil Level 1–2 untuk belajar mandiri, atau checklist uji untuk modul evaluasi/ujian).
-8. **Bagian 8: Ringkasan Fungsi & Refleksi Pemahaman** (Tabel rangkuman sintaks + pertanyaan pemahaman konseptual).
+1. **Bagian 1: Prasyarat, Jembatan Konsep, & Peta Alur** `[INTI]` (2 soal kilat prasyarat + alasan fitur ada / model mental + alur eksekusi ASCII).
+2. **Bagian 2: Kamus Fungsi, Klausa, & Argumen Dasar *(Wajib Terperinci)*** `[INTI]` (Bedah setiap keyword, fungsi SQL, tipe argumen/klausa, nilai kembali, dan contoh mikro 1–3 baris).
+3. **Bagian 3: Prasyarat Lingkungan & Checkpoint 3 Tema Berkelanjutan** `[INTI]` (Peta progresi & skrip idempotent `toko_db`, `akademik_db`, `logistik_db`).
+4. **Bagian 4: Contoh Praktik Terpandu Bertingkat — Tema 1 (Minimal 4 Contoh Mikro)** (Contoh 1 Dasar `[INTI]` → Contoh 2 Variasi + *State Tracing* `[INTI]` → Contoh 3 Kombinasi + *Step Trace* `[INTI]` → Contoh 4 Terapan & Edge Case `[PENDALAMAN]`).
+5. **Bagian 5: Verifikasi Hasil Eksekusi & Panduan Debugging** `[INTI]` (Tabel ekspektasi output Contoh 1–4 + tabel kesalahan umum & anti-pattern performa).
+6. **Bagian 6: Latihan Soal & Praktikum Berkelanjutan Multi-Tema (4 Level, 8–10 Soal)** (Level 1 *Tracing*/Sintaks & Level 2 Modifikasi pada **Tema 1** `[INTI]` → Level 3 Transfer & Milestone Berkelanjutan pada **Tema 2** `[INTI LANJUT]` → Level 4 Analisis Kasus & Performa pada **Tema 2/3** `[PENDALAMAN]`).
+7. **Bagian 7: Cek Mandiri, Milestone Tema, & Panduan Verifikasi** (Indikator hasil Level 1–2 + checklist kesiapan milestone Tema 2–3, atau checklist uji untuk modul evaluasi).
+8. **Bagian 8: Ringkasan Fungsi & Refleksi Pemahaman** (Tabel rangkuman sintaks + pertanyaan pemahaman konseptual & transfer lintas tema).
 

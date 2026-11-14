@@ -35,6 +35,9 @@ DILARANG KERAS langsung menulis materi ajar lengkap sebelum konfirmasi diberikan
   8. *Pekerjaan Rumah (PR Pondok / Mandiri)* (soal perhitungan rutin, soal cerita, refleksi pemahaman konsep, serta **Kunci Jawaban Akhir Ringkas** untuk cek mandiri).
   9. *Ringkasan Materi* (2–4 poin esensial).
 - **Strict LaTeX KaTeX**: Dilarang menggunakan teks datar tanpa format untuk rumus matematika (seperti `nn+12`, `51-1=4`, `x-2x+2x-2`). Semua variabel, persamaan, pecahan, akar, eksponen, limit, turunan, integral, dan matriks WAJIB diformat menggunakan sintaks KaTeX murni.
+- **Instruksi Terpusat (Anti-Repetisi)**: Jika instruksi soal pada suatu sub-bagian seragam, tuliskan cukup satu kali di sub-judul atau kalimat pengantar (contoh: `#### A. Tentukan nilai $x$ dan $y$ dari sistem persamaan berikut:`). Dilarang mengulang teks instruksi di setiap butir nomor soal.
+- **Bebas Label Meta Authoring**: Dilarang mencantumkan teks internal authoring seperti `*(Pola Kembar Contoh X)*` atau label deskriptif kategori soal (`1. Koefisien positif:`) pada lembar soal siswa.
+- **Kelugasan Materi (Zero Forced Analogy)**: Masuk langsung ke materi konsep secara lugas dan komunikatif. Jangan memaksakan analogi filosofis atau keagamaan yang tidak proporsional/relevan.
 - **Zero Teacher Rubric**: Dilarang menyertakan rubrik penilaian instruktur, lembar penskoran guru, atau catatan fasilitator.
 
 ## Cakupan Silabus (72 Pertemuan / 6 Semester)

@@ -387,7 +387,7 @@ Tabel status dan pemetaan modul skill yang aktif dan tersedia di repositori:
 | **Global Rule** | `rules/AGENTS.md` | Core Supervisor & Process Controller | **Aktif** | Standar komunikasi direct, boundaries, & Mandatory Two-Phase Planning Protocol |
 | **Template** | `rules/templates/template-plan.md` | Planning Architect | **Aktif** | Format baku dokumen perencanaan 5 bagian (.plan/) |
 | **Template** | `rules/templates/template-materi-ajar.md` | Curriculum Author | **Aktif** | Standar modul materi ajar siswa 9 bagian terkalibrasi 80 menit/minggu, LaTeX KaTeX, Scaffolding Halus |
-| **Template** | `rules/templates/template-tutor.md` | Technical Tutor & Lab Architect | **Aktif** | Standar modul tutor & praktikum 8 bagian (SMK & Mahasiswa): Kamus Fungsi/Argumen, 4 Contoh Mikro, & 4 Level Latihan |
+| **Template** | `rules/templates/template-tutor.md` | Technical Tutor & Lab Architect | **Aktif** | Standar modul tutor & praktikum 8 bagian (SMK & Mahasiswa): Model Mental, Kamus Fungsi, 4 Contoh + *State Tracing*, `[INTI]` vs `[PENDALAMAN]`, & Praktikum Berkelanjutan 2–3 Tema |
 | **Skill** | `skills/task-management-ui` | Mobile UI/UX Architect | **Aktif** | Dual-Engine (Flutter & React): Task Dashboard, Gradient Slider, Detail Sheet, Create Form |
 | **Skill** | `skills/coffee-shop-ui` | Coffee Shop UI/UX Specialist | **Aktif** | Nam Design Styleguide (Sora, #C67C4E), 5 Layar Pemesanan Kopi, Dual-Engine (Flutter & React) |
 | **Skill** | `skills/food-delivery-ui` | Food Delivery UI/UX Architect | **Aktif** | Dual-Engine (Flutter & React): 24+ Layar Customer App & Chef Marketplace (#FF7622) |
@@ -399,7 +399,7 @@ Tabel status dan pemetaan modul skill yang aktif dan tersedia di repositori:
 | **Skill** | `skills/zenith-ui` | Multi-Engine UI Architect | **Aktif** | Zenith Modern Dashboard & Web UI (Native CSS, Tailwind CSS, Bootstrap 5) |
 | **Skill** | `skills/viral-news-analyzer` | Media Intelligence Analyst | **Aktif** | Pemantauan isu viral medsos, verifikasi akurasi cek fakta, polarisasi pro-kontra, & arsip laporan .md (reports/viral/) |
 | **Skill** | `skills/fact-verifier` | Fact-Checker & Investigative Verifier | **Aktif** | Uji silang multi-sumber resmi (minimal 2 media), ekstraksi kutipan asli (verbatim), & tautan URL artikel asli |
-| **Skill** | `skills/santri-robotics-iot-mentor` | Embedded Systems & IoT Mentor | **Aktif** | Kurikulum 5 Tahap Robotika & IoT (Tong Sampah Otomatis, Line Follower, Pemadam Api, Telemetri ESP32 & DB) |
+| **Skill** | `skills/santri-robotics-iot-mentor` | Embedded Systems & IoT Mentor | **Aktif** | Kurikulum 5 Tahap Robotika & IoT, 8 Bagian Tutor/Lab Wokwi (`template-tutor.md`), & 3 Tema Berkelanjutan |
 
 ---
 

@@ -33,6 +33,9 @@ DILARANG KERAS langsung menulis materi ajar lengkap sebelum konfirmasi diberikan
   8. *Pekerjaan Rumah (PR Pondok / Mandiri)* (soal rutin, soal cerita, refleksi konsep, dan Kunci Jawaban Akhir Ringkas untuk cek mandiri).
   9. *Ringkasan Materi* (2–4 poin inti paling esensial).
 - **Kalibrasi Tingkat Kesulitan SMP (80 Menit/Minggu)**: Utamakan bilangan bulat/rasional ramah hitung, hindari hasil akar irasional atau manipulasi pecahan aljabar rumit kecuali menjadi materi pokok pertemuan, dan gunakan instruksi soal yang ringkas.
+- **Instruksi Terpusat (Anti-Repetisi)**: Jika instruksi soal pada suatu sub-bagian seragam, tuliskan cukup satu kali di sub-judul atau kalimat pengantar (contoh: `#### A. Tentukan nilai $x$ dan $y$ dari sistem persamaan berikut:`). Dilarang mengulang teks instruksi di setiap butir nomor soal.
+- **Bebas Label Meta Authoring**: Dilarang mencantumkan teks internal authoring seperti `*(Pola Kembar Contoh X)*` atau label deskriptif kategori soal (`1. Koefisien positif:`) pada lembar soal siswa.
+- **Kelugasan Materi (Zero Forced Analogy)**: Masuk langsung ke materi konsep secara lugas dan komunikatif. Jangan memaksakan analogi filosofis atau keagamaan yang tidak proporsional/relevan.
 
 ## Cakupan Silabus (72 Pertemuan)
 1. **Kelas 7**:

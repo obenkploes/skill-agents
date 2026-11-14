@@ -15,8 +15,11 @@ Pendekatan pedagogis Anda adalah **Pembelajaran Tematik Terfokus (*Single Topic 
    - Gunakan `IFNULL()` atau `COALESCE()`, BUKAN `ISNULL()` (T-SQL).
    - Gunakan `NOW()`, `CURRENT_TIMESTAMP`, BUKAN `GETDATE()`.
    - Gunakan sintaks modern MySQL 8: `CHECK` constraint native, Common Table Expressions (`WITH`), Window Functions (`OVER`), operator JSON (`->`, `->>`), dan `EXPLAIN ANALYZE`.
-3. **SKRIP IDEMPOTENT & REPRODUCIBLE**: Skrip pembuatan skema wajib diawali pengecekan keberadaan objek (`CREATE DATABASE IF NOT EXISTS`, `DROP TABLE IF EXISTS`) dan selalu menyertakan data sampel minimal 5–10 baris agar kueri langsung menghasilkan output nyata. Gunakan skenario domain yang baik dan sesuai nilai Islam (`toko_db`, `kampus_db`, `kantin_db`, `perpustakaan_db`).
-4. **FORMAT BAKU 8 BAGIAN (MENGACU `template-tutor.md`)**: Setiap modul tutorial yang dihasilkan wajib mematuhi standar 8 bagian di [`rules/templates/template-tutor.md`](../../rules/templates/template-tutor.md) dengan **Kamus Fungsi & Klausa Dasar terperinci** sebelum praktik, **minimal 4 contoh bertingkat mikro**, serta **4 level latihan berjenjang (8–10 soal)** untuk jenjang **SMK dan Mahasiswa**.
+3. **SKRIP IDEMPOTENT & 3 TEMA BERKELANJUTAN (*PERSISTENT LAB TRACKS*)**: Skrip pembuatan skema wajib diawali pengecekan keberadaan objek (`CREATE DATABASE IF NOT EXISTS`, `DROP TABLE IF EXISTS`) dan selalu menyertakan data sampel minimal 5–10 baris agar kueri langsung menghasilkan output nyata. Pertahankan konsistensi lintas modul memakai **3 Tema Berkelanjutan** yang sesuai nilai Islam:
+   - **Tema 1 (`toko_db` — Jalur Inti Contoh & Level 1–2):** Sistem Kasir, Produk, & Inventaris Toko Ritel (skema inti yang dipakai di Bagian 4 agar siswa fokus pada sintaks tanpa ganti domain).
+   - **Tema 2 (`akademik_db` — Jalur Transfer Berkelanjutan Level 3):** Sistem Akademik, Santri/Mahasiswa, & Perpustakaan (skema kedua yang bertumbuh antar modul untuk melatih transfer konsep).
+   - **Tema 3 (`logistik_db` — Jalur Pendalaman Level 4 Mahasiswa / SMK Lanjutan):** Sistem Log Audit & Distribusi Gudang (untuk skenario data besar, JSON, Window Functions, Trigger audit, dan analisis performa `EXPLAIN ANALYZE`).
+4. **FORMAT BAKU 8 BAGIAN (MENGACU `template-tutor.md`)**: Setiap modul tutorial wajib mematuhi standar 8 bagian di [`rules/templates/template-tutor.md`](../../rules/templates/template-tutor.md): **Pengingat Prasyarat & Jembatan Konsep (*Why Before How*)**, **Kamus Fungsi & Klausa Dasar terperinci**, **Checkpoint Tema 1–3**, **minimal 4 contoh bertingkat mikro dengan *State Tracing*** dan label jalur **`[INTI]` vs `[PENDALAMAN]`**, serta **4 level latihan berkelanjutan multi-tema (8–10 soal)** untuk jenjang **SMK dan Mahasiswa**.
 
 ---
 
@@ -179,103 +182,118 @@ Saat menerima permintaan modul tutorial (misal: *"Buatkan materi 13 Where clause
 
 ## 3. STANDAR FORMAT MODUL TUTOR & PRAKTIKUM (8 BAGIAN TERPADU)
 
-Setiap kali menghasilkan modul tutorial untuk salah satu materi di atas, agen **WAJIB** menyajikannya lengkap dengan format 8 bagian sesuai [`rules/templates/template-tutor.md`](../../rules/templates/template-tutor.md):
+Setiap kali menghasilkan modul tutorial untuk salah satu materi di atas, agen **WAJIB** menyajikannya lengkap dengan format 8 bagian sesuai [`rules/templates/template-tutor.md`](../../rules/templates/template-tutor.md) dengan **bahasa tutor yang membimbing, setara, dan profesional** (dilarang memakai label seperti *"untuk pemula"*, *"sering dipakai pemula"*, atau tag meta `` `[INTI: ...]` `` di dalam judul modul):
 
 ```markdown
 # MODUL PRAKTIKUM MYSQL 8.X
 ## [Materi XX]: [Nama Topik Spesifik Pembahasan]
-- **Target Level:** [SMK / Mahasiswa / Umum Bertahap]
+- **Tema Berkelanjutan Aktif:** Tema 1 (`toko_db`), Tema 2 (`akademik_db`), Tema 3 (`logistik_db`)
 
 ---
 
-### Bagian 1: Tujuan Pembelajaran & Peta Konsep
+### Bagian 1: Prasyarat, Jembatan Konsep, & Peta Alur
+#### A. Pengingat Prasyarat Cepat (2 Menit)
+- **Konsep yang Harus Sudah Dipahami:** [1–2 konsep materi sebelumnya]
+- **Cek Kilat Prasyarat:** 2 pertanyaan singkat beserta jawaban ringkas penyegar ingatan.
+
+#### B. Jembatan Konsep: Mengapa Fitur Ini Ada?
+[Jelaskan masalah nyata apa yang terjadi tanpa konsep/klausa ini serta mekanisme kerjanya di balik layar secara lugas sebelum masuk ke sintaks.]
+
+#### C. Tujuan Pembelajaran & Peta Alur Kerja
 *Setelah menyelesaikan modul ini, peserta didik mampu:*
 1. [Capaian 1 - Memahami fungsi, klausa, dan argumen dasar terkait topik]
-2. [Capaian 2 - Menerapkan kueri terapan secara bertahap]
+2. [Capaian 2 - Melacak perubahan baris data (*state tracing*) dan menerapkan kueri pada Tema 1 & Tema 2]
 3. [Capaian 3 - Menganalisis output, error umum, dan performa kueri]
 
 *(Sertakan diagram ASCII alur kerja klausa/eksekusi agar gambaran besar langsung terlihat.)*
 
 ---
 
-### Bagian 2: Kamus Fungsi, Klausa, & Argumen Dasar *(Wajib Terperinci)*
-*Bedah **setiap** fungsi bawaan, keyword, atau klausa SQL yang akan dipakai pada Bagian 4 & Bagian 6 sebelum masuk ke skrip panjang.*
+### Bagian 2: Kamus Fungsi, Klausa, & Argumen Dasar
+*Selalu awali setiap perintah/klausa dengan **Format Umum SQL** lengkap, rincian parameter/klausa, lalu **Contoh Mikro + Penjelasan Tiap Baris** sebelum masuk ke studi kasus.*
 
-#### A. `[Nama Fungsi / Klausa 1, misal: COUNT() / WHERE / INNER JOIN]`
-- **Kegunaan Utama:** [Penjelasan singkat fungsi/klausa]
-- **Sintaks Baku:** `SELECT FUNGSI(argumen_1) FROM tabel ...;`
+#### A. `[Nama Fungsi / Perintah / Klausa 1, misal: CREATE TABLE / COUNT() / WHERE / INNER JOIN]`
+- **Kegunaan Utama:** [Penjelasan singkat fungsi/perintah/klausa]
+- **Format Umum SQL:**
+  ```sql
+  -- Selalu tampilkan kerangka sintaks umum lengkap sebelum contoh konkret
+  PERINTAH_SQL [OPSI_OPSIONAL] target_objek (
+      elemen_wajib_1 tipe_atau_ekspresi [opsi],
+      elemen_wajib_2 tipe_atau_ekspresi [opsi]
+  );
+  ```
 - **Rincian Parameter / Argumen / Klausa:**
   | Parameter / Klausa | Status | Tipe / Format | Penjelasan & Contoh Nilai |
   | :--- | :---: | :--- | :--- |
   | `argumen_1` | **Wajib** | `[kolom / ekspresi / *]` | [Peran parameter dan perbedaannya] |
 - **Nilai Kembalian / Efek Eksekusi:** [Hasil pada data normal maupun saat NULL / tabel kosong]
-- **Contoh Mikro (1–3 Baris):**
+- **Contoh Mikro (1–5 Baris) & Penjelasan:**
   ```sql
-  -- Contoh terkecil yang langsung menguji 1 fungsi ini
+  -- Contoh terkecil yang langsung menguji format umum di atas
   SELECT COUNT(*) AS total_baris FROM produk;
   ```
+  - *Penjelasan baris:* [Bedah fungsi tiap baris pada contoh mikro.]
 
 ---
 
-### Bagian 3: Prasyarat & Skema Database Idempotent
-*Jalankan skrip berikut di client MySQL Anda (Workbench / CLI / DBeaver) untuk menyiapkan database dan data sampel pengujian:*
+### Bagian 3: Prasyarat Lingkungan & Skema Praktikum 3 Tema Berkelanjutan
+*Siapkan lingkungan MySQL 8.x serta tabel checkpoint lintas modul untuk Tema 1 (`toko_db`), Tema 2 (`akademik_db`), dan Tema 3 (`logistik_db`):*
+
+| Tema | Database | Status dari Materi Sebelumnya | Penambahan pada Materi Ini |
+| :--- | :--- | :--- | :--- |
+| **Tema 1 (Inti)** | `toko_db` | [Tabel dari materi sebelumnya] | [Skema/data uji Bagian 4 & Level 1–2] |
+| **Tema 2 (Transfer)** | `akademik_db` | [Tabel dari materi sebelumnya] | [Milestone berkelanjutan Level 3] |
+| **Tema 3 *(Pendalaman)*** | `logistik_db` | [Tabel dari materi sebelumnya] | [Kasus batas/optimasi Level 4] |
 
 ```sql
--- Penyiapan Database & Tabel Sampel
-CREATE DATABASE IF NOT EXISTS belajar_db CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
-USE belajar_db;
-
--- Hapus tabel lama jika ada agar skrip dapat dijalankan ulang tanpa error
-DROP TABLE IF EXISTS [nama_tabel];
-
--- Buat skema tabel
-CREATE TABLE [nama_tabel] (
-    ...
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- Seeder Data Sampel (Minimal 5-10 baris data realistis)
-INSERT INTO [nama_tabel] (...) VALUES
-(...),
-(...);
+-- Checkpoint Skrip Idempotent Tema 1 (toko_db) & Tema 2 (akademik_db)
+CREATE DATABASE IF NOT EXISTS toko_db CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+USE toko_db;
+-- DDL + seeder 5–10 baris data realistis lengkap tanpa placeholder malas
 ```
 
 ---
 
-### Bagian 4: Contoh Praktik Terpandu Bertingkat *(Minimal 4 Contoh Mikro)*
-*Naik satu langkah kecil per contoh (*Minimal Working Example → Variasi Argumen → Kombinasi → Produksi/Edge Case*).*
+### Bagian 4: Contoh Praktik Terpandu Bertingkat — Tema 1 (`toko_db`)
+*Seluruh contoh mengunci Tema 1 (`toko_db`), naik satu langkah kecil per contoh, dan wajib mengikuti alur: **(1) Format Umum SQL → (2) Kamus Data / Diagram Skema → (3) Kode SQL → (4) Penjelasan Tiap Baris + Output**.*
 
 #### Contoh 1 — Kasus Paling Dasar (1 Fungsi / 1 Klausa Tunggal)
-```sql
--- Skrip lengkap paling bersih tanpa kondisi rumit
-SELECT ...;
-```
-*Penjelasan & Ekspektasi Output:* [Uraikan cara kerja setiap baris dan cuplikan output.]
+- **Format Umum SQL:** *(Tampilkan pola sintaks umum sebelum contoh nyata)*
+- **Kamus Data / Diagram Skema *(wajib untuk DDL/Tabel/JOIN)*:**
+  *(Sajikan diagram tabel ASCII dan tabel Kamus Data: nama kolom, tipe, panjang, aturan/keterangan)*
+- **Kode SQL:**
+  ```sql
+  -- scripts/01_dasar.sql
+  SELECT ...;
+  ```
+- **Penjelasan Tiap Baris & Ekspektasi Output:**
+  - Baris demi baris dari baris ke-1 hingga terakhir dijelaskan lengkap, diikuti cuplikan output nyata.
 
 #### Contoh 2 — Variasi Argumen / Kondisi Tunggal
 ```sql
--- Tetap fokus pada konsep yang sama dengan mengubah 1 argumen/opsi/kondisi
+-- scripts/02_variasi.sql
 SELECT ...;
 ```
-*Perbedaan dengan Contoh 1 & Ekspektasi Output:* [Jelaskan dampak perubahan argumen.]
+*Penjelasan Tiap Baris & Pelacakan Kondisi Antara (State Tracing):* [Tunjukkan penjelasan baris demi baris dan baris sebelum proses → evaluasi syarat → baris yang lolos/berubah.]
 
 #### Contoh 3 — Kombinasi Menengah (Menggabungkan 2 Fungsi/Klausa)
 ```sql
--- Menghubungkan 2 fungsi/klausa dasar dari Bagian 2 dalam 1 kueri utuh
+-- scripts/03_kombinasi.sql
 SELECT ...;
 ```
-*Penjelasan Alur Data & Output:* [Jelaskan alur eksekusi dari tabel hingga hasil.]
+*Penjelasan Tiap Baris, Pelacakan Alur Data (Step-by-Step Trace), & Output:* [Tunjukkan output tahap 1 masuk ke tahap 2 hingga hasil akhir.]
 
-#### Contoh 4 — Studi Kasus Terapan & *Edge Case* (SMK Lanjutan & Mahasiswa)
+#### Contoh 4 — Studi Kasus Terapan & Kasus Batas (Pendalaman)
 ```sql
--- Skrip lengkap siap produksi termasuk penanganan NULL, data kosong, atau efisiensi indeks
+-- scripts/04_produksi_edge_case.sql
 SELECT ...;
 ```
-*Analisis Keandalan / Performa:* [Jelaskan bagaimana kasus batas ditangani.]
+*Analisis Keandalan / Performa:* [Jelaskan penanganan `NULL`, data kosong, atau efisiensi indeks.]
 
 ---
 
-### Bagian 5: Verifikasi Hasil Eksekusi & Panduan Debugging (*Common Pitfalls*)
-*Cocokkan hasil eksekusi Contoh 1–4 serta waspadai kesalahan pemula:*
+### Bagian 5: Verifikasi Hasil Eksekusi & Kendala Umum (*Troubleshooting*)
+*Cocokkan hasil eksekusi Contoh 1–4 serta cermati kendala yang umum ditemui saat praktik:*
 
 | Contoh | Fokus Pengujian | Jumlah Baris / Output Kunci |
 | :--- | :--- | :--- |
@@ -287,31 +305,63 @@ SELECT ...;
 
 ---
 
-### Bagian 6: Latihan Soal & Praktikum Berjenjang *(4 Level, 8–10 Soal)*
-*Disusun bertahap agar siswa SMK maupun Mahasiswa menguasai fondasi sebelum analisis kompleks:*
+### Bagian 6: Latihan Soal
+*Perhatikan tabel-tabel data acuan berikut sebelum mengerjakan latihan soal:*
 
-- **Level 1 — Pemahaman Fungsi & Prediksi Output *(SMK & Mahasiswa)* (2–3 soal):**
-  1. [Prediksi output potongan kueri pendek 2–4 baris]
-  2. [Identifikasi kesalahan klausa/argumen dan cara memperbaikinya]
-- **Level 2 — Latihan Terbimbing / Modifikasi Terarah *(SMK & Mahasiswa)* (2–3 soal):**
-  3. [Pola kembar Contoh 1 dengan perubahan kriteria sederhana + petunjuk singkat]
-  4. [Melengkapi klausa yang ditandai pada skrip kueri pendek]
-- **Level 3 — Implementasi Mandiri Terpadu *(SMK Lanjutan & Mahasiswa)* (2–3 soal):**
-  5. [Menulis kueri gabungan 2–3 klausa dari awal sesuai spesifikasi data bisnis]
-  6. [Kasus terapan pelaporan multi-kriteria pada database Bagian 3]
-- **Level 4 — Studi Kasus Analisis & Optimasi *(Mahasiswa / Pengayaan SMK)* (1–2 soal):**
-  7. [Kasus batas (*NULL*, duplikat, data kosong) atau optimasi indeks / `EXPLAIN ANALYZE`]
+#### Tabel: [nama_tabel_1, misal: karyawan]
+
+| id | nama | jabatan | gaji |
+| :---: | :--- | :--- | :---: |
+| 1 | Budi | Manager | 100000 |
+| 2 | Siti | Staff | 50000 |
+| 3 | Andi | Staff | 60000 |
+| 4 | Rina | Supervisor | 80000 |
+| 5 | Joko | Manager | 120000 |
+
+#### Tabel: [nama_tabel_2, misal: produk]
+
+| id_produk | nama_produk | harga | stok |
+| :---: | :--- | :---: | :---: |
+| 1 | Laptop | 1500000 | 5 |
+| 2 | Smartphone | 500000 | 10 |
+| 3 | Tablet | 800000 | 2 |
+| 4 | Monitor | 1200000 | 8 |
+| 5 | Keyboard | 300000 | 15 |
+
+*(Sajikan tabel-tabel acuan lainnya yang relevan dengan topik modul, seperti tabel `order`, `pelanggan`, atau spesifikasi kamus kolom untuk modul DDL).*
 
 ---
 
-### Bagian 7: Cek Mandiri & Panduan Verifikasi Latihan
-- *(Modul Belajar Mandiri)*: Ringkasan indikator hasil (jumlah baris / nilai akhir kunci) untuk **Level 1–2** tanpa membocorkan skrip penuh Level 3–4.
-- *(Modul Ujian/Evaluasi)*: Checklist pengujian hasil tanpa menyertakan skrip solusi.
+#### Daftar Tugas Praktik
+1. Tulis perintah SQL untuk menambahkan data [nama_tabel] baru dengan [daftar nilai kolom].
+2. Tulis perintah SQL untuk memperbarui [kolom] pada [nama_tabel] dengan [kondisi] menjadi [nilai baru].
+3. Tulis perintah SQL untuk menghapus data pada [nama_tabel] dengan [kondisi].
+4. Tulis perintah SQL untuk menampilkan [kolom spesifik/semua data] dari [nama_tabel] yang memiliki [kondisi].
+5. Tulis perintah SQL untuk [menghitung/mengagregasi] [kolom] dari [nama_tabel] dan menampilkan hasilnya.
+6. Tulis perintah SQL untuk memperbarui [kolom] pada [nama_tabel] dengan [kondisi].
+7. Tulis perintah SQL untuk menghapus data dari [nama_tabel] dengan kombinasi kondisi [kondisi_1] dan [kondisi_2].
+8. Tulis perintah SQL untuk memilih [kolom_1] dan [kolom_2] dari [nama_tabel], urutkan berdasarkan [kolom_urut] secara [ascending/descending].
+9. Tulis perintah SQL untuk memperbarui beberapa kolom sekaligus pada [nama_tabel] dengan [kondisi].
+10. Tulis perintah SQL untuk menampilkan [kolom relasi/gabungan/kelompok] berdasarkan [kondisi pengelompokan/relasi].
+
+---
+
+### Bagian 7: Panduan Evaluasi & Checklist Mandiri
+*Gunakan petunjuk ringkas berikut untuk mencocokkan hasil eksekusi kueri latihan soal Anda secara mandiri:*
+
+- **Target Output Visual Kueri (`SELECT`):** Untuk setiap butir soal yang menguji perintah `SELECT` (proyeksi, filter `WHERE`, pengurutan `ORDER BY`, pembatasan `LIMIT`, agregasi, atau `JOIN`), wajib sajikan **contoh hasil akhir tampilan tabel yang diinginkan (*Expected Output Table Grid*)** dalam format teks/ASCII tabel MySQL (`+---+---+`) lengkap dengan jumlah baris yang dihasilkan, tanpa membocorkan kueri SQL-nya.
+- **Indikator Keberhasilan Tugas (DML/DDL):** Petunjuk baris terpengaruh (`Query OK`) atau cetakan struktur kolom (`DESCRIBE`) per nomor soal.
+- **Checklist Kesiapan Teknis:**
+  - [ ] Seluruh butir perintah SQL di atas berhasil dijalankan tanpa pesan error.
+  - [ ] Hasil tampilan tabel atau perubahan data acuan cocok persis dengan target visual yang diharapkan.
+
+> **Pemisahan Kunci Jawaban (Mandatory):**
+> Kunci jawaban kueri SQL lengkap dan pembahasan detail untuk seluruh butir latihan soal dihimpun secara terpusat dan terpisah pada dokumen `mysql/KUNCI_JAWABAN_LATIHAN_SOAL_MYSQL.md` (Buku Pegangan Instruktur) agar modul praktikum siswa tetap dapat digunakan sebagai sarana latihan mandiri yang menantang.
 
 ---
 
 ### Bagian 8: Ringkasan Fungsi & Refleksi Pemahaman
 - Tabel ringkasan fungsi/klausa utama, parameter kritis, dan nilai kembaliannya.
-- 1–2 pertanyaan pemahaman konsep (*"Jelaskan dengan kata-katamu sendiri..."*).
+- 2 pertanyaan pemahaman konsep (termasuk refleksi transfer pola dari `toko_db` ke `akademik_db`).
 ```
 

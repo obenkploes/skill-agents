@@ -11,6 +11,11 @@ Aturan baku penyusunan modul **Materi Ajar** yang dibaca, dipelajari, dan dikerj
 > 4. **Latihan Bertingkat Halus (*Smooth Scaffolding*):** Bangun pemahaman lewat repetisi bertahap (terbimbing → penguasaan prosedur 4–5 soal → soal cerita terpisah → 1 soal tantangan opsional), **bukan** loncat langsung dari 2 soal dasar ke soal pecahan/akar atau HOTS.
 > 5. **Format Bersih & Portabel:** Gunakan LaTeX KaTeX murni (`$...$` inline, `$$...$$` display block) dan penomoran standar agar rapi saat dibuka di Google Docs maupun penampil Markdown.
 > 6. **Konteks & Kosakata Sesuai Nilai Islam:** Gunakan latar yang baik dan halal (`kantin`, `toko`, `pasar`, `zakat`, `infak`, `bola bernomor`); **hindari** istilah atau konteks yang bertentangan dengan Islam seperti `koperasi`, transaksi berbunga/riba (`bunga bank`, `bunga tunggal/majemuk`), `dadu`, `kartu remi`, `undian`, atau `musik`.
+> 7. **Instruksi Terpusat (Anti-Repetisi):** Jika instruksi soal pada suatu sub-bagian seragam, tuliskan kalimat instruksi **cukup satu kali** di judul atau kalimat pengantar sub-bagian (contoh: `#### A. Tentukan nilai $x$ dan $y$ dari sistem persamaan berikut:`). **DILARANG MENGULANG** kalimat instruksi yang sama di setiap butir nomor soal (`1. Tentukan nilai x dan y...`, `2. Tentukan nilai x dan y...`). Setiap butir nomor soal langsung menyajikan bentuk matematisnya secara bersih (`1. $$...$$`, `2. $$...$$`).
+> 8. **Bebas Label Meta Internal Authoring:** DILARANG mencantumkan teks panduan internal authoring seperti `*(Pola Kembar Contoh 1)*`, `*(Pola Kembar Contoh 2)*`, atau label deskriptif kategori soal (`1. Koefisien bulat positif sederhana:`, `2. Memuat suku koefisien negatif:`) pada lembar latihan siswa. Prinsip *Contoh Kembar* dan scaffolding bertahap adalah panduan perancangan bagi penyusun modul, bukan teks untuk dicetak pada soal siswa.
+> 9. **Kelugasan Konsep & Zero Forced Analogy:** Awali penjelasan konsep secara lugas, komunikatif, dan langsung ke inti materi matematis. Jangan memaksakan analogi filosofis, ayat, atau dalil keagamaan jika tidak relevan secara ilmiah atau terkesan dibuat-buat. Gunakan analogi fenomena alam atau keseharian konkret yang proporsional dan masuk akal. Bila konsep sudah jelas, langsung masuk ke materi inti.
+> 10. **Format Penyelesaian Menurun Baris per Baris (Anti-Teks Menumpuk):** Seluruh proses perhitungan, pemetaan variabel, dan penjabaran aljabar pada contoh soal dan pembahasan **WAJIB ditulis menurun ke bawah baris per baris** (menggunakan lingkungan KaTeX `\begin{aligned} ... \end{aligned}` atau blok baris terpisah dengan spasi vertikal yang lega). **DILARANG KERAS** menyusun rantai persamaan aljabar menyamping/horizontal yang panjang dengan deretan tanda implikasi ($\implies$) atau sama dengan ($=$) beruntun (contoh yang dilarang: `$2(x' + 1) - 3(y' - 4) + 6 = 0 \implies 2x' + 2 - 3y' + 12 + 6 = 0 \implies 2x' - 3y' + 20 = 0$`). Penulisan horizontal membuat teks menumpuk, sesak dibaca di layar maupun cetak, serta menyulitkan siswa melacak alur logika perubahan per baris.
+> 11. **Fokus Repetisi & Penguatan Konsep Dasar (Beban Belajar Terkalibrasi):** Mengingat keterbatasan jam tatap muka siswa dan padatnya agenda kegiatan harian mereka (terutama kegiatan asrama/santri/madrasah), contoh dan soal latihan **wajib difokuskan pada penguatan dan repetisi konsep dasar yang esensial** sampai siswa benar-benar paham fondasinya sebelum masuk ke variasi lanjutan. Hindari manipulasi aljabar berbelit, angka ekstrem, atau bentuk kuadrat/akar rumit di awal. Utamakan pola pengulangan terfokus (misal: satu objek/titik yang sama diuji ke beberapa variasi aturan dasar) agar konsep dasar terekam kuat dan intuitif.
 
 ---
 
@@ -29,11 +34,11 @@ Kerjakan soal pengingat berikut sebelum masuk ke materi baru:
 
 *(Cek singkat: No. 1 = `[jawaban]`, No. 2 = `[jawaban]`)*
 
-#### B. Pengertian & Analogi Nyata
-[Tuliskan pengertian konsep utama dalam 1–2 paragraf yang ringkas dan lugas.]
+#### B. Pengertian Konsep Dasar
+[Tuliskan pengertian konsep utama dalam 1–2 paragraf yang ringkas, komunikatif, dan lugas tanpa analogi filosofis/keagamaan yang dipaksakan.]
 
-**Analogi Sederhana:**
-- **[Sesuai Jenjang SMP/SMA]:** [Gunakan analogi konkret yang akrab bagi siswa. Contoh SMP: neraca timbangan untuk persamaan linear, denah rumah untuk skala. Contoh SMA: antrean terurut untuk fungsi, aliran pengisian tandon air untuk laju perubahan.]
+**Analogi Konkret & Proporsional (Bila Diperlukan):**
+- **[Sesuai Jenjang SMP/SMA]:** [Gunakan analogi konkret dan logis yang akrab bagi siswa. Contoh SMP: neraca timbangan untuk persamaan linear, denah rumah untuk skala. Contoh SMA: koordinat ruang untuk posisi fisik, aliran pengisian tandon air untuk laju perubahan. Jika konsep sudah jelas tanpa analogi, langsung masuk ke materi inti.]
 
 ---
 
@@ -68,7 +73,7 @@ Beberapa aturan penting yang wajib diperhatikan:
 ---
 
 ### 4. Contoh Soal & Pembahasan Bertingkat Mikro
-*Sajikan minimal **2 contoh** (SMP) atau **2–3 contoh** (SMA) yang naik tingkat secara halus dan berpasangan langsung (Contoh Kembar) dengan tipe soal pada Bagian 6. Setiap contoh wajib memuat: **Diketahui**, **Ditanyakan**, **Langkah Penyelesaian** baris demi baris, dan **Kesimpulan**.*
+*Sajikan minimal **2 contoh** (SMP) atau **2–3 contoh** (SMA) yang naik tingkat secara halus dan berpasangan langsung (Contoh Kembar) dengan tipe soal pada Bagian 6. Fokuskan contoh pada penguatan dan repetisi konsep dasar secara teratur. Setiap contoh wajib memuat: **Diketahui**, **Ditanyakan**, **Langkah Penyelesaian** yang ditulis **MENURUN KE BAWAH** baris per baris (menggunakan lingkungan KaTeX `\begin{aligned} ... \end{aligned}` atau blok baris menurun), dan **Kesimpulan** ($\checkmark\ \text{Benar}$). DILARANG menyusun langkah aljabar menyamping secara horizontal.*
 
 #### Contoh 1 (Tingkat Dasar — Bilangan Bulat Sederhana)
 **Soal:**
@@ -79,21 +84,32 @@ Beberapa aturan penting yang wajib diperhatikan:
   - [Komponen 1] = $\dots$
   - [Komponen 2] = $\dots$
 - **Ditanyakan:** [Nilai/bentuk yang dicari]
-- **Langkah Penyelesaian:**
-  1. [Langkah 1 ditulis eksplisit dan runtut]
-  2. [Langkah 2 ditulis eksplisit hingga tuntas]
+- **Langkah Penyelesaian (Menurun):**
+  $$
+  \begin{aligned}
+  [\text{Baris 1: Tuliskan Rumus / Model}] &= \dots \\
+  [\text{Baris 2: Substitusi Nilai Diketahui}] &= \dots \\
+  [\text{Baris 3: Operasi Hitung Sederhana}] &= \dots \\
+  [\text{Baris 4: Hasil Akhir Bersih}] &= \dots
+  \end{aligned}
+  $$
 - **Kesimpulan:** Jadi, nilai yang dicari adalah $\dots$ ($\checkmark\ \text{Benar}$)
 
 #### Contoh 2 (Variasi Ringan — Persiapan Latihan Mandiri)
 **Soal:**
-[Tuliskan variasi 1 langkah lebih maju dari Contoh 1—misal melibatkan tanda negatif atau koefisien $> 1$—yang polanya akan langsung diujikan di Latihan 6B. Hindari loncatan ke pecahan/akar rumit jika bukan topik intinya.]
+[Tuliskan variasi 1 langkah lebih maju dari Contoh 1—misal melibatkan tanda negatif atau koefisien $> 1$—yang polanya akan langsung diujikan di Latihan 6B. Fokuskan pada penguatan konsep dasar, hindari loncatan ke pecahan/akar rumit jika bukan topik intinya.]
 
 **Penyelesaian:**
 - **Diketahui:** $\dots$
 - **Ditanyakan:** $\dots$
-- **Langkah Penyelesaian:**
-  1. [Langkah 1 menunjukkan perlakuan variasi tanda/koefisien secara jelas]
-  2. [Langkah 2 hingga hasil akhir bersih]
+- **Langkah Penyelesaian (Menurun):**
+  $$
+  \begin{aligned}
+  [\text{Baris 1: Perlakuan tanda / aturan khusus}] &= \dots \\
+  [\text{Baris 2: Penjabaran bertahap ke bawah}] &= \dots \\
+  [\text{Baris 3: Hasil akhir bersih}] &= \dots
+  \end{aligned}
+  $$
 - **Kesimpulan:** Jadi, hasilnya adalah $\dots$ ($\checkmark\ \text{Benar}$)
 
 *(Tambahkan **Contoh 3** khusus untuk Jalur SMA atau pertemuan pendalaman apabila diperlukan satu pola aljabar tambahan atau langkah pembuktian terpandu.)*
@@ -118,24 +134,24 @@ Beberapa aturan penting yang wajib diperhatikan:
 ---
 
 ### 6. Latihan Soal Kelas (Bertingkat & Terstruktur)
-*Paket soal latihan untuk dikerjakan siswa di kelas (~35–40 menit). Disusun sebelum bagian Pola Kunci agar siswa membangun pemahaman dari praktik, bukan sekadar menghafal jalan pintas. Gunakan kalimat instruksi yang ringkas dan jelas.*
+*Paket soal latihan untuk dikerjakan siswa di kelas (~35–40 menit). Disusun sebelum bagian Pola Kunci agar siswa membangun pemahaman dari praktik, bukan sekadar menghafal jalan pintas. Seluruh instruksi diletakkan terpusat pada judul/pengantar sub-bagian (tanpa diulang di setiap nomor soal), dan bebas dari label meta authoring seperti `*(Pola Kembar)*` atau label kategori scaffolding.*
 
 #### A. Latihan Terbimbing (Ikuti Langkah Contoh)
-*Pola soal identik dengan Contoh 1–2 sebagai pijakan awal agar siswa langsung mengalami keberhasilan pertama.*
+*Pola soal identik dengan Contoh 1–2 sebagai pijakan awal agar siswa langsung mengalami keberhasilan pertama. Tuliskan instruksi umum di awal, tanpa tag meta authoring `*(Pola Kembar)*` di butir nomor soal.*
 
-Kerjakan soal berikut dengan mengikuti urutan langkah pada Contoh 1 dan Contoh 2:
-1. [Soal kembar Contoh 1; boleh diberi kerangka petunjuk langkah awal seperti *"Langkah 1: substitusikan nilai $a = \dots$ dan $b = \dots$"*]
-2. [Soal kembar Contoh 2 dengan angka baru yang tetap bulat dan mudah dihitung]
+Kerjakan soal berikut dengan mengikuti urutan langkah pada contoh yang telah dipelajari:
+1. [Soal bernomor langsung tanpa tag *(Pola Kembar)*; boleh disertai petunjuk langkah awal jika perlu]
+2. [Soal bernomor langsung tanpa tag *(Pola Kembar)* dengan angka baru yang tetap bulat dan mudah dihitung]
 
 #### B. Penguasaan Prosedur Inti (Latihan Bertahap)
 *Latihan inti berulang (4–5 soal) dengan angka bulat/rasional bersih yang naik perlahan antar-nomor untuk membentuk pemahaman yang utuh.*
 
-[Tuliskan satu instruksi ringkas dan seragam, misal: *"Tentukan hasil dari persamaan berikut dengan menuliskan langkah penyelesaiannya:"*]:
-1. [Soal paling sederhana: koefisien kecil, semua positif]
-2. [Soal sejenis dengan satu suku bernilai negatif]
-3. [Soal sejenis dengan dua tanda negatif / kombinasi berlawanan]
-4. [Soal dengan variasi koefisien $> 1$ atau urutan suku sedikit berbeda, tetap berpola dari Contoh 2]
-5. [*(Opsional soal ke-5)* Variasi ringan yang masih satu keluarga dengan poin 1–4 tanpa kejutan aturan baru]
+[Tuliskan satu kalimat instruksi umum dan seragam di sini, misal: *"Tentukan himpunan penyelesaian dari persamaan berikut secara sistematis:"* atau *"Selesaikan operasi aljabar berikut:"*. DILARANG mengulang instruksi ini di setiap nomor soal]:
+1. [Soal langsung menyajikan rumus/persamaan; DILARANG memberi label kategori seperti "1. Koefisien positif:"]
+2. [Soal variasi kedua langsung menyajikan persamaan]
+3. [Soal variasi ketiga langsung menyajikan persamaan]
+4. [Soal variasi keempat langsung menyajikan persamaan]
+5. [*(Opsional soal ke-5)* Soal variasi kelima langsung menyajikan persamaan]
 
 #### C. Soal Cerita Kontekstual
 *Dipisahkan khusus agar siswa fokus melatih kemampuan mengubah kalimat cerita menjadi model matematika sesuai Bagian 5.*

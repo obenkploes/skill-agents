@@ -22,8 +22,11 @@ DILARANG KERAS langsung menyajikan modul lengkap sebelum konfirmasi diberikan.
 
 ## Aturan Utama (Invariant Rules)
 - Patuhi aturan universal di [rules/AGENTS.md](../../rules/AGENTS.md).
-- **Wajib Mengikuti Standar Modul Tutor 8 Bagian** di [template-tutor.md](../../rules/templates/template-tutor.md): rincikan fungsi/klausa T-SQL & argumennya sebelum praktik, sediakan minimal 4 contoh bertingkat mikro, serta susun latihan berjenjang 4 level (8–10 soal) untuk jenjang SMK dan Mahasiswa.
-- **Production-Ready T-SQL**: Dilarang memotong skrip SQL contoh dengan placeholder komentar (`-- tulis query di sini`). Setiap modul wajib menyertakan DDL, DML, dan script pengujian yang langsung dapat dieksekusi di SSMS atau Azure Data Studio.
+- **Wajib Mengikuti Standar Modul Tutor 8 Bagian** di [template-tutor.md](../../rules/templates/template-tutor.md): sertakan prasyarat & jembatan konsep, rincikan konsep/perintah atau klausa T-SQL & argumennya sebelum praktik, sediakan 4 tahap/contoh bertingkat mikro disertai *state tracing* dan penanda jalur yang bersih (`Inti` vs `Pendalaman`), serta susun latihan berkelanjutan 4 level berbasis **3 Tema Tetap** (`TokoRitelDB`, `AkademikDB`, `LogistikAuditDB`) untuk jenjang SMK dan Mahasiswa.
+- **Prinsip *Zero Untaught Syntax* & *Zero Meta-Prompt Leakage*:**
+  - **Level 1 (Modul Fondasi, Instalasi, & Tooling):** Peserta belum belajar DDL/DML/T-SQL prosedural. Dilarang memaksakan `CREATE TABLE`, `INSERT`, `JOIN`, `TRY...CATCH`, atau DMV kompleks. Gunakan *mental model*, panduan terpandu GUI/Configuration Manager/SSMS, studi kasus skenario 3 tema, dan maksimal kueri verifikasi 1 baris (`SELECT @@VERSION;`, `SELECT @@SERVERNAME;`) yang dibedah token demi token.
+  - **Level 2–7 (Modul Praktikum Sintaks & Arsitektur Lanjutan):** Wajib menyertakan skrip T-SQL utuh, idempotent (`IF OBJECT_ID...`, `CREATE OR ALTER...`), dan bebas placeholder komentar (`-- tulis query di sini`), dengan tetap mematuhi batas sintaks levelnya (DDL baru di Level 2, DML & `JOIN` di Level 3, SP/UDF/Trigger di Level 4, `TRY...CATCH` & Transaksi di Level 5, Index/DMV di Level 6, Security/Backup di Level 7).
+  - **Gaya Bahasa Buku Ajar Bersih:** Tulis seluruh modul dari sudut pandang tutor kepada siswa/mahasiswa. Jangan membocorkan instruksi prompt (seperti `*(Wajib Terperinci)*`, `"Bedah setiap..."`, `"Mode A/B"`, `"Pola Kembar Contoh"`, atau catatan defensif fitur yang belum diajarkan), dan jangan membungkus penanda jalur dengan *backtick* di dalam heading (`##`).
 
 ## Roadmap Kurikulum 7 Tingkat (Beginner hingga Advanced)
 1. **Level 1: Instalasi & Tooling**:
@@ -69,12 +72,12 @@ DILARANG KERAS langsung menyajikan modul lengkap sebelum konfirmasi diberikan.
 
 ## Standar Format Modul Tutor & Praktikum (8 Bagian)
 Setiap modul praktikum yang dihasilkan wajib mengadopsi struktur 8 bagian terpadu sesuai [template-tutor.md](../../rules/templates/template-tutor.md):
-1. **Bagian 1: Tujuan Pembelajaran & Peta Konsep** (Kemampuan nyata + diagram alur/arsitektur ASCII).
-2. **Bagian 2: Kamus Fungsi, Klausa T-SQL, & Argumen Dasar *(Wajib Terperinci)*** (Bedah fungsi, klausa, parameter wajib/opsional, nilai kembali, & contoh mikro 1–3 baris).
-3. **Bagian 3: Prasyarat & Lingkungan Praktik Idempotent** (Versi SQL Server, dataset uji, `IF OBJECT_ID...`).
-4. **Bagian 4: Contoh Praktik T-SQL Bertingkat (Minimal 4 Contoh Mikro)** (Dasar Tunggal → Variasi Parameter → Kombinasi → Terapan Produksi & *Edge Case*).
-5. **Bagian 5: Verifikasi Output & Troubleshooting (*Common Pitfalls*)** (Tabel output/statistik I/O + solusi error pemula & anti-pattern).
-6. **Bagian 6: Latihan Soal & Praktikum Berjenjang (4 Level, 8–10 Soal SMK & Mahasiswa)** (Level 1 Prediksi/Cek Sintaks → Level 2 Modifikasi Terbimbing → Level 3 Implementasi Mandiri → Level 4 Analisis Kasus & Optimasi).
-7. **Bagian 7: Cek Mandiri & Panduan Verifikasi Latihan** (Indikator output Level 1–2 atau checklist pengujian).
-8. **Bagian 8: Ringkasan Fungsi & Refleksi Pemahaman** (Tabel ringkasan perintah + pertanyaan pemahaman konseptual).
+1. **Bagian 1: Prasyarat, Jembatan Konsep, & Peta Alur** `[INTI]` (2 soal kilat prasyarat + *Why Before How* + diagram alur/arsitektur ASCII).
+2. **Bagian 2: Kamus Fungsi, Klausa T-SQL, & Argumen Dasar *(Wajib Terperinci)*** `[INTI]` (Bedah fungsi, klausa, parameter wajib/opsional, nilai kembali, & contoh mikro 1–3 baris).
+3. **Bagian 3: Prasyarat Lingkungan & Checkpoint 3 Tema Berkelanjutan** `[INTI]` (Versi SQL Server, tabel progresi & skrip idempotent `TokoRitelDB`, `AkademikDB`, `LogistikAuditDB`).
+4. **Bagian 4: Contoh Praktik T-SQL Bertingkat — Tema 1 (Minimal 4 Contoh Mikro)** (Dasar Tunggal `[INTI]` → Variasi Parameter + *State Tracing* `[INTI]` → Kombinasi + *Step Trace* `[INTI]` → Terapan Produksi & *Edge Case* `[PENDALAMAN]`).
+5. **Bagian 5: Verifikasi Output & Troubleshooting (*Common Pitfalls*)** `[INTI]` (Tabel output/statistik I/O + solusi error pemula & anti-pattern).
+6. **Bagian 6: Latihan Soal & Praktikum Berkelanjutan Multi-Tema (4 Level, 8–10 Soal)** (Level 1 *Tracing*/Sintaks & Level 2 Modifikasi pada `TokoRitelDB` `[INTI]` → Level 3 Transfer & Milestone Berkelanjutan pada `AkademikDB` `[INTI LANJUT]` → Level 4 Analisis Kasus & Optimasi pada `LogistikAuditDB` `[PENDALAMAN]`).
+7. **Bagian 7: Cek Mandiri, Milestone Tema, & Panduan Verifikasi** (Indikator output Level 1–2 + checklist kesiapan milestone Tema 2–3, atau checklist uji evaluasi).
+8. **Bagian 8: Ringkasan Fungsi & Refleksi Pemahaman** (Tabel ringkasan perintah + pertanyaan pemahaman konseptual & transfer lintas tema).
 
