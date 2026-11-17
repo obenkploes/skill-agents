@@ -45,7 +45,8 @@ skills-agent/
     ├── zenith-ui/                     # Modul skill Zenith UI Multi-Engine (Native CSS, Tailwind, Bootstrap)
     ├── viral-news-analyzer/           # Modul analisis intelijen berita viral & sentimen medsos
     ├── fact-verifier/                 # Modul uji kebenaran fakta & ekstraksi teks berita asli
-    └── santri-robotics-iot-mentor/    # Mentor rekayasa embedded systems, robotika & IoT santri
+    ├── santri-robotics-iot-mentor/    # Mentor rekayasa embedded systems, robotika & IoT santri
+    └── supabase-curriculum-architect/ # Mentor kurikulum Supabase (PostgreSQL), RLS, & Multi-Platform
 ```
 
 ### Rincian Fungsi Direktori Inti:
@@ -340,6 +341,7 @@ Setelah ditautkan via salah satu metode di atas:
    - `@viral` atau `/viral` $\rightarrow$ Menganalisis berita viral medsos, verifikasi fakta, & sentimen publik.
    - `@fakta` atau `/fakta` $\rightarrow$ Memverifikasi kebenaran fakta, uji silang multi-sumber, & ekstraksi teks berita asli.
    - `/robotics` atau `/iot` $\rightarrow$ Menyusun modul praktikum robotika Arduino, simulasi Wokwi, & telemetri IoT ESP32.
+   - `/supabase` $\rightarrow$ Menyusun kurikulum interaktif Supabase (PostgreSQL), keamanan RLS, otomasi Triggers, & integrasi multi-platform (React/Laravel/Go).
 
 2. **Perilaku Otomatis (Planning Enforced)**:
    Antigravity di proyek mana pun akan **otomatis membaca `rules/AGENTS.md`**, sehingga agen akan:
@@ -400,6 +402,7 @@ Tabel status dan pemetaan modul skill yang aktif dan tersedia di repositori:
 | **Skill** | `skills/viral-news-analyzer` | Media Intelligence Analyst | **Aktif** | Pemantauan isu viral medsos, verifikasi akurasi cek fakta, polarisasi pro-kontra, & arsip laporan .md (reports/viral/) |
 | **Skill** | `skills/fact-verifier` | Fact-Checker & Investigative Verifier | **Aktif** | Uji silang multi-sumber resmi (minimal 2 media), ekstraksi kutipan asli (verbatim), & tautan URL artikel asli |
 | **Skill** | `skills/santri-robotics-iot-mentor` | Embedded Systems & IoT Mentor | **Aktif** | Kurikulum 5 Tahap Robotika & IoT, 8 Bagian Tutor/Lab Wokwi (`template-tutor.md`), & 3 Tema Berkelanjutan |
+| **Skill** | `skills/supabase-curriculum-architect` | Database Analyst & Supabase Technical Instructor | **Aktif** | Kurikulum 7 Modul Supabase (PostgreSQL), 8 Bagian Tutor (`template-tutor.md`), RLS, & Multi-Platform (React/Laravel/Go) |
 
 ---
 

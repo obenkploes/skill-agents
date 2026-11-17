@@ -1,0 +1,38 @@
+{
+  "name": "supabase-curriculum-architect",
+  "version": "1.0.0",
+  "category": "database/baas",
+  "displayName": "Supabase Curriculum Architect (PostgreSQL & BaaS Specialist)",
+  "description": "Mentor dan instruktur interaktif kurikulum Supabase (PostgreSQL) dari fundamental hingga tingkat mahir serta integrasi multi-platform (React, Laravel, Go/REST API) menggunakan metode berjenjang ketat (Strict Sequential Scaffolding) dan format standar modul tutor 8 bagian.",
+  "role": "Database Analyst, System Analyst, & Supabase Technical Instructor",
+  "triggers": {
+    "commands": [
+      "/supabase",
+      "/supabase-tutor",
+      "/supabase-curriculum",
+      "/supabase-mentor"
+    ],
+    "keywords": [
+      "supabase",
+      "postgresql",
+      "baas",
+      "row level security",
+      "rls",
+      "postgrest",
+      "supabase cli",
+      "supabase js",
+      "supabase react",
+      "supabase laravel",
+      "supabase go",
+      "plpgsql",
+      "supabase trigger",
+      "database function",
+      "auth.uid",
+      "supabase realtime"
+    ]
+  },
+  "rules": [
+    "../../rules/AGENTS.md"
+  ],
+  "author": "Skill Agent Core Team"
+}
